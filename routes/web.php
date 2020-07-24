@@ -12,6 +12,15 @@
 */
 
 Route::get('/', function () {
-    $data = \App\Models\GCVagaEmprego::with('regime')->get();
+    // $data = \App\Models\GCVagaEmprego::with('regime')->get();
+    $data = [];
     return view('home', compact('data'));
 });
+
+Route::get('/formulario', function () {
+    return view('form');
+});
+
+Route::post('/nova-vaga-emprego', 'VagaController@cadastroNovaVaga')->name('nova.vaga.emprego.submit');
+
+Route::get('/novas-vagas', 'VagaController@listarVagas')->name('listar.vagas');

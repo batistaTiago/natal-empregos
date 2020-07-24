@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGCVagaEmpregosTable extends Migration
+class CreateVagaEmpregosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class CreateGCVagaEmpregosTable extends Migration
      */
     public function up()
     {
-        Schema::create('g_c_vaga_emprego', function (Blueprint $table) {
+        Schema::create('vaga_emprego', function (Blueprint $table) {
             $table->bigIncrements('id');
 
+            $table->unsignedBigInteger('empresa_id');
             $table->string('titulo');
             $table->string('sub_titulo');
+            $table->string('local');
+            $table->string('descricao');
+            $table->string('observacoes');
             $table->unsignedBigInteger('regime_contratacao_id');
             $table->float('remuneracao');
 
@@ -32,6 +36,6 @@ class CreateGCVagaEmpregosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('g_c_vaga_emprego');
+        Schema::dropIfExists('vaga_emprego');
     }
 }
