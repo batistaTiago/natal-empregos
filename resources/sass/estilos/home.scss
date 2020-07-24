@@ -1,0 +1,32 @@
+.cartao {
+    width: 65vw;
+    height: 40vh;
+    background-color: rgb(243, 231, 198);
+    border: 1px solid black;
+    color: black;
+    padding: 1.5em;
+}
+
+.empresacidade {
+    display: flex;
+    width: 35%;
+    justify-content: space-evenly;
+}
+
+.titulo {
+    font-size: 2em;
+}
+.subtitulo {
+    font-size: 1.3em;
+    margin-left: 1em;
+}
+.descricao {
+    font-size: 1.1em;
+    margin-left: 1em;
+    margin-top: 5vh;
+}
+.fontezinha {
+    font-size: 0.9em;
+    margin-left: 3em;
+    margin-top: 2vh;
+}

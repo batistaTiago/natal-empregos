@@ -19,29 +19,32 @@
             <th class="hidden-xs">Remuneração</th>
         </tr>
     </thead>
-    <tbody>
-        @foreach ($data as $idx => $vaga)
-        <tr>
-            <td>{{ $idx + 1 }}</td>
-            <td>
-                {{ $vaga->titulo }}
-            </td>
-            <td>
-                {{ $vaga->sub_titulo }}
-            </td>
-            <td>
-                {{ $vaga->sub_titulo }}
-            </td>
-            <td>
-                {{ $vaga->regime->nome }}
-            </td>
-            <td>
-                {{ $vaga->remuneracao }}
-            </td>
-        </tr>
-        @endforeach
-    </tbody>
 </table>
+    @foreach ($data as $idx => $vaga)
+        <div class="cartao">
+            {{-- <p>{{ $idx + 1 }}</p> --}}
+            <p class="titulo">Analista de Banco de Dados</p>
+            <div class="empresacidade">
+                <p class="">
+                    Garantistas Coding SA
+                </p>
+                <p>
+                    Natal, RN
+                </p>
+                </div>    
+            <p class="fontezinha">Contrato: {{ $vaga->regime->nome }}</p>
+            <p class="fontezinha">Remuneração R$ {{ $vaga->remuneracao }}</p>
+            <p class="fontezinha">Benefícios: Vale transporte, Vale refeição</p>
+            <p class="descricao">
+                Checkboxes are used to let a user select one or more options of a limited number of choices. 
+                Checkboxes are used to let a user select one or more options of a limited number of choices.
+            </p>
+        </div>
+    @endforeach
+        {{-- 
+        
+         --}}
+
 
 @endsection
 

@@ -15,3 +15,11 @@ Route::get('/', function () {
     $data = \App\Models\GCVagaEmprego::with('regime')->get();
     return view('home', compact('data'));
 });
+
+Route::get('/cadastro', function () {
+    return view('cadastro');
+});
+
+Route::post('/enviar', function () {
+    dd("aqui");
+});
