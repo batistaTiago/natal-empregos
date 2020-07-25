@@ -28,6 +28,9 @@
             <label for="subtitulo">Subtítulo</label>
             <input class="inputs" type="text" name="subtitulo" id="subtitulo" placeholder="Ex: Descrição resumida da vaga">
 
+            <label for="titulo">Foto</label>
+            <input class="inputs" type="file" name="foto" id="foto">
+
             <label for="local">Local de trabalho</label>
             <input class="inputs" type="text" name="local" id="local" placeholder="Local de trabalho">
 
@@ -36,9 +39,6 @@
 
             <label for="contrato">Benefícios</label>
             <input class="inputs" type="text" name="beneficios" id="beneficios" placeholder="Ex: vale transporte, vale alimentação...">
-            
-            
-            
             
             <label for="titulo">Remuneração</label>
             <input class="inputs" type="number" name="remunerecao" id="remunerecao" placeholder="Remuneração (somente números)">
@@ -53,7 +53,7 @@
                 <input type="checkbox" id="remoto" name="remoto" style="margin-left: 1em">
                 <label for="remoto">Remoto?</label>
             </div>
-            <button class="botaocadastro">Criar vaga</button>
+            <button class="botao">Criar vaga</button>
         </div>
         </form>
 </div>
