@@ -16,14 +16,23 @@ class CreateVagaEmpregosTable extends Migration
         Schema::create('vaga_emprego', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->unsignedBigInteger('empresa_id');
+
+            /* dados */
             $table->string('titulo');
             $table->string('sub_titulo');
-            $table->string('local');
-            $table->string('descricao');
-            $table->string('observacoes');
+            $table->text('descricao')->nullable();
+            $table->string('observacoes')->nullable();
+            $table->float('remuneracao')->nullable();
+            $table->boolean('aceita_remoto')->nullable();
+            
+            
+            /* controle */
+            $table->boolean('ativa')->default(false);
+
+            /* relacionamentos */
+            $table->unsignedBigInteger('empresa_id');
             $table->unsignedBigInteger('regime_contratacao_id');
-            $table->float('remuneracao');
+
 
             $table->timestamps();
         });
