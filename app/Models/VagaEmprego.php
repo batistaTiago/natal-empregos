@@ -20,6 +20,6 @@ class VagaEmprego extends Model
 
     public function beneficios()
     {
-        return $this->belongsToMany(Beneficio::class, VagaEmpregoBeneficio::class);
+        return $this->belongsToMany(Beneficio::class, VagaEmpregoBeneficio::class)->withPivot('valor')->as('detalhes');
     }
 }
