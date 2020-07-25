@@ -10,6 +10,16 @@ class VagaEmprego extends Model
 
     public function regime()
     {
-        return $this->belongsTo(RegimeContratacao::class, 'regime_contratacao_id');
+        return $this->belongsTo(RegimeContratacao::class);
+    }
+
+    public function empresa()
+    {
+        return $this->belongsTo(Empresa::class);
+    }
+
+    public function beneficios()
+    {
+        return $this->belongsToMany(Beneficio::class, VagaEmpregoBeneficio::class);
     }
 }
