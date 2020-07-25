@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGCRegimeContratacaosTable extends Migration
+class CreateRegimeContratacaosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateGCRegimeContratacaosTable extends Migration
      */
     public function up()
     {
-        Schema::create('g_c_regime_contratacao', function (Blueprint $table) {
+        Schema::create('regime_contratacao', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateGCRegimeContratacaosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('g_c_regime_contratacao');
+        Schema::dropIfExists('regime_contratacao');
     }
 }

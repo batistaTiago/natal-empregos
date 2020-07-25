@@ -2,9 +2,9 @@
 
 use Illuminate\Database\Seeder;
 
-use App\Models\GCRegimeContratacao;
+use App\Models\RegimeContratacao;
 
-class GCRegimeContratacaoSeeder extends Seeder
+class RegimeContratacaoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,7 +13,7 @@ class GCRegimeContratacaoSeeder extends Seeder
      */
     public function run()
     {
-        GCRegimeContratacao::insert([
+        RegimeContratacao::insert([
             [
                 'nome' => 'CLT'
             ],
