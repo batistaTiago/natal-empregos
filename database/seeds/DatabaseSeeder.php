@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(BeneficioSeeder::class);
         $this->call(EmpresaSeeder::class);
         $this->call(VagaEmpregoSeeder::class);
+        $this->call(VagaEmpregoImagemSeeder::class);
     }
 }

@@ -23,6 +23,10 @@ class BootstrapRelations extends Migration
             $table->foreign('vaga_emprego_id')->references('id')->on('vaga_emprego');
             $table->foreign('beneficio_id')->references('id')->on('beneficio');
         });
+
+        Schema::table('vaga_emprego_imagem', function (Blueprint $table) {
+            $table->foreign('vaga_emprego_id')->references('id')->on('vaga_emprego');
+        });
     }
 
     /**
