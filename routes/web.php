@@ -20,10 +20,17 @@ Route::get('/', function () {
 Route::get('/cadastro', function () {
     return view('cadastro');
 });
+Route::get('/cadastroempresa', function () {
+    return view('cadastroempresa');
+});
 
 Route::post('/enviar', function () {
     dd("aqui");
 });
+Route::get('/detalhesvaga', function () {
+    return view('detalhesvaga');
+});
+
 Route::get('/formulario', function () {
     return view('form');
 });

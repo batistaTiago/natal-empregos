@@ -109,8 +109,64 @@
   margin-left: 2vw;
 }
 
+.empresacontainer {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+}
+.empresacontainer label {
+  padding: 0.5em;
+  font-size: 1.2em;
+}
+.empresacontainer input {
+  padding: 1em;
+  border-radius: 5px;
+}
+
+.divdetalhes {
+  padding: 3em;
+  background-color: #fff;
+  color: black;
+}
+
+.divsalario {
+  display: flex;
+  padding: 1em;
+}
+
+.divbeneficios {
+  padding: 2em;
+}
+
+.infoenvio {
+  font-size: 0.8em;
+}
+
+.cabecalho {
+  margin-left: 2vw;
+}
+
+.titulocabeca {
+  font-size: 2em;
+}
+
+.detalhado {
+  padding: 1em;
+}
+
+.requisitos {
+  padding: 1em;
+}
+
+.botaovaga {
+  width: 15em;
+  height: 5em;
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
 body {
-  background: #333333;
+  background: #9c9c9c;
 }
 
 /*# sourceMappingURL=system.css.map */

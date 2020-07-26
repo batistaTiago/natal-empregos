@@ -47,13 +47,20 @@
             <div class="remoto">
                 <select class="inputs" name="contrato" id="contrato" placeholder="Selecione um">
                     <option value="">Selecione um</option>
-                    <option value="clt">CLT</option>
-                    <option value="pj">PJ</option>
+                    <option value="1">CLT</option>
+                    <option value="2">PJ</option>
                 </select>
                 <input type="checkbox" id="remoto" name="remoto" style="margin-left: 1em">
                 <label for="remoto">Remoto?</label>
             </div>
-            <button class="botao">Criar vaga</button>
+            <div style="display: flex; justify-content: center; margin-top: 2vh">
+                <button type="submit" class="botao">
+                Voltar
+                </button>    
+                <button type="submit" class="botao">
+                    Enviar
+                </button>
+            </div>
         </div>
         </form>
 </div>

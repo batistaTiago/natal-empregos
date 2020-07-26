@@ -1,0 +1,13 @@
+.empresacontainer {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    label {
+        padding: 0.5em;
+        font-size: 1.2em;
+    }
+    input {
+        padding: 1em;
+        border-radius: 5px;
+    }
+}

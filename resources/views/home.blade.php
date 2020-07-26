@@ -31,7 +31,7 @@
                     <p>
                         Natal, RN
                     </p>
-                    </div>    
+                </div>    
                 <p class="fontezinha">Contrato: {{ $vaga->regime->nome }}</p>
                 <p class="fontezinha">Remuneração R$ {{ $vaga->remuneracao }}</p>
                 <p class="fontezinha">Benefícios: Vale transporte, Vale refeição</p>
