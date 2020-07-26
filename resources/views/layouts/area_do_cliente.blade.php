@@ -71,7 +71,7 @@
                     <li class="hidden-xs"><a href="login.html"><i class="glyphicon glyphicon-off"></i></a></li>
                 </ul>
                 <form id="search-form" class="navbar-form pull-right" role="search">
-                    <input type="search" class="form-control search-query" placeholder="Search...">
+                    <input type="search" class="form-control search-query" placeholder="Buscar...">
                 </form>
             </div>
         </header>
@@ -84,7 +84,12 @@
 
 
             <footer class="content-footer">
-                FOOTER
+                
+                <p>Parceiros: Garantistas Coding LTDA 2020</p>
+                <p>Natal Empregos - 2020</p>
+                <h href="http://localhost:8000/">Saiba Mais</h>
+                
+                
             </footer>
         </div>
         <div class="loader-wrap hiding hide">

@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-    // $data = \App\Models\GCVagaEmprego::with('regime')->get();
-    $data = [];
+    $data = \App\Models\VagaEmprego::with('regime')->get();
+    //$data = [];
     return view('home', compact('data'));
 });
 
