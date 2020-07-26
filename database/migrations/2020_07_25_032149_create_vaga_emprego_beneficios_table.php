@@ -23,6 +23,9 @@ class CreateVagaEmpregoBeneficiosTable extends Migration
             $table->unsignedBigInteger('vaga_emprego_id');
             $table->unsignedBigInteger('beneficio_id');
 
+            /* restricoes */
+            $table->unique(['vaga_emprego_id', 'beneficio_id']);
+
             $table->timestamps();
         });
     }
