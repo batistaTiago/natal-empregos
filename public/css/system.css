@@ -48,40 +48,73 @@
   align-items: center;
 }
 
+.container {
+  align-items: center;
+}
+
 .cartao {
-  width: 65vw;
-  height: 40vh;
-  background-color: #f3e7c6;
-  border: 1px solid black;
+  width: 55vw;
+  background-color: white;
   color: black;
-  padding: 1.5em;
+  padding: 2em;
+  margin-bottom: 1em;
+  border-radius: 0.2em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+  align-self: center;
+}
+
+.imagem {
+  width: 13em;
+  height: 10em;
+  border-radius: 0.5em;
 }
 
 .empresacidade {
-  display: flex;
-  width: 35%;
-  justify-content: space-evenly;
+  font-size: 1.5rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  opacity: 0.6;
+  margin-top: 0.9em;
+  margin-left: 0.5em;
+  align-content: flex-end;
 }
 
 .titulo {
-  font-size: 2em;
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 3rem;
+  line-height: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.0125em;
+  text-decoration: inherit;
+  text-transform: inherit;
 }
 
 .subtitulo {
-  font-size: 1.3em;
-  margin-left: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .descricao {
-  font-size: 1.1em;
-  margin-left: 1em;
-  margin-top: 5vh;
+  font-family: Roboto, sans-serif;
+  font-size: 1.2em;
+  margin-top: 4vh;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .fontezinha {
-  font-size: 0.9em;
-  margin-left: 3em;
-  margin-top: 2vh;
+  font-size: 1em;
+  margin-left: 1.5em;
+  margin-top: 1.5vh;
+}
+
+.detalhes {
+  margin-top: 5vh;
 }
 
 .newsletter {
