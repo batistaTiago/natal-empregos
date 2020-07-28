@@ -24,11 +24,15 @@ Route::get('/cadastroempresa', function () {
     return view('cadastroempresa');
 });
 
-Route::post('/enviar', function () {
-    dd("aqui");
+Route::get('/landing', function () {
+    return view('landing');
 });
 Route::get('/detalhesvaga', function () {
     return view('detalhesvaga');
+});
+
+Route::get('/contato', function () {
+    return view('contato');
 });
 
 Route::get('/formulario', function () {

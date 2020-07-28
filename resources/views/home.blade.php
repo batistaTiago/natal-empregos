@@ -7,8 +7,7 @@
 @endsection
 
 @section('content')
-<<<<<<< HEAD
-<div>
+<div class="containercartao">
     <table class="table table-striped">
         <thead>
             <tr>
@@ -52,42 +51,6 @@
                 </div>
             </div>
 </div>
-=======
-<div class="container">
-    @foreach ($data as $idx => $vaga)
-        <div class="cartao">
-            {{-- <p>{{ $idx + 1 }}</p> --}}
-            <p class="titulo">{{$vaga->titulo}}</p>
-            <div class="empresacidade">
-                <p>
-                    {{$vaga->sub_titulo}}
-                </p>
-                <p>
-                    Natal,RN
-                </p>
-            </div>
-            <div class="subtitulo">
-                <div class="detalhes">
-                    <p class="fontezinha"><b>Contrato</b>: {{ $vaga->regime->nome }}</p>
-                        <p class="fontezinha"><b>Remuneração:</b> R$ {{ $vaga->remuneracao }}</p>
-                        <p class="fontezinha"><b>Benefícios:</b> {{ $vaga->observacoes }}</p>
-                        
-                    </p>
-                </div>
-                <div>
-                    <img class="imagem" src='/img/arquivo.jpg'>
-                </div>
-                
-            </div>
-            <p class="descricao">
-            {{$vaga->descricao}}
-            </p>
-        </div>
-    @endforeach
-        {{-- 
-        
-         --}}
->>>>>>> a906ba3f4af5f5577ea4de08f6ddd7baf62bc84c
 
 </div>
 @endsection

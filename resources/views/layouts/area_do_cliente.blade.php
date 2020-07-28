@@ -44,7 +44,7 @@
                         </a>
                         <ul id="account-menu" class="dropdown-menu account" role="menu">
                             <li role="presentation" class="account-picture">
-                                <img src="img/2.png" alt=""> Philip Daineka
+                                <img src="img/2.png" alt=""> Administrador
                             </li>
                             <li role="presentation">
                                 <a href="form_account.html" class="link">
@@ -77,9 +77,6 @@
         </header>
 
         <div class="content container">
-            <h2 class="page-title">Natal Empregos</h2>
-
-
             @yield('content')
 
 
@@ -87,7 +84,7 @@
                 
                 <p>Parceiros: Garantistas Coding LTDA 2020</p>
                 <p>Natal Empregos - 2020</p>
-                <h href="http://localhost:8000/">Saiba Mais</h>
+                <a href="http://localhost:8000/">Saiba Mais</a>
                 
                 
             </footer>
