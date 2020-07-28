@@ -21,10 +21,10 @@ class VagaEmpregoSeeder extends Seeder
                 'titulo' => 'Analista de Banco de Dados',
                 'sub_titulo' => 'Garantistas CORPs',
                 'descricao' => 'Analise de banco de dados e infraestrutura',
-                'observacoes' => 'Vale refeicao, vale transporte',
                 'regime_contratacao_id' => 1, // CLT
                 'remuneracao' => 16200,
                 'aceita_remoto' => true,
+                'status' => true,
             ],
             [
                 'id' => 2,
@@ -32,10 +32,11 @@ class VagaEmpregoSeeder extends Seeder
                 'titulo' => 'Web Designer',
                 'sub_titulo' => 'Garantistas CORPs',
                 'descricao' => 'AdobeXD e photoshop, se souber html e css eh um bonus',
-                'observacoes' => 'Vale refeicao, vale transporte',
                 'regime_contratacao_id' => 2, // CLT
                 'remuneracao' => 420,
                 'aceita_remoto' => true,
+                'status' => true,
+
             ],
             [
                 'id' => 3,
@@ -43,10 +44,11 @@ class VagaEmpregoSeeder extends Seeder
                 'titulo' => 'ASG',
                 'sub_titulo' => 'Garantistas CORPs',
                 'descricao' => 'Tia da limpeza',
-                'observacoes' => 'Vale refeicao, vale transporte',
                 'regime_contratacao_id' => 1, // CLT
                 'remuneracao' => 4.20,
                 'aceita_remoto' => false,
+                'status' => true,
+
             ],
         ];
 
@@ -57,7 +59,7 @@ class VagaEmpregoSeeder extends Seeder
             foreach ($d as $data) {
 
                 $vaga = new VagaEmprego($data);
-                
+
                 $temVR = rand(0, 1);
                 $temVT = rand(0, 1);
 
@@ -95,7 +97,6 @@ class VagaEmpregoSeeder extends Seeder
             }
 
             DB::commit();
-
         } catch (\Throwable $e) {
             DB::rollBack();
 

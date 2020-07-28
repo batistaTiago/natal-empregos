@@ -9,7 +9,7 @@
 @section('content')
 <div class="containercadastro">
     <h1>Cadastro</h1>
-        <form action="/enviar" method="POST">
+        <form action="{{route('nova.vaga.emprego.submit')}}" method="POST">
         @csrf
         <div class="divinputs">
             <label for="empresa">Nome da empresa</label>
@@ -21,7 +21,7 @@
                 <input type="checkbox" id="nao" name="nao" style="margin-left: 1em">
                 <label for="nao">Não</label>
             </div>
-
+            
             <label for="titulo">Título da vaga</label>
             <input class="inputs" type="text" name="titulo" id="titulo" placeholder="Título da vaga">
 

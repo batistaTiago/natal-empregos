@@ -17,9 +17,7 @@ Route::get('/', function () {
     return view('home', compact('data'));
 });
 
-Route::get('/cadastro', function () {
-    return view('cadastro');
-});
+Route::get('/cadastro-vaga', 'VagaController@cadastroForm')->name('cadastro.vaga');
 
 Route::post('/enviar', function () {
     dd("aqui");
@@ -28,6 +26,20 @@ Route::get('/formulario', function () {
     return view('form');
 });
 
+Route::get('/cadastro-empresa', function () {
+    return view('cadastro');
+})->name('cadastro.empresa.form');
+Route::post('/cadastro-empresa', 'EmpresaController@cadastroNovaEmpresa')->name('cadastro.empresa.submit');
+Route::get('/detalhes-vaga/{id}', 'VagaController@getDetalhesVaga')->name('detalhes.vaga');
+Route::get('', function () {
+});
+
+Route::get('admin/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
 Route::post('/nova-vaga-emprego', 'VagaController@cadastroNovaVaga')->name('nova.vaga.emprego.submit');
 
 Route::get('/novas-vagas', 'VagaController@listarVagas')->name('listar.vagas');
+
+Route::get('/contato', function () {
+    return view('contato');
+})->name('contato.form');
+Route::post('/contato', 'ContatoController@contatoSubmit')->name('contato.form.submit');

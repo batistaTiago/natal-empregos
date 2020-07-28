@@ -17,7 +17,8 @@ class EmpresaSeeder extends Seeder
             [
                 'nome' => 'Garantistas Coding Corp',
                 'nome_fantasia' => 'GCC',
-                'cpnj' => '420'
+                'cpnj' => '420',
+                'slug' => \slugify('Garantistas Coding Corp')
             ]
         ]);
     }

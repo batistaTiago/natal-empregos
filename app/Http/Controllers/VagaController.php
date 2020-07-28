@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\GCVagaEmprego;
+use App\Models\VagaEmprego;
+use App\Models\Empresa;
 
 class VagaController extends Controller
 {
@@ -12,27 +13,32 @@ class VagaController extends Controller
     // Salva nova vaga via formulario
     public function cadastroNovaVaga(Request $request)
     {
-        $novaVaga = new  GCVagaEmprego();
-        $novaVaga->empresa = $request->empresa;
+        $novaVaga = new  VagaEmprego();
+        $slugname = \slugify($request->empresa);
+
+
+        $empresa = Empresa::procurarPorNomeOuCriar($request->empresa);
+
         $novaVaga->titulo  = $request->titulo;
         $novaVaga->sub_titulo = $request->subtitulo;
-        $novaVaga->local = $request->local;
+        // $novaVaga->local = $request->local;
+
+
         $novaVaga->descricao = $request->descricao;
-        $novaVaga->observacoes = $request->observacoes;
         $novaVaga->regime_contratacao_id = $request->regime_contratacao_id;
         $novaVaga->remuneracao = 1200;
+        $novaVaga->aceita_remoto = true;
+        $novaVaga->ativa = true;
+        $novaVaga->regime_contratacao_id = 2;
 
-        // dd($novaVaga);
 
         if ($novaVaga->save()) {
 
-            $msg = 'Vaga cadastrada!';
-
-            // Flash
-            // return view compact msg
-            return 'success';
+            flash('Vaga de trabalho registrata com sucesso');
+            return redirect()->back();
         } else {
-            return 'false';
+            flash('Registro nao concluido , tente novamente.');
+            return redirect()->back();
         }
     }
 
@@ -40,10 +46,20 @@ class VagaController extends Controller
     public function listarVagas(Request $request)
     {
 
-        $allVagas = GCVagaEmprego::all();
-
-        dd($allVagas);
+        $allVagas = VagaEmprego::all();
 
         return view('vagas', compact('allVagas'));
+    }
+
+    public function cadastroForm(Request $request)
+    {
+        $allVagas = VagaEmprego::all();
+
+        $allEmpresas = Empresa::all();
+
+        // dd($allVagas);
+        // dd($allEmpresas);
+        // die;
+        return view('cadastro', compact('allEmpresas'));
     }
 }

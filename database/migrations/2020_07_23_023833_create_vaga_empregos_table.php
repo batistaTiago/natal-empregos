@@ -21,11 +21,11 @@ class CreateVagaEmpregosTable extends Migration
             $table->string('titulo');
             $table->string('sub_titulo');
             $table->text('descricao')->nullable();
-            $table->string('observacoes')->nullable();
             $table->float('remuneracao')->nullable();
             $table->boolean('aceita_remoto')->nullable();
-            
-            
+            $table->boolean('status');
+
+
             /* controle */
             $table->boolean('ativa')->default(false);
 

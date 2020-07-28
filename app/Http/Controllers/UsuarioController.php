@@ -8,6 +8,5 @@ class UsuarioController extends Controller
 {
     public function novoUsuario(Request $request)
     {
-        dd('aqui');
     }
 }
