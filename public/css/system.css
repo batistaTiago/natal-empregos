@@ -1,3 +1,10 @@
+.botao {
+  width: 10em;
+  height: 3em;
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
 .containercadastro {
   width: 60vw;
 }
@@ -24,14 +31,6 @@
   flex-direction: column;
 }
 
-.botaocadastro {
-  width: 10em;
-  height: 3em;
-  margin-top: 3vh;
-  color: black;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-}
-
 .inputs {
   height: 3em;
   border: 1px solid rgba(0, 0, 0, 0.7);
@@ -49,6 +48,17 @@
   align-items: center;
 }
 
+<<<<<<< HEAD
+=======
+.container {
+  align-items: center;
+}
+
+.containercartao {
+  margin-top: 15vh;
+}
+
+>>>>>>> frontend
 .cartao {
   width: 30vw;
   background-color: white;
@@ -110,17 +120,149 @@
   margin-top: 1.5vh;
 }
 
-.detalhes {
-  margin-top: 5vh;
+.newsletter {
+  border: 1px solid rgba(150, 150, 150, 0.205);
+  width: 80%;
+  margin-top: 6vh;
+  margin-left: 5vw;
+  padding: 0.7em 1em;
+  border-radius: 0.3em;
+}
+.newsletter p {
+  padding: 0.5em;
+  font-size: 1.7em;
 }
 
-body {
-  background: #4b79a1;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #283e51, #4b79a1);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #283e51, #4b79a1);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.newsform {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.newsinput {
+  padding: 0.5em;
+  width: 50vw;
+  margin-left: 2vw;
+}
+
+.empresacontainer {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+}
+.empresacontainer label {
+  padding: 0.5em;
+  font-size: 1.2em;
+}
+.empresacontainer input {
+  padding: 1em;
+  border-radius: 5px;
+}
+
+.divdetalhes {
+  padding: 3em;
+  background-color: #fff;
+  color: black;
+}
+
+.divsalario {
+  display: flex;
+  padding: 1em;
+}
+
+.divbeneficios {
+  padding: 2em;
+}
+
+.infoenvio {
+  font-size: 0.8em;
+}
+
+.cabecalho {
+  margin-left: 2vw;
+}
+
+.titulocabeca {
+  font-size: 2em;
+}
+
+.detalhado {
+  padding: 1em;
+}
+
+.requisitos {
+  padding: 1em;
+}
+
+.botaovaga {
+  width: 15em;
+  height: 5em;
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.containerlayout {
+  background-color: #e6e6e6;
+  margin-top: 12vh;
+  height: 100%;
+  width: 100%;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 12vh;
+  background-color: rgba(0, 0, 0, 0.075);
+  display: flex;
+  align-items: center;
+}
+
+.divmenus {
+  width: 100%;
+  margin-left: 5em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logolayout {
+  width: 25vw;
+  margin-left: 5vw;
+  font-size: 1.4em;
+  font-family: "Candara", sans-serif;
+}
+.logolayout a {
+  color: black;
+  text-decoration: none;
+}
+
+.menus {
+  display: flex;
+}
+.menus p {
+  font-family: "Roboto", sans-serif;
+}
+.menus a {
+  color: black;
+  text-decoration: none;
+}
+
+.botaonavbar {
+  border-bottom: 2px solid transparent;
+  padding: 1em;
+  margin: 0 2em;
+}
+.botaonavbar:hover {
+  border-bottom: 2px solid #ca7b12;
+}
+.botaonavbar:hover a {
+  color: #ca7b12;
+}
+
+.body {
+  background-color: #e6e6e6;
 }
 
 /*# sourceMappingURL=system.css.map */
