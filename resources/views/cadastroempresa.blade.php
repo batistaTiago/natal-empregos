@@ -7,8 +7,8 @@
 @endsection
 
 @section('content')
-
-<form action="{{route('cadastro.empresa.submit')}}" method="POST">
+{{-- {{route('cadastro.empresa.submit')}} --}}
+<form action="" method="POST">
     <div class="empresacontainer">
         @csrf
         <label for="nome">Nome da empresa</label>

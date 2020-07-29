@@ -8,18 +8,6 @@
 
 @section('content')
 <div class="containercartao">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th class="hidden-xs">#</th>
-                <th>Titulo</th>
-                <th>Sub-titulo</th>
-                <th class="hidden-xs">Empresa</th>
-                <th class="hidden-xs">Regime de Contratação</th>
-                <th class="hidden-xs">Remuneração</th>
-            </tr>
-        </thead>
-    </table>
         @foreach ($data as $idx => $vaga)
             <div class="cartao">
                 {{-- <p>{{ $idx + 1 }}</p> --}}
