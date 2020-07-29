@@ -16,20 +16,6 @@ Route::get('/', function () {
     return view('home', compact('data'));
 });
 
-Route::get('/landing', function () {
-    return view('landing');
-});
-Route::get('/detalhesvaga', function () {
-    return view('detalhesvaga');
-});
-
-Route::get('/contato', function () {
-    return view('contato');
-});
-
-Route::get('/formulario', function () {
-    return view('form');
-});
 
 Route::prefix('admin')->group(function () {
 
