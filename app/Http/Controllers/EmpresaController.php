@@ -8,7 +8,12 @@ use Illuminate\Http\Request;
 class EmpresaController extends Controller
 {
 
-    public function cadastroNovaEmpresa(Request $request)
+    public function cadastrarEmpresaForm()
+    {
+        return view('cadastro');
+    }
+
+    public function cadastrarEmpresaCallback(Request $request)
     {
         $novaEmpresa = new Empresa();
 

@@ -16,7 +16,6 @@ class VagaController extends Controller
         $novaVaga = new  VagaEmprego();
         $slugname = \slugify($request->empresa);
 
-
         $empresa = Empresa::procurarPorNomeOuCriar($request->empresa);
 
         $novaVaga->titulo  = $request->titulo;
@@ -34,10 +33,10 @@ class VagaController extends Controller
 
         if ($novaVaga->save()) {
 
-            flash('Vaga de trabalho registrata com sucesso');
+            flash('Vaga de trabalho registrata com sucesso')->success();
             return redirect()->back();
         } else {
-            flash('Registro nao concluido , tente novamente.');
+            flash('Registro nao concluido , tente novamente.')->error();
             return redirect()->back();
         }
     }
@@ -45,7 +44,6 @@ class VagaController extends Controller
     // enviar todas as vagas para a requisicao
     public function listarVagas(Request $request)
     {
-
         $allVagas = VagaEmprego::all();
 
         return view('vagas', compact('allVagas'));
@@ -54,12 +52,8 @@ class VagaController extends Controller
     public function cadastroForm(Request $request)
     {
         $allVagas = VagaEmprego::all();
-
         $allEmpresas = Empresa::all();
 
-        // dd($allVagas);
-        // dd($allEmpresas);
-        // die;
         return view('cadastro', compact('allEmpresas'));
     }
 }

@@ -19,27 +19,34 @@ Route::get('/', function () {
 
 Route::get('/cadastro-vaga', 'VagaController@cadastroForm')->name('cadastro.vaga');
 
-Route::post('/enviar', function () {
-    dd("aqui");
-});
 Route::get('/formulario', function () {
     return view('form');
 });
 
-Route::get('/cadastro-empresa', function () {
-    return view('cadastro');
-})->name('cadastro.empresa.form');
-Route::post('/cadastro-empresa', 'EmpresaController@cadastroNovaEmpresa')->name('cadastro.empresa.submit');
-Route::get('/detalhes-vaga/{id}', 'VagaController@getDetalhesVaga')->name('detalhes.vaga');
-Route::get('', function () {
+
+Route::prefix('admin')->group(function () {
+    
+    Route::get('dashboard', 'AdminController@dashboard')->name('admin.dashboard');
+
+    Route::prefix('empresa')->group(function () {
+        Route::get('cadastrar', 'EmpresaController@cadastrarEmpresaForm')->name('admin.empresa.cadastrar.form');
+        Route::post('cadastrar', 'EmpresaController@cadastrarEmpresaCallback')->name('admin.empresa.cadastrar.callback');
+
+        Route::prefix('slug')->group(function () {
+            Route::prefix('vagas')->group(function () {
+                Route::post('/', 'VagaController@cadastroNovaVaga')->name('nova.vaga.emprego.submit');
+            });
+        });
+    });
 });
 
-Route::get('admin/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
-Route::post('/nova-vaga-emprego', 'VagaController@cadastroNovaVaga')->name('nova.vaga.emprego.submit');
 
-Route::get('/novas-vagas', 'VagaController@listarVagas')->name('listar.vagas');
+Route::prefix('area-do-candidato')->group(function () {
+    Route::prefix('vagas')->group(function () {
+        Route::get('/', 'VagaController@listarVagas')->name('cliente.vagas.listar');
+        Route::get('/{id}', 'VagaController@getDetalhesVaga')->name('cliente.vaga.detalhe');
+    });
 
-Route::get('/contato', function () {
-    return view('contato');
-})->name('contato.form');
-Route::post('/contato', 'ContatoController@contatoSubmit')->name('contato.form.submit');
+    Route::get('/contato', 'ContatoController@contatoForm')->name('cliente.contato.form');
+    Route::post('/contato', 'ContatoController@contatoSubmit')->name('contato.form.submit');
+});

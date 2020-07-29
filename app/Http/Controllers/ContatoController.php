@@ -7,7 +7,12 @@ use Illuminate\Http\Request;
 
 class ContatoController extends Controller
 {
-    public function contatoSubmit(Request $request)
+
+    public function contatoForm(Request $request) {
+        return view('contato');
+    }
+
+    public function contatoCallback(Request $request)
     {
         $contato = new Contato();
         $contato->nome = $request->nome;
