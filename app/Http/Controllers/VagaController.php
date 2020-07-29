@@ -51,9 +51,7 @@ class VagaController extends Controller
 
     public function cadastroForm(Request $request)
     {
-        $allVagas = VagaEmprego::all();
-        $allEmpresas = Empresa::all();
-
-        return view('cadastro', compact('allEmpresas'));
+        $empresas = Empresa::all();
+        return view('cadastrovaga', compact('empresas'));
     }
 }
