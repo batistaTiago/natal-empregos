@@ -14,6 +14,7 @@
 Route::get('/', function () {
     $data = \App\Models\VagaEmprego::with('regime')->get();
     //$data = [];
+    
     return view('home', compact('data'));
 });
 

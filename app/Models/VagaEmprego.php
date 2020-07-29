@@ -10,7 +10,7 @@ class VagaEmprego extends Model
 
     public function regime()
     {
-        return $this->belongsTo(RegimeContratacao::class);
+        return $this->belongsTo(RegimeContratacao::class, "regime_contratacao_id");
     }
 
     public function empresa()

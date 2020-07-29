@@ -49,12 +49,8 @@
   align-items: center;
 }
 
-.container {
-  align-items: center;
-}
-
 .cartao {
-  width: 55vw;
+  width: 30vw;
   background-color: white;
   color: black;
   padding: 2em;
@@ -65,8 +61,8 @@
 }
 
 .imagem {
-  width: 13em;
-  height: 10em;
+  width: 10em;
+  height: 9em;
   border-radius: 0.5em;
 }
 
@@ -84,7 +80,7 @@
   font-family: Roboto, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-size: 3rem;
+  font-size: 2.5rem;
   line-height: 2rem;
   font-weight: 500;
   letter-spacing: 0.0125em;
