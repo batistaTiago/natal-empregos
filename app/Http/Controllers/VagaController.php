@@ -57,7 +57,7 @@ class VagaController extends Controller
 
     public function landing(Request $request)
     {
-        $data = \App\Models\VagaEmprego::with('regime')->paginate(10);
+        $data = \App\Models\VagaEmprego::with('regime')->paginate(12);
         return view('home', compact('data'));
     }
 }

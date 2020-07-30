@@ -3,27 +3,25 @@
     justify-content: center;
 }
 .cartao {
-    margin: 2em;
     background-color: rgb(255, 255, 255);
     color: black;
-    padding: 2em;
-    margin-bottom: 1em;
-    border-radius: 0.2em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 2px;
+    border: 1px solid transparentize($color: $azul, $amount: 0.7);
     align-self: center;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-}
-
-.imagem {
-    width: 10em;
-    height: 9em;
-    border-radius: 0.5em;
+    cursor: pointer;
+    &:hover {
+        background-color: transparentize($color: $azul, $amount: 0.9);
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
+    }
 }
 
 .empresacidade {
-    font-size: 1.5rem;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1rem;
     line-height: 1.25rem;
     font-weight: 400;
     opacity: 0.6;
@@ -33,10 +31,10 @@
 }
 
 .titulo {
-    font-family: Roboto, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 500;
     letter-spacing: 0.0125em;
@@ -50,29 +48,36 @@
     justify-content: space-between;
 }
 
-.descricao {
-    font-family: Roboto, sans-serif;
-    font-size: 1.2em;
-    margin-top: 2em;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
+// .descricao {
+//     font-family: Roboto, sans-serif;
+//     font-size: 1.2em;
+//     margin-top: 2em;
+//     display: -webkit-box;
+//     -webkit-line-clamp: 3;
+//     -webkit-box-orient: vertical;
+//     overflow: hidden;
+// }
 
 .fontezinha {
     font-size: 1em;
     margin-left: 1.5em;
-    margin-top: 1em;
+    text-align: right;
 }
 
 .paginacao {
-    display: flex;
-    justify-content: center;
-    & button {
-        border-radius: 5px;
+    & a {
+        border: 1px solid $azul-escuro;
+        color: black;
+    }
+    & a:hover {
+        background-color: $azul;
         color: white;
-        background-color: rgb(202, 123, 18);
+    }
+
+    li.page-item.active {
+        span.page-link {
+            background-color: $azul;
+        }
     }
 }
 
@@ -82,13 +87,21 @@
         padding: 0.5em;
         font-size: 1.2em;
     }
-    border: 1px solid rgba(0, 0, 0, 0.075);
-    background-color: rgba(24, 81, 204, 0.253);
-    width: 50%;
+    border-top: 1px solid $azul;
+    width: 100%;
     margin-top: 3em;
-    padding: 0.3em 0.5em;
+    padding: 0.3em;
     text-align: center;
-    margin: 5% auto;
+    & button {
+        margin-top: 5px;
+        padding: 0.5em;
+        background-color: white;
+        border: 1px solid $azul-escuro;
+        &:hover {
+            background-color: $azul;
+            color: white;
+        }
+    }
 }
 
 .newsform {
@@ -108,4 +121,16 @@
     margin-top: 2em;
     font-size: 0.8em;
     font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+@media screen and (max-width: 520px) {
+    li.page-item {
+        display: none;
+    }
+
+    .page-item:first-child,
+    .page-item:last-child,
+    .page-item.active {
+        display: block;
+    }
 }

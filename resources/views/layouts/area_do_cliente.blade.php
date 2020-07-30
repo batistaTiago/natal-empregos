@@ -7,7 +7,10 @@
    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
+    <script src="https://kit.fontawesome.com/7725e2dc25.js" crossorigin="anonymous"></script>
+
     <link href="{{ asset('css/system.css') }}" rel="stylesheet">
+
 
     @yield('css')
 
@@ -15,28 +18,29 @@
 </head>
 <body>
     <div class="containerlayout">
-        <div class="navegar">
-            <div class="logolayout">
-                <a href="">
-                    <div style="display: flex">
-                        <p style="color: white;">Natal <strong style="color: rgb(202, 123, 18);">Empregos</strong></p>
-                    </div>
-                </a>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand logolayout" href="#">Natal<strong>Empregos</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse central" id="navbarTogglerDemo02">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Blog <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contato</a>
+                </li>
+              </ul>
             </div>
-            <div class="menus">
-                <p href="" class="botaonavbar"> <a href=""> Blog </a></p>
-                <p href="" class="botaonavbar"><a href=""> Anuncie sua vaga </a></p>
-                <p href="" class="botaonavbar"><a href="{{ route('cliente.contato.form') }}"> Contato </a></p>
-            </div>
-        </div>
-
+          </nav>
+        
         <div class="searchbar">
                 <p>Busque pela vaga de sua preferência</p>
-                <form action="">
-                        <div class="searchform">
-                            <input type="text" id="searchform" name="searchform" class="searchinput" placeholder="Ex: Cozinheiro, Marketing, Soldador, Motorista...">
-                            <button class="botao botaosearch">Buscar</button>
-                        </div>
+                <form action="" class="searchform mt-2">
+                        <input type="text" id="searchinput" name="searchinput" class="searchinput " placeholder="Ex: Cozinheiro, Marketing, Soldador, Motorista...">
+                        <button class="botaosearch"><i class="fas fa-search"></i></button>
                 </form>
         </div>
         
@@ -47,16 +51,16 @@
         
         <footer class="clientefooter">
             <div class="linksfooter">
-                <div>
+                <div class="linksuteis">
                     <p>Links úteis</p>
                     <ul>
                         <li><a href="">Sobre a Natal Empregos</a></li>
                         <li><a href="">Fale conosco</a></li>
-                        <li><a href="">@natal.empregos</a></li>
-                        <li><a href="">Natal Empregos</a></li>
+                        <li><a href=""><i class="fab fa-instagram"></i> natal.empregos</a></li>
+                        <li><a href=""><i class="fab fa-facebook-square"></i> Natal Empregos</a></li>
                     </ul>
                 </div>
-                <div>
+                <div class="parceiros">
                     <p>Parceiros: </p>
                     <ul>
                         <li><p style="">Garantistas Coding LTDA 2020</p></li>
@@ -64,7 +68,7 @@
                     </ul>
                 </div>
             </div>
-            <p style="text-align: center">Natal Empregos - 2020</p>
+            <p style="text-align: center; color:white">Natal Empregos - 2020</p>
         </footer>
         
     </div>
@@ -84,5 +88,10 @@
     
     @yield('modal')
     @yield('js')
+    <script>
+        function teste() {
+            alert("Um código que o usuário jamais poderia ter acesso")
+        }
+    </script>
 </body>
 </html>
