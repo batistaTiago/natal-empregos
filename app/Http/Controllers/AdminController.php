@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\VagaEmprego;
+use App\Models\Contato;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -10,6 +11,8 @@ class AdminController extends Controller
     public function dashboard(Request $request)
     {
         $allVagas  = VagaEmprego::all();
-        dd($allVagas);
+
+        $allContatos = Contato::all();
+        dd($allContatos, $allVagas);
     }
 }

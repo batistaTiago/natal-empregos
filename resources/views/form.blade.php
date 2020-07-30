@@ -9,7 +9,7 @@
 @section('content')
 
 <h1>tostado2</h1>
-<form action="{{route('nova.vaga.emprego.submit')}}" method="POST">
+<form action="{{route('admin.vaga.editar')}}" method="POST">
     @csrf
     <input type="text" name="empresa">
     <input type="text" name="titulo">

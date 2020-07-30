@@ -9,7 +9,7 @@
 @section('content')
 <div class="containercadastro">
     <h1>Cadastro</h1>
-        <form action="" method="POST">
+        <form action="{{route('')}}" method="POST">
         @csrf
         <div class="divinputs">
             <label for="empresa">Nome da empresa</label>

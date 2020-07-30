@@ -29,21 +29,21 @@ class EmpresaController extends Controller
         if ($success) {
             if ($request->header('accept') == 'application/json') {
                 /* retorna json */
-    
+
                 return 'json';
             } else {
                 /* retorna view */
-             
+
                 return 'view';
             }
         } else {
             if ($request->header('accept') == 'application/json') {
                 /* retorna json */
-    
+
                 return 'json de erro';
             } else {
                 /* retorna view de erro (callback de erro do form de submit empresa)*/
-             
+
                 return 'view de erro';
             }
         }
