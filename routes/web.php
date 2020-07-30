@@ -11,10 +11,7 @@
 |
  */
 
-Route::get('/', function () {
-    $data = \App\Models\VagaEmprego::with('regime')->get();
-    return view('home', compact('data'));
-});
+Route::get('/', 'VagaController@landing');
 
 
 Route::prefix('admin')->group(function () {

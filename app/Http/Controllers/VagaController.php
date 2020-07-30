@@ -54,4 +54,10 @@ class VagaController extends Controller
         $empresas = Empresa::all();
         return view('cadastrovaga', compact('empresas'));
     }
+
+    public function landing(Request $request)
+    {
+        $data = \App\Models\VagaEmprego::with('regime')->paginate(10);
+        return view('home', compact('data'));
+    }
 }

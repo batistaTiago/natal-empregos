@@ -49,9 +49,26 @@ class VagaEmpregoSeeder extends Seeder
                 'aceita_remoto' => false,
                 'status' => true,
 
-            ],
+            ]
         ];
 
+        $d = [];
+
+        for ($i = 0; $i < 100; $i++) {
+            $d[] = [
+                'id' => $i+1,
+                'empresa_id' => 1,
+                'titulo' => 'Analista de Banco de Dados',
+                'sub_titulo' => 'Garantistas CORPs',
+                'descricao' => 'Analise de banco de dados e infraestrutura',
+                'regime_contratacao_id' => 1, // CLT
+                'remuneracao' => 16200,
+                'aceita_remoto' => true,
+                'status' => true,
+            ];
+        }
+
+        
         try {
 
             DB::beginTransaction();
