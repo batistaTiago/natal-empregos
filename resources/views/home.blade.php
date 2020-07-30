@@ -9,30 +9,30 @@
 @section('content')
 <div class="container">
     <div class="mt-5 mb-2 containercartao row">
-        @foreach ($data as $idx => $vaga)
+        @foreach ($vagas as $idx => $vaga)
         <div class="my-3 col-sm-12 col-md-6 col-lg-4">
             <div class="cartao">
               {{--
               <p>{{ $idx + 1 }}</p>
               --}}
-              <p class="titulo text-center">Analista de Banco de Dados</p>
+              <p class="titulo text-center">{{ $vaga->titulo }}</p>
               <div class="empresacidade">
                 <p>
-                  Garantistas Coding SA
+                  {{ $vaga->empresa->nome ?? 'TO BE DEFINED' }}
                 </p>
                 <p>
-                  Natal, RN
+                  {{ $vaga->empresa->cidade ?? 'TO BE DEFINED' }}
                 </p>
               </div>
               <p class="fontezinha">Regime de contratação: {{ $vaga->regime->nome }}</p>
-              <p class="fontezinha">Salário: {{ realMoney($vaga->remuneracao) }}</p>
+              <p class="fontezinha">Salário: <strong>{{ isset($vaga->remuneracao) ? realMoney($vaga->remuneracao) : 'Não informado' }}</strong></p>
             </div>
         </div>
         @endforeach
     </div>
     <div style="display: flex; justify-content: center">
         <div class="paginacao">
-            {{$data->onEachSide(3)->links()}} 
+            {{ $vagas->links() }} 
         </div>
     </div>
 </div>

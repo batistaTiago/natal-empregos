@@ -58,7 +58,7 @@ class VagaEmpregoSeeder extends Seeder
             $d[] = [
                 'id' => $i+1,
                 'empresa_id' => 1,
-                'titulo' => 'Analista de Banco de Dados',
+                'titulo' => 'Analista de Banco de Dados 54sa4 1r56sa46r 5s4a56r4as6 5r4as896r4as48',
                 'sub_titulo' => 'Garantistas CORPs',
                 'descricao' => 'Analise de banco de dados e infraestrutura',
                 'regime_contratacao_id' => 1, // CLT
