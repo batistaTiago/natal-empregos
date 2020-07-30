@@ -44,9 +44,9 @@ class VagaController extends Controller
     // enviar todas as vagas para a requisicao
     public function listarVagas(Request $request)
     {
-        $allVagas = VagaEmprego::all();
+        $vagas = VagaEmprego::all();
 
-        return view('vagas', compact('allVagas'));
+        return view('home', compact('vagas'));
     }
 
     public function cadastroForm(Request $request)
@@ -59,5 +59,16 @@ class VagaController extends Controller
     {
         $data = \App\Models\VagaEmprego::with('regime')->paginate(10);
         return view('home', compact('data'));
+    }
+    public function editarVagaEmprego(Request $request)
+    {
+        $vaga = VagaEmprego::find($request->id);
+        $params = Request::all();
+        dd($params);
+        if ($vaga) {
+            return 'vaga existente';
+        } else {
+            return 'vaga nao existente';
+        }
     }
 }

@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class ContatoController extends Controller
 {
 
-    public function contatoForm(Request $request) {
+    public function contatoForm(Request $request)
+    {
         return view('contato');
     }
 
