@@ -7,37 +7,51 @@
 @endsection
 
 @section('content')
-<div class="containercartao">
+<div class="container">
+    <div class="containercartao row">
         @foreach ($data as $idx => $vaga)
+        <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="cartao">
-                {{-- <p>{{ $idx + 1 }}</p> --}}
-                <p class="titulo">Analista de Banco de Dados</p>
-                <div class="empresacidade">
-                    <p class="">
-                        Garantistas Coding SA
-                    </p>
-                    <p>
-                        Natal, RN
-                    </p>
-                </div>    
-                <p class="fontezinha">Contrato: {{ $vaga->regime->nome }}</p>
-                <p class="fontezinha">Remuneração R$ {{ $vaga->remuneracao }}</p>
-                <p class="fontezinha">Benefícios: Vale transporte, Vale refeição</p>
-                <p class="descricao">
-                    Checkboxes are used to let a user select one or more options of a limited number of choices. 
-                    Checkboxes are used to let a user select one or more options of a limited number of choices.
+              {{--
+              <p>{{ $idx + 1 }}</p>
+              --}}
+              <p class="titulo">Analista de Banco de Dados</p>
+              <div class="empresacidade">
+                <p class="">
+                  Garantistas Coding SA
                 </p>
+                <p>
+                  Natal, RN
+                </p>
+              </div>
+              <p class="fontezinha">Regime de contratação: {{ $vaga->regime->nome }}</p>
+              <p class="fontezinha">Salário: {{ realMoney($vaga->remuneracao) }}</p>
             </div>
+        </div>
         @endforeach
-            <div class="newsletter">
-                <p>Cadastre seu email para receber as novas oportunidades em primeira mão.</p>
+    </div>
+        
+        <div class="paginacao">
+            <button><<</button>
+            <button><</button>
+            <button disabled>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>></button>
+            <button>>></button>
+        </div>
+        <div class="newsletter">
+            <p>Receba as vagas em primeira mão</p>
+            <form action="">
                 <div class="newsform">
-                    <form action="">
-                        <input type="email" id="newsletter" name="newsinput" class="newsinput" placeholder="Ex: natal@empregos.com">
-                    </form>
-                    <button class="botao" style="margin-left: 3vw; width: 5em">Enviar</button>
+                    <p>Preencha os seus dados e iremos enviar novas vagas assim que surgirem</p>
+                    <input type="text" id="newsnome" name="newsnome" class="newsinput" placeholder="Digite seu nome">
+                    <input type="email" id="newsemail" name="newsemail" class="newsinput" placeholder="Digite seu email">
                 </div>
-            </div>
+                <button class="botao">Receber vagas</button>
+                <p id="privacidade">Não iremos compartilhar suas informações com ninguém.</p>
+            </form>
+        </div> 
 </div>
 
 </div>

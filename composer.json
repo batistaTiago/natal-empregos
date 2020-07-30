@@ -41,7 +41,8 @@
             "database/factories"
         ],
         "files": [
-            "app/Helpers/Slugify.php"
+            "app/Helpers/Slugify.php",
+            "app/Helpers/realMoney.php"
         ]
     },
     "autoload-dev": {

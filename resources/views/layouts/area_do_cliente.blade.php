@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,35 +15,58 @@
 </head>
 <body>
     <div class="containerlayout">
-        <div class="navbar">
+        <div class="navegar">
             <div class="logolayout">
                 <a href="">
                     <div style="display: flex">
-                        <p>Natal <strong style="color: rgb(202, 123, 18);">Empregos</strong></p>
+                        <p style="color: white;">Natal <strong style="color: rgb(202, 123, 18);">Empregos</strong></p>
                     </div>
                 </a>
             </div>
-            <div class="divmenus">
-                <div class="menus">
-                    <p href="" class="botaonavbar"> <a href=""> Blog </a></p>
-                    <p href="" class="botaonavbar"><a href=""> Anuncie sua vaga </a></p>
-                    <p href="" class="botaonavbar"><a href="{{ route('cliente.contato.form') }}"> Contato </a></p>
-                </div>
+            <div class="menus">
+                <p href="" class="botaonavbar"> <a href=""> Blog </a></p>
+                <p href="" class="botaonavbar"><a href=""> Anuncie sua vaga </a></p>
+                <p href="" class="botaonavbar"><a href="{{ route('cliente.contato.form') }}"> Contato </a></p>
             </div>
         </div>
+
+        <div class="searchbar">
+                <p>Busque pela vaga de sua preferência</p>
+                <form action="">
+                        <div class="searchform">
+                            <input type="text" id="searchform" name="searchform" class="searchinput" placeholder="Ex: Cozinheiro, Marketing, Soldador, Motorista...">
+                            <button class="botao botaosearch">Buscar</button>
+                        </div>
+                </form>
+        </div>
+        
 
         <div class="abraco">
             @yield('content')
         </div>
         
         <footer class="clientefooter">
-                
-            <p>Natal Empregos - 2020</p>
-            <p>Parceiros: Garantistas Coding LTDA 2020</p>
-            <a href="http://localhost:8000/">Saiba Mais</a>
-            
-            
+            <div class="linksfooter">
+                <div>
+                    <p>Links úteis</p>
+                    <ul>
+                        <li><a href="">Sobre a Natal Empregos</a></li>
+                        <li><a href="">Fale conosco</a></li>
+                        <li><a href="">@natal.empregos</a></li>
+                        <li><a href="">Natal Empregos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p>Parceiros: </p>
+                    <ul>
+                        <li><p style="">Garantistas Coding LTDA 2020</p></li>
+                        <li><p style="">Outros aliados</p></li>
+                    </ul>
+                </div>
+            </div>
+            <p style="text-align: center">Natal Empregos - 2020</p>
         </footer>
+        
     </div>
 
 
