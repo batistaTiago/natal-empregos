@@ -20,9 +20,8 @@ class ContatoController extends Controller
         $contato->assunto = $request->assunto;
         $contato->telefone = $request->telefone;
         $contato->email = $request->email;
-        $contato->email = $request->email;
+        $contato->lido = false;
         $contato->mensagem = $request->mensagem;
-
         if ($contato->save()) {
 
             flash('Contato submetido corretamente');

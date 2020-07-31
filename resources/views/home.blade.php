@@ -18,22 +18,22 @@
     <div class="mt-5 mb-2 containercartao row">
         @foreach ($vagas as $idx => $vaga)
         <div class="my-3 col-sm-12 col-md-6 col-lg-4">
-            <div class="cartao">
+            <a class="cartao" href="{{ route('cliente.vaga.detalhe', [ $vaga->id ]) }}">
               {{--
               <p>{{ $idx + 1 }}</p>
               --}}
               <p class="titulo text-center">{{ $vaga->titulo }}</p>
               <div class="empresacidade">
                 <p>
-                  {{ $vaga->empresa->nome ?? 'TO BE DEFINED' }}
+                  {{ $vaga->empresa->nome ?? 'A combinar' }}
                 </p>
                 <p>
-                  {{ $vaga->empresa->cidade ?? 'TO BE DEFINED' }}
+                  {{ $vaga->empresa->cidade ?? 'A combinar' }}
                 </p>
               </div>
               <p class="fontezinha">Regime de contratação: {{ $vaga->regime->nome }}</p>
               <p class="fontezinha">Salário: <strong>{{ isset($vaga->remuneracao) ? realMoney($vaga->remuneracao) : 'Não informado' }}</strong></p>
-            </div>
+            </a>
         </div>
         @endforeach
     </div>
