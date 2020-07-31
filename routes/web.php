@@ -40,3 +40,6 @@ Route::prefix('vagas')->group(function () {
 
 Route::get('/contato', 'ContatoController@contatoForm')->name('cliente.contato.form');
 Route::post('/contato', 'ContatoController@contatoCallback')->name('contato.form.callback');
+
+
+Route::post('gcc-tracker', 'TrackerController@registrarAcesso')->name('gcc-tracker');
