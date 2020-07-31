@@ -1,0 +1,41 @@
+.empresacontainer {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    width: 70%;
+
+    label {
+        padding: 0.2em;
+        font-size: 1em;
+    }
+    input {
+        padding: 0.2em;
+        border-radius: 2px;
+    }
+    textarea {
+        border: 1px solid black;
+        padding: 0.5em;
+    }
+}
+
+.formcontato {
+    background-color: transparentize($color: $azul, $amount: 0.5);
+
+    & button {
+        margin-top: 5px;
+        padding: 0.5em;
+        background-color: white;
+        border: 1px solid $azul-escuro;
+        &:hover {
+            background-color: $azul;
+            color: white;
+        }
+    }
+}
+
+.fontecontato {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-size: 1.5em;
+    text-align: center;
+    color: rgb(31, 30, 30);
+}

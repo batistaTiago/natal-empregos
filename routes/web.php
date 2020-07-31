@@ -42,3 +42,7 @@ Route::prefix('vagas')->group(function () {
 
 Route::get('/contato', 'ContatoController@contatoForm')->name('cliente.contato.form');
 Route::post('/contato', 'ContatoController@contatoSubmit')->name('contato.form.callback');
+
+Route::get('/detalhes', function () {
+    return view("detalhesvaga");
+});

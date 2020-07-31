@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <div class="divdetalhes">
+    <div class="container divdetalhes">
         <div class="infoenvio">
             <p>Enviado em 25/07/2020 às 21:06</p>
         </div>
@@ -42,15 +42,11 @@
         
         <h3>Benefícios</h3>
         <div class="divbeneficios">
-            <p>Vale transporte</p>
-            <p>Plano de saúde</p>
-            <p>Vale refeição</p>
-        </div>
-        
-        <div style="display: flex; justify-content: flex-end"> 
-            <button class="botaovaga" >
-                Quero me candidatar
-            </button>
+            <ul>
+                <li>Vale transporte</li>
+                <li>Plano de saúde</li>
+                <li>Vale refeição</li>
+            </ul>
         </div>
     </div>
 

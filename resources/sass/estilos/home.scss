@@ -135,3 +135,18 @@
         display: block;
     }
 }
+
+.contatoform {
+    padding: 1em;
+
+    & button {
+        margin-top: 5px;
+        padding: 0.5em;
+        background-color: white;
+        border: 1px solid $azul-escuro;
+        &:hover {
+            background-color: $azul;
+            color: white;
+        }
+    }
+}
