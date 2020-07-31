@@ -21,8 +21,6 @@ class VagaController extends Controller
         $novaVaga->titulo  = $request->titulo;
         $novaVaga->sub_titulo = $request->subtitulo;
         // $novaVaga->local = $request->local;
-
-
         $novaVaga->descricao = $request->descricao;
         $novaVaga->regime_contratacao_id = $request->regime_contratacao_id;
         $novaVaga->remuneracao = 1200;
@@ -44,8 +42,7 @@ class VagaController extends Controller
     // enviar todas as vagas para a requisicao
     public function listarVagas(Request $request)
     {
-        $vagas = VagaEmprego::all();
-
+        $vagas = VagaEmprego::with('regime')->paginate(12);
         return view('home', compact('vagas'));
     }
 
@@ -57,8 +54,7 @@ class VagaController extends Controller
 
     public function landing(Request $request)
     {
-        $vagas = VagaEmprego::with('regime')->paginate(12);
-        return view('home', compact('vagas'));
+        return redirect(route('cliente.vagas.listar'));
     }
     public function editarVagaEmprego(Request $request)
     {
@@ -70,5 +66,12 @@ class VagaController extends Controller
         } else {
             return 'vaga nao existente';
         }
+    }
+
+    public function vagaDetalhes(Request $request)
+    {
+        $id = $request->id;
+        $vaga = VagaEmprego::find($id);
+        return view('detalhesvaga', compact('vaga'));
     }
 }

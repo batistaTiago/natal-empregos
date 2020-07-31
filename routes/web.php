@@ -28,17 +28,15 @@ Route::prefix('admin')->group(function () {
             });
         });
     });
-
     Route::prefix('vagas')->group(function () {
         Route::get('/cadastrar', 'VagaController@cadastroForm')->name('admin.empresa.detalhes.vagas.cadastrar.form');
     });
 });
 
-
 Route::prefix('vagas')->group(function () {
     Route::get('/', 'VagaController@listarVagas')->name('cliente.vagas.listar');
-    Route::get('/{id}', 'VagaController@getDetalhesVaga')->name('cliente.vaga.detalhe');
+    Route::get('/{id}', 'VagaController@vagaDetalhes')->name('cliente.vaga.detalhe');
 });
 
 Route::get('/contato', 'ContatoController@contatoForm')->name('cliente.contato.form');
-Route::post('/contato', 'ContatoController@contatoSubmit')->name('contato.form.callback');
+Route::post('/contato', 'ContatoController@contatoCallBack')->name('contato.form.callback');

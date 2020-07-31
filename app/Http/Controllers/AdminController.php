@@ -10,9 +10,10 @@ class AdminController extends Controller
 {
     public function dashboard(Request $request)
     {
-        $allVagas  = VagaEmprego::all();
+        $vagas  = VagaEmprego::all();
 
-        $allContatos = Contato::all();
-        dd($allContatos, $allVagas);
+        $contatos = Contato::all();
+        dd($contatos, $vagas);
+        return view('admindashboard', compact('contatos', 'vagas'));
     }
 }
