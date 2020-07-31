@@ -25,10 +25,10 @@
               <p class="titulo text-center">{{ $vaga->titulo }}</p>
               <div class="empresacidade">
                 <p>
-                  {{ $vaga->empresa->nome ?? 'A combinar' }}
+                  {{ $vaga->empresa->nome ?? 'Não informado' }}
                 </p>
                 <p>
-                  {{ $vaga->empresa->cidade ?? 'A combinar' }}
+                  {{ $vaga->empresa->cidade ?? 'Não informado' }}
                 </p>
               </div>
               <p class="fontezinha">Regime de contratação: {{ $vaga->regime->nome }}</p>
