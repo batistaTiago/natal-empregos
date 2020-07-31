@@ -9,7 +9,7 @@
 @section('content')
     <div class="container divdetalhes">
         <div class="infoenvio">
-            <p>Enviado em 25/07/2020 às 21:06</p>
+            <p>Enviado em {{ $vaga->created_at }}</p>
         </div>
         <div class="cabecalho">
             <p class="titulocabeca">
