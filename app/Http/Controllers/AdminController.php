@@ -18,7 +18,7 @@ class AdminController extends Controller
 
         $acessosUltimos30Dias = Acesso::where('created_at', '>=', now()->subDays(30))->get()
             ->map(function ($acesso) {
-                $acesso->data_acesso = Carbon::parse($acesso->created_at)->format('d/m/Y');
+                $acesso->data_acesso = Carbon::parse($acesso->created_at)->format('m-d-Y');
                 return $acesso;
             })->groupBy('data_acesso')
             ->map(function ($acessosPorDia, $dataAcesso) {
@@ -27,6 +27,8 @@ class AdminController extends Controller
                     'qtd' => $acessosPorDia->count()
                 ];
             })->values();
+
+        // return response()->json($acessosUltimos30Dias);
 
         return view('admindashboard', compact('contatos', 'vagas', 'acessosUltimos30Dias'));
     }
