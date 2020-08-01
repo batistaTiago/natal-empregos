@@ -17,6 +17,12 @@ class VagaController extends Controller
         dd($vagas);
     }
 
+    public function cadastroForm(Request $request)
+    {
+        $empresas = Empresa::all();
+        return view('cadastrovaga', compact('empresas'));
+    }
+
 
     // Salva nova vaga via formulario
     public function cadastroNovaVaga(Request $request)
@@ -44,6 +50,19 @@ class VagaController extends Controller
         } else {
             flash('Registro nao concluido , tente novamente.')->error();
             return redirect()->back();
+        }
+    }
+
+
+    public function editarVagaEmprego(Request $request)
+    {
+        $vaga = VagaEmprego::find($request->id);
+        $params = Request::all();
+        dd($params);
+        if ($vaga) {
+            return 'vaga existente';
+        } else {
+            return 'vaga nao existente';
         }
     }
 }

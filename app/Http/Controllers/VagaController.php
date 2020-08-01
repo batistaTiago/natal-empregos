@@ -15,26 +15,9 @@ class VagaController extends Controller
         return view('home', compact('vagas'));
     }
 
-    public function cadastroForm(Request $request)
-    {
-        $empresas = Empresa::all();
-        return view('cadastrovaga', compact('empresas'));
-    }
-
     public function landing(Request $request)
     {
         return redirect(route('cliente.vagas.listar'));
-    }
-    public function editarVagaEmprego(Request $request)
-    {
-        $vaga = VagaEmprego::find($request->id);
-        $params = Request::all();
-        dd($params);
-        if ($vaga) {
-            return 'vaga existente';
-        } else {
-            return 'vaga nao existente';
-        }
     }
 
     public function vagaDetalhes(Request $request)
