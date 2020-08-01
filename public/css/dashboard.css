@@ -1,0 +1,1193 @@
+	.mediaViewInfo {
+		--web-view-name: Web 1920 – 1;
+		--web-view-id: Web_1920__1;
+		--web-scale-on-resize: true;
+		--web-enable-deep-linking: true;
+	}
+	:root {
+		--web-view-ids: Web_1920__1;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Web_1920__1 {
+		position: absolute;
+		width: 1366px;
+		height: 768px;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		--web-view-name: Web 1920 – 1;
+		--web-view-id: Web_1920__1;
+		--web-scale-on-resize: true;
+		--web-enable-deep-linking: true;
+	}
+	@keyframes fadein {
+	
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	
+	}
+	#Retngulo_1493 {
+		fill: rgba(23,43,77,1);
+	}
+	.Retngulo_1493 {
+		position: absolute;
+		overflow: visible;
+		width: 1121px;
+		height: 88px;
+		left: 245px;
+		top: 0px;
+	}
+	#Grupo_173 {
+		position: absolute;
+		width: 245px;
+		height: 768px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Retngulo_1490 {
+		fill: rgba(255,255,255,1);
+	}
+	.Retngulo_1490 {
+		position: absolute;
+		overflow: visible;
+		width: 245px;
+		height: 768px;
+		left: 0px;
+		top: 0px;
+	}
+	#Grupo_7 {
+		position: absolute;
+		width: 170px;
+		height: 33px;
+		left: 20px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Administrao {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 171px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Gotham;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 25px;
+		color: rgba(23,43,77,1);
+	}
+	#Grupo_5 {
+		position: absolute;
+		width: 225px;
+		height: 55px;
+		left: 10px;
+		top: 83px;
+		overflow: visible;
+	}
+	#Retngulo_1491 {
+		fill: rgba(246,249,252,1);
+	}
+	.Retngulo_1491 {
+		position: absolute;
+		overflow: visible;
+		width: 225px;
+		height: 55px;
+		left: 0px;
+		top: 0px;
+	}
+	#Home {
+		left: 50px;
+		top: 19px;
+		position: absolute;
+		overflow: visible;
+		width: 36px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Gotham;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(119,100,228,1);
+	}
+	#home {
+		position: absolute;
+		width: 20px;
+		height: 22px;
+		left: 20px;
+		top: 17px;
+		overflow: visible;
+	}
+	#Caminho_435 {
+		fill: transparent;
+		stroke: rgba(119,100,228,1);
+		stroke-width: 2px;
+		stroke-linejoin: round;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Caminho_435 {
+		overflow: visible;
+		position: absolute;
+		width: 20px;
+		height: 22px;
+		left: 1px;
+		top: 1px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Caminho_436 {
+		fill: transparent;
+		stroke: rgba(119,100,228,1);
+		stroke-width: 2px;
+		stroke-linejoin: round;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Caminho_436 {
+		overflow: visible;
+		position: absolute;
+		width: 8px;
+		height: 12px;
+		left: 7px;
+		top: 11px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Grupo_8 {
+		position: absolute;
+		width: 225px;
+		height: 55px;
+		left: 10px;
+		top: 193px;
+		overflow: visible;
+	}
+	#Caminho_475 {
+		fill: rgba(255,255,255,1);
+	}
+	.Caminho_475 {
+		overflow: visible;
+		position: absolute;
+		width: 225px;
+		height: 55px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Grupo_9 {
+		position: absolute;
+		width: 225px;
+		height: 55px;
+		left: 10px;
+		top: 166px;
+		overflow: visible;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Web_1920___2.html;
+		cursor: pointer;
+	}
+	#Retngulo_1492 {
+		fill: rgba(255,255,255,1);
+	}
+	.Retngulo_1492 {
+		position: absolute;
+		overflow: visible;
+		width: 225px;
+		height: 55px;
+		left: 0px;
+		top: 0px;
+	}
+	#Vagas {
+		opacity: 0.8;
+		left: 50px;
+		top: 19px;
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Gotham;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(23,43,77,1);
+	}
+	#file-text {
+		opacity: 0.8;
+		position: absolute;
+		width: 18px;
+		height: 22px;
+		left: 21px;
+		top: 17px;
+		overflow: visible;
+	}
+	#Caminho_441 {
+		fill: transparent;
+		stroke: rgba(251,99,64,1);
+		stroke-width: 2px;
+		stroke-linejoin: round;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Caminho_441 {
+		overflow: visible;
+		position: absolute;
+		width: 18px;
+		height: 22px;
+		left: 1px;
+		top: 1px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Caminho_442 {
+		fill: transparent;
+		stroke: rgba(251,99,64,1);
+		stroke-width: 2px;
+		stroke-linejoin: round;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Caminho_442 {
+		overflow: visible;
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 11px;
+		top: 1px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Linha_6 {
+		fill: transparent;
+		stroke: rgba(251,99,64,1);
+		stroke-width: 2px;
+		stroke-linejoin: round;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Linha_6 {
+		overflow: visible;
+		position: absolute;
+		width: 10px;
+		height: 2px;
+		left: 5px;
+		top: 12px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Linha_7 {
+		fill: transparent;
+		stroke: rgba(251,99,64,1);
+		stroke-width: 2px;
+		stroke-linejoin: round;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Linha_7 {
+		overflow: visible;
+		position: absolute;
+		width: 10px;
+		height: 2px;
+		left: 5px;
+		top: 16px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Caminho_443 {
+		fill: transparent;
+		stroke: rgba(251,99,64,1);
+		stroke-width: 2px;
+		stroke-linejoin: round;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Caminho_443 {
+		overflow: visible;
+		position: absolute;
+		width: 4px;
+		height: 2px;
+		left: 5px;
+		top: 8px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Grupo_10 {
+		position: absolute;
+		width: 225px;
+		height: 55px;
+		left: 10px;
+		top: 221px;
+		overflow: visible;
+	}
+	#Retngulo_1492_ {
+		fill: rgba(255,255,255,1);
+	}
+	.Retngulo_1492_ {
+		position: absolute;
+		overflow: visible;
+		width: 225px;
+		height: 55px;
+		left: 0px;
+		top: 0px;
+	}
+	#Contatos {
+		opacity: 0.8;
+		left: 50px;
+		top: 19px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Gotham;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(23,43,77,1);
+	}
+	#message-square {
+		opacity: 0.8;
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		left: 20px;
+		top: 18px;
+		overflow: visible;
+	}
+	#message-square_ {
+		fill: transparent;
+		stroke: rgba(254,185,105,1);
+		stroke-width: 2px;
+		stroke-linejoin: round;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.message-square_ {
+		overflow: visible;
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		left: 1px;
+		top: 1px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Grupo_12 {
+		position: absolute;
+		width: 225px;
+		height: 55px;
+		left: 10px;
+		top: 276px;
+		overflow: visible;
+	}
+	#Retngulo_1492_ba {
+		fill: rgba(255,255,255,1);
+	}
+	.Retngulo_1492_ba {
+		position: absolute;
+		overflow: visible;
+		width: 225px;
+		height: 55px;
+		left: 0px;
+		top: 0px;
+	}
+	#Blog {
+		opacity: 0.8;
+		left: 50px;
+		top: 19px;
+		position: absolute;
+		overflow: visible;
+		width: 27px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Gotham;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(23,43,77,1);
+	}
+	#user {
+		opacity: 0.8;
+		position: absolute;
+		width: 18px;
+		height: 20px;
+		left: 21px;
+		top: 18px;
+		overflow: visible;
+	}
+	#Caminho_444 {
+		fill: transparent;
+		stroke: rgba(17,205,239,1);
+		stroke-width: 2px;
+		stroke-linejoin: round;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Caminho_444 {
+		overflow: visible;
+		position: absolute;
+		width: 18px;
+		height: 8px;
+		left: 1px;
+		top: 13px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Elipse_340 {
+		fill: transparent;
+		stroke: rgba(17,205,239,1);
+		stroke-width: 2px;
+		stroke-linejoin: round;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Elipse_340 {
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		height: 10px;
+		left: 5px;
+		top: 1px;
+	}
+	#Grupo_14 {
+		position: absolute;
+		width: 123px;
+		height: 50px;
+		left: 1203px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Grupo_de_mscara_1 {
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Arya_Stark {
+		left: 65px;
+		top: 16px;
+		position: absolute;
+		overflow: visible;
+		width: 59px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Gotham;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(255,255,255,1);
+	}
+	#Grupo_174 {
+		position: absolute;
+		width: 600px;
+		height: 498px;
+		left: 430px;
+		top: 180px;
+		overflow: visible;
+	}
+	#Retngulo_1496 {
+		fill: rgba(255,255,255,1);
+	}
+	.Retngulo_1496 {
+		filter: drop-shadow(0px 3px 6px rgba(44, 40, 40, 0.11));
+		position: absolute;
+		overflow: visible;
+		width: 618px;
+		height: 516px;
+		left: 0px;
+		top: 0px;
+	}
+	#Acessos_por_dia {
+		left: 30px;
+		top: 49px;
+		position: absolute;
+		overflow: visible;
+		width: 125px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -1px;
+		text-align: left;
+		font-family: Gotham;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		color: rgba(23,43,77,1);
+	}
+	#Grupo_116 {
+		position: absolute;
+		width: 534.14px;
+		height: 343px;
+		left: 30px;
+		top: 84px;
+		overflow: visible;
+	}
+	#Grupo_107 {
+		opacity: 0.8;
+		position: absolute;
+		width: 483.64px;
+		height: 300px;
+		left: 50.5px;
+		top: 9.221px;
+		overflow: visible;
+	}
+	#Linha_28 {
+		fill: transparent;
+		stroke: rgba(136,152,170,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-dasharray: 3;
+		stroke-dashoffset: 0;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Linha_28 {
+		overflow: visible;
+		position: absolute;
+		width: 483.64px;
+		height: 1px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Linha_29 {
+		fill: transparent;
+		stroke: rgba(136,152,170,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-dasharray: 3;
+		stroke-dashoffset: 0;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Linha_29 {
+		overflow: visible;
+		position: absolute;
+		width: 483.64px;
+		height: 1px;
+		left: 0px;
+		top: 50px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Linha_30 {
+		fill: transparent;
+		stroke: rgba(136,152,170,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-dasharray: 3;
+		stroke-dashoffset: 0;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Linha_30 {
+		overflow: visible;
+		position: absolute;
+		width: 483.64px;
+		height: 1px;
+		left: 0px;
+		top: 100px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Linha_31 {
+		fill: transparent;
+		stroke: rgba(136,152,170,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-dasharray: 3;
+		stroke-dashoffset: 0;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Linha_31 {
+		overflow: visible;
+		position: absolute;
+		width: 483.64px;
+		height: 1px;
+		left: 0px;
+		top: 150px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Linha_32 {
+		fill: transparent;
+		stroke: rgba(136,152,170,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-dasharray: 3;
+		stroke-dashoffset: 0;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Linha_32 {
+		overflow: visible;
+		position: absolute;
+		width: 483.64px;
+		height: 1px;
+		left: 0px;
+		top: 200px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Linha_33 {
+		fill: transparent;
+		stroke: rgba(136,152,170,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-dasharray: 3;
+		stroke-dashoffset: 0;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Linha_33 {
+		overflow: visible;
+		position: absolute;
+		width: 483.64px;
+		height: 1px;
+		left: 0px;
+		top: 250px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Linha_34 {
+		fill: transparent;
+		stroke: rgba(136,152,170,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-dasharray: 3;
+		stroke-dashoffset: 0;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Linha_34 {
+		overflow: visible;
+		position: absolute;
+		width: 483.64px;
+		height: 1px;
+		left: 0px;
+		top: 300px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Grupo_108 {
+		position: absolute;
+		width: 21px;
+		height: 317px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#ID0K {
+		left: 7px;
+		top: 302px;
+		position: absolute;
+		overflow: visible;
+		width: 13px;
+		white-space: nowrap;
+		line-height: 13px;
+		margin-top: -1px;
+		text-align: left;
+		font-family: Gotham;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(136,152,170,1);
+	}
+	#ID10K {
+		left: 3px;
+		top: 250px;
+		position: absolute;
+		overflow: visible;
+		width: 19px;
+		white-space: nowrap;
+		line-height: 13px;
+		margin-top: -1px;
+		text-align: left;
+		font-family: Gotham;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(136,152,170,1);
+	}
+	#ID20K {
+		left: 1px;
+		top: 201px;
+		position: absolute;
+		overflow: visible;
+		width: 19px;
+		white-space: nowrap;
+		line-height: 13px;
+		margin-top: -1px;
+		text-align: left;
+		font-family: Gotham;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(136,152,170,1);
+	}
+	#ID30K {
+		left: 0px;
+		top: 152px;
+		position: absolute;
+		overflow: visible;
+		width: 19px;
+		white-space: nowrap;
+		line-height: 13px;
+		margin-top: -1px;
+		text-align: left;
+		font-family: Gotham;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(136,152,170,1);
+	}
+	#ID40K {
+		left: 0px;
+		top: 101px;
+		position: absolute;
+		overflow: visible;
+		width: 19px;
+		white-space: nowrap;
+		line-height: 13px;
+		margin-top: -1px;
+		text-align: left;
+		font-family: Gotham;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(136,152,170,1);
+	}
+	#ID50K {
+		left: 0px;
+		top: 50px;
+		position: absolute;
+		overflow: visible;
+		width: 19px;
+		white-space: nowrap;
+		line-height: 13px;
+		margin-top: -1px;
+		text-align: left;
+		font-family: Gotham;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(136,152,170,1);
+	}
+	#ID60K {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 19px;
+		white-space: nowrap;
+		line-height: 13px;
+		margin-top: -1px;
+		text-align: left;
+		font-family: Gotham;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(136,152,170,1);
+	}
+	#Grupo_109 {
+		position: absolute;
+		width: 405px;
+		height: 15px;
+		left: 81px;
+		top: 328px;
+		overflow: visible;
+	}
+	#May {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 17px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Gotham;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(136,152,170,1);
+	}
+	#May_b {
+		left: 80px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 14px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Gotham;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(136,152,170,1);
+	}
+	#May_ca {
+		left: 153px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Gotham;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(136,152,170,1);
+	}
+	#May_cb {
+		left: 232px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 19px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Gotham;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(136,152,170,1);
+	}
+	#May_cc {
+		left: 309px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 18px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Gotham;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(136,152,170,1);
+	}
+	#May_cd {
+		left: 385px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 21px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Gotham;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(136,152,170,1);
+	}
+	#Grupo_112 {
+		position: absolute;
+		width: 1px;
+		height: 76px;
+		left: 233.5px;
+		top: 230.221px;
+		overflow: visible;
+	}
+	#Linha_64 {
+		fill: transparent;
+		stroke: rgba(17,205,239,1);
+		stroke-width: 6px;
+		stroke-linejoin: miter;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Linha_64 {
+		overflow: visible;
+		position: absolute;
+		width: 6px;
+		height: 82px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Grupo_113 {
+		position: absolute;
+		width: 26px;
+		height: 102px;
+		left: 310.5px;
+		top: 204.221px;
+		overflow: visible;
+	}
+	#Caminho_476 {
+		fill: rgba(0,0,0,0);
+		stroke: rgba(45,206,152,1);
+		stroke-width: 6px;
+		stroke-linejoin: miter;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Caminho_476 {
+		overflow: visible;
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		left: 26px;
+		top: 77px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Linha_64_cc {
+		fill: transparent;
+		stroke: rgba(17,205,239,1);
+		stroke-width: 6px;
+		stroke-linejoin: miter;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Linha_64_cc {
+		overflow: visible;
+		position: absolute;
+		width: 6px;
+		height: 108px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Grupo_114 {
+		position: absolute;
+		width: 26px;
+		height: 222px;
+		left: 387.5px;
+		top: 84.221px;
+		overflow: visible;
+	}
+	#Caminho_477 {
+		fill: rgba(0,0,0,0);
+		stroke: rgba(45,206,152,1);
+		stroke-width: 6px;
+		stroke-linejoin: miter;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Caminho_477 {
+		overflow: visible;
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		left: 26px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Linha_64_cf {
+		fill: transparent;
+		stroke: rgba(17,205,239,1);
+		stroke-width: 6px;
+		stroke-linejoin: miter;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Linha_64_cf {
+		overflow: visible;
+		position: absolute;
+		width: 6px;
+		height: 53px;
+		left: 0px;
+		top: 175px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Grupo_115 {
+		position: absolute;
+		width: 26px;
+		height: 147px;
+		left: 464.5px;
+		top: 159.221px;
+		overflow: visible;
+	}
+	#Caminho_478 {
+		fill: rgba(0,0,0,0);
+		stroke: rgba(45,206,152,1);
+		stroke-width: 6px;
+		stroke-linejoin: miter;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Caminho_478 {
+		overflow: visible;
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		left: 26px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Linha_64_ci {
+		fill: transparent;
+		stroke: rgba(17,205,239,1);
+		stroke-width: 6px;
+		stroke-linejoin: miter;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Linha_64_ci {
+		overflow: visible;
+		position: absolute;
+		width: 6px;
+		height: 86px;
+		left: 0px;
+		top: 67px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Grupo_175 {
+		position: absolute;
+		width: 26px;
+		height: 102px;
+		left: 164.5px;
+		top: 204.221px;
+		overflow: visible;
+	}
+	#Caminho_476_ck {
+		fill: rgba(0,0,0,0);
+		stroke: rgba(45,206,152,1);
+		stroke-width: 6px;
+		stroke-linejoin: miter;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Caminho_476_ck {
+		overflow: visible;
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		left: 26px;
+		top: 77px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Linha_64_cl {
+		fill: transparent;
+		stroke: rgba(17,205,239,1);
+		stroke-width: 6px;
+		stroke-linejoin: miter;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Linha_64_cl {
+		overflow: visible;
+		position: absolute;
+		width: 6px;
+		height: 108px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Grupo_176 {
+		position: absolute;
+		width: 26px;
+		height: 76px;
+		left: 95.5px;
+		top: 230.221px;
+		overflow: visible;
+	}
+	#Caminho_476_cn {
+		fill: rgba(0,0,0,0);
+		stroke: rgba(45,206,152,1);
+		stroke-width: 6px;
+		stroke-linejoin: miter;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Caminho_476_cn {
+		overflow: visible;
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		left: 26px;
+		top: 57.373px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Linha_64_co {
+		fill: transparent;
+		stroke: rgba(17,205,239,1);
+		stroke-width: 6px;
+		stroke-linejoin: miter;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Linha_64_co {
+		overflow: visible;
+		position: absolute;
+		width: 6px;
+		height: 82px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Grupo_119 {
+		position: absolute;
+		width: 69px;
+		height: 17px;
+		left: 264px;
+		top: 457px;
+		overflow: visible;
+	}
+	#Elipse_364 {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(17,205,239,1);
+		stroke-width: 4px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Elipse_364 {
+		position: absolute;
+		overflow: visible;
+		width: 14px;
+		height: 14px;
+		left: 0px;
+		top: 2px;
+	}
+	#Acessos {
+		left: 24px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 46px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Gotham;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(77,79,92,1);
+	}
