@@ -1,25 +1,25 @@
 @extends('layouts.admin')
 
+
 @section('css')
 <style>
 
-#chartdiv {
-  width: 100%;
-  height: 500px;
-}
-
-</style>
+	#chartdiv {
+      position: absolute;
+      top: 150px;
+      left: 350px;
+      width: 50%;
+      height: 50%;
+	}
+	
+	</style>
 @endsection
 
 @section('content')
 
-
-{{-- @TODO: tirar daqui e colocar no layout --}}
 <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
 <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
 <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
-
-
 
 <div id="chartdiv"></div>
 

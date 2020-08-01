@@ -30,6 +30,6 @@ class AdminController extends Controller
 
         // return response()->json($acessosUltimos30Dias);
 
-        return view('admindashboard', compact('contatos', 'vagas', 'acessosUltimos30Dias'));
+        return view('admin.dashboard', compact('contatos', 'vagas', 'acessosUltimos30Dias'));
     }
 }
