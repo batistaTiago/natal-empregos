@@ -14,14 +14,14 @@ class BootstrapRelations extends Migration
     public function up()
     {
         Schema::table('vaga_emprego', function (Blueprint $table) {
-            $table->foreign('empresa_id')->references('id')->on('empresa');
-            $table->foreign('regime_contratacao_id')->references('id')->on('regime_contratacao');
+            $table->foreign('empresa_id')->references('id')->on('empresa')->onDelete('cascade');
+            $table->foreign('regime_contratacao_id')->references('id')->on('regime_contratacao')->onDelete('cascade');
         });
 
 
         Schema::table('vaga_emprego_beneficio', function (Blueprint $table) {
-            $table->foreign('vaga_emprego_id')->references('id')->on('vaga_emprego');
-            $table->foreign('beneficio_id')->references('id')->on('beneficio');
+            $table->foreign('vaga_emprego_id')->references('id')->on('vaga_emprego')->onDelete('cascade');
+            $table->foreign('beneficio_id')->references('id')->on('beneficio')->onDelete('cascade');
         });
     }
 

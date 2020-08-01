@@ -20,7 +20,7 @@ class CreateEmpresasTable extends Migration
             /* dados */
             $table->string('nome');
             $table->string('nome_fantasia')->nullable();
-            $table->string('cpnj')->nullable();
+            $table->string('cnpj')->nullable();
             $table->string('slug')->unique();
 
             // manter como string

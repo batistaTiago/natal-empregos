@@ -7,7 +7,14 @@
 @endsection
 
 @section('content')
-<div class="container">
+<div class="container">    
+    <div class="searchbar">
+        <p>Busque pela vaga de sua preferência</p>
+        <form action="" class="searchform mt-2">
+                <input type="text" id="searchinput" name="searchinput" class="searchinput " placeholder="Ex: Cozinheiro, Marketing, Soldador, Motorista...">
+                <button class="botaosearch"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
     <div class="mt-5 mb-2 containercartao row">
         @foreach ($vagas as $idx => $vaga)
         <div class="my-3 col-sm-12 col-md-6 col-lg-4">
@@ -36,12 +43,16 @@
         </div>
     </div>
 </div>
+
+
+    
+    @include('componentes.contato_form')
+
 <div class="newsletter">
     <p>Receba as vagas em primeira mão</p>
     <form action="">
         <div class="newsform">
             <p>Preencha os seus dados e iremos enviar novas vagas assim que surgirem</p>
-            <input type="text" id="newsnome" name="newsnome" class="newsinput" placeholder="Digite seu nome">
             <input type="email" id="newsemail" name="newsemail" class="newsinput" placeholder="Digite seu email">
         </div>
         <button class="botao">Receber vagas<i class="fas fa-envelope" style="margin-left: 8px;"></i></button>

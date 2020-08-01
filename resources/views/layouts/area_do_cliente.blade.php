@@ -24,7 +24,7 @@
               <span class="navbar-toggler-icon"></span>
             </button>
           
-            <div class="collapse navbar-collapse central" id="navbarTogglerDemo02">
+            <div class="collapse navbar-collapse central" id="navbarTogglerDemo02" style="display: flex; justify-content: center">
               <ul class="navbar-nav">
                 <li class="nav-item active">
                   <a class="nav-link" href="#">Blog <span class="sr-only">(current)</span></a>
@@ -36,15 +36,6 @@
             </div>
           </nav>
         
-        <div class="searchbar">
-                <p>Busque pela vaga de sua preferência</p>
-                <form action="" class="searchform mt-2">
-                        <input type="text" id="searchinput" name="searchinput" class="searchinput " placeholder="Ex: Cozinheiro, Marketing, Soldador, Motorista...">
-                        <button class="botaosearch"><i class="fas fa-search"></i></button>
-                </form>
-        </div>
-        
-
         <div class="abraco">
             @yield('content')
         </div>
@@ -52,16 +43,16 @@
         <footer class="clientefooter">
             <div class="linksfooter">
                 <div class="linksuteis">
-                    <p>Links úteis</p>
+                    <p style="font-size: 1.1em">Links úteis</p>
                     <ul>
                         <li><a href="">Sobre a Natal Empregos</a></li>
                         <li><a href="">Fale conosco</a></li>
-                        <li><a href=""><i class="fab fa-instagram"></i> natal.empregos</a></li>
-                        <li><a href=""><i class="fab fa-facebook-square"></i> Natal Empregos</a></li>
+                        <li><a href="https://www.instagram.com/natal.empregos/"><i class="fab fa-instagram"></i> natal.empregos</a></li>
+                        <li><a href="https://www.facebook.com/groups/433243110094657/learning_content/"><i class="fab fa-facebook-square"></i> Natal Empregos</a></li>
                     </ul>
                 </div>
                 <div class="parceiros">
-                    <p>Parceiros: </p>
+                    <p style="font-size: 1.1em">Parceiros: </p>
                     <ul>
                         <li><p style="">Garantistas Coding LTDA 2020</p></li>
                         <li><p style="">Outros aliados</p></li>
