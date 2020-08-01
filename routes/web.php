@@ -44,7 +44,17 @@ Route::prefix('vagas')->group(function () {
 });
 
 Route::get('/contato', 'ContatoController@contatoForm')->name('cliente.contato.form');
-Route::post('/contato', 'ContatoController@contatoCallback')->name('contato.form.callback');
-
 
 Route::post('gcc-tracker', 'TrackerController@registrarAcesso')->name('gcc-tracker');
+
+
+Route::post('/contato', 'ContatoController@contatoSubmit')->name('contato.form.callback');
+
+Route::get('/detalhes', function () {
+    return view("detalhesvaga");
+});
+
+
+Route::get('/teste/{id}', 'VagaController@deletarContato')->name('deletar.contato');
+Route::get('/teste2', 'VagaController@editarEmpresa')->name('editar.empresa');
+Route::get('/teste3', 'VagaController@deletarEmpresa')->name('deletar.empresa');
