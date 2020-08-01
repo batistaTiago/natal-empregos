@@ -76,13 +76,27 @@
     
     <!-- sweet alert 2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    
     @yield('modal')
     @yield('js')
+
+
+
+    <form id="tracker-token" class="d-none">
+        @csrf
+    </form>
+
     <script>
-        function teste() {
-            alert("Um código que o usuário jamais poderia ter acesso")
-        }
+        $(() => {
+            const _token = $('form#tracker-token input[name="_token"]').val();
+
+            $.ajax({
+                url: '{{ route("gcc-tracker") }}',
+                method: 'post',
+                data: {
+                    _token
+                }
+            });
+        });
     </script>
 </body>
 </html>
