@@ -12,6 +12,9 @@
  */
 
 Route::get('/', 'VagaController@landing');
+Route::get('/listavagas', function () {
+    return view('listavagas');
+});
 
 
 Route::prefix('admin')->group(function () {
