@@ -9,18 +9,24 @@
 
     <script src="https://kit.fontawesome.com/7725e2dc25.js" crossorigin="anonymous"></script>
 
-    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/system.css') }}" rel="stylesheet">
 
 
     @yield('css')
 
     <title>Bem vindo a Natal Empregos</title>
+	
+</head>
+<body>
 	<div class='header'>
 		<div class="sideMenu">
 			<div class="administracao">Administração</div>
+			<div class="linha"></div>
 			<div class='userContent'>
-				<div>Foto</div>
 				<div>
+					<img class="foto" src="{{ asset('img/Toalhinha.jpg') }}" alt="">
+				</div>
+				<div class="nomeEmail">
 					<div class="nome">Emanuele</div>
 					<div class="email">emanuele@email.com</div>
 				</div>
@@ -39,6 +45,7 @@
 				<img src="{{ asset('img/blog.svg') }}" alt="">
 				<div class="texto">Blog</div>
 			</div>
+			<div class="linha2"></div>
 			<div class="botoes">
 				<img src="{{ asset('img/sair.svg') }}" alt="">
 				<div class="texto">Sair</div>
@@ -46,13 +53,9 @@
 		</div>
 		<div class="topo"></div>
 	</div>
-</head>
-<body>
 	<div class="wrapper">
 		@yield('content')
 	</div>
-</body>
-</html>
 
 
     <!-- jquery -->

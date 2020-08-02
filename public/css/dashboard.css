@@ -1,18 +1,22 @@
 .header{
 	display: flex;
-	flex-direction: row;
 }
 .sideMenu{
+	display: flex;
 	width: 256px;
 	height: 1000px;
 	background: #222B56;
 	box-shadow: 6px 0px 18px rgba(0, 0, 0, 0.06);
-
+	flex-direction: column;
+	align-items: center;
 }
 
 .botoes{
 	display: flex;
+	width: 30%;
 	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
 }
 
 
@@ -26,9 +30,12 @@
 .userContent{
 	display: flex;
 	flex-direction: row;
+	padding-top: 10px;
+	justify-content: space-between;
 }
 
 .texto{
+	margin-left: 10px;
 	font-family: Poppins;
 	font-style: normal;
 	font-weight: 500;
@@ -51,7 +58,6 @@
 	line-height: 25px;
 	color: #FFFFFF;
 	text-align: center;
-	padding-top: 15px;
 }
 
 .nome{
@@ -79,3 +85,8 @@
 	color: #FFFFFF;
 
 }
+
+.botoes >img{
+	
+}
+
