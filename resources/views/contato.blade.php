@@ -1,4 +1,4 @@
-@extends('layouts.area_do_cliente')
+{{-- @extends('layouts.area_do_cliente')
 
 @section('css')
 <style>
@@ -45,4 +45,4 @@
     });
 
 </script>
-@endsection
+@endsection --}}

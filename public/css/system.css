@@ -177,10 +177,8 @@
 }
 
 .newsletter {
-  border-top: 1px solid #0b4683;
   width: 100%;
-  margin-top: 3em;
-  padding: 0.3em;
+  padding-bottom: 2em;
   text-align: center;
 }
 .newsletter p {
@@ -233,41 +231,32 @@
   color: white;
 }
 
-.formcontato {
-  background-color: #0b4683;
-}
 .formcontato .form-control {
-  color: white !important;
+  color: #222b56 !important;
   background-color: transparent !important;
-  border: 1px solid white;
+  border: 1px solid #222b56;
   padding: 3px 10px;
 }
 .formcontato .form-control::placeholder {
-  color: rgba(255, 255, 255, 0.795) !important;
+  color: rgba(0, 0, 0, 0.795) !important;
 }
 .formcontato label {
   font-weight: 600;
-  color: white !important;
+  color: #222b56 !important;
 }
 .formcontato button {
   width: 100%;
 }
 .formcontato button:hover {
-  border: 1px solid white;
-}
-
-.fontecontato {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 2em;
-  padding: 0.5em 0.2em;
-  text-align: center;
-  color: #d69510;
+  border: 1px solid #222b56;
 }
 
 .divdetalhes {
+  margin-top: 100px;
   padding: 2em;
   background-color: #fff;
   color: black;
+  border: 1px solid black;
 }
 
 .infoenvio {
@@ -327,6 +316,12 @@ nav.navbar {
   color: #d69510;
 }
 
+.logofooter {
+  text-align: center;
+  color: white;
+  font-size: 1.5em;
+}
+
 .menus {
   display: flex;
 }
@@ -342,7 +337,6 @@ nav.navbar {
   width: 100%;
   background-color: #0b4683;
   padding: 1em;
-  font-size: 12px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 .clientefooter ul {
@@ -431,6 +425,21 @@ body .container .row {
 button {
   transition: 0.1s ease-in-out !important;
   transition-property: background-color, color, border-color !important;
+}
+
+#modalcontato .modal-content .modaltitulo {
+  font-size: 2em;
+  text-align: center;
+  color: #222b56;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.separador {
+  width: 100%;
+  height: 2px;
+  background-color: #0b4683;
+  border: none;
+  margin: 2em 0;
 }
 
 /*# sourceMappingURL=system.css.map */

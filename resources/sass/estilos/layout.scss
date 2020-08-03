@@ -35,6 +35,12 @@ nav.navbar {
     }
 }
 
+.logofooter {
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+}
+
 .menus {
     display: flex;
     p {
@@ -50,7 +56,7 @@ nav.navbar {
     width: 100%;
     background-color: $azul;
     padding: 1em;
-    font-size: 12px;
+
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 
     & ul {

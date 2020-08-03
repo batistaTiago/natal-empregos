@@ -49,9 +49,7 @@
     </div>
 </div>
 
-
-    
-    @include('componentes.contato_form')
+<hr class="separador">
 
 <div class="newsletter">
     <p>Receba as vagas em primeira mão</p>
@@ -60,7 +58,7 @@
             <p>Preencha os seus dados e iremos enviar novas vagas assim que surgirem</p>
             <input type="email" id="newsemail" name="newsemail" class="newsinput" placeholder="Digite seu email">
         </div>
-        <button class="botao">Receber vagas<i class="fas fa-envelope" style="margin-left: 8px;"></i></button>
+        <button class="botao"><i class="fas fa-envelope" style="margin-left: 8px;"></i> Receber vagas</button>
         <p id="privacidade">Não iremos compartilhar suas informações com ninguém.</p>
     </form>
 </div> 
@@ -79,3 +77,4 @@
 
 </script>
 @endsection
+

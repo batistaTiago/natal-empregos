@@ -18,19 +18,19 @@
 </head>
 <body>
     <div class="containerlayout">
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
             <a class="navbar-brand logolayout" href="/">Natal<strong>Empregos</strong></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-          
-            <div class="collapse navbar-collapse central" id="navbarTogglerDemo02" style="display: flex; justify-content: center">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Blog <span class="sr-only">(current)</span></a>
+                      
+            <div class="collapse navbar-collapse central" id="navbarToggler" style="justify-content: center">
+              <ul class="navbar-nav" >
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Blog</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Contato</a>
+                  <a class="botaocontato nav-link" href="">Contato</a>
                 </li>
               </ul>
             </div>
@@ -46,7 +46,7 @@
                     <p style="font-size: 1.1em">Links úteis</p>
                     <ul>
                         <li><a href="">Sobre a Natal Empregos</a></li>
-                        <li><a href="">Fale conosco</a></li>
+                        <li><a class="botaocontato" href="">Fale conosco</a></li>
                         <li><a href="https://www.instagram.com/natal.empregos/"><i class="fab fa-instagram"></i> natal.empregos</a></li>
                         <li><a href="https://www.facebook.com/groups/433243110094657/learning_content/"><i class="fab fa-facebook-square"></i> Natal Empregos</a></li>
                     </ul>
@@ -59,7 +59,9 @@
                     </ul>
                 </div>
             </div>
-            <p style="text-align: center; color:white">Natal Empregos - 2020</p>
+            <div class="logofooter">
+            <p class="logolayout" href="/">Natal<strong>Empregos</strong> - {{ date('Y') }}</p>
+            </div>
         </footer>
     </div>
 
@@ -82,6 +84,23 @@
     @yield('modal')
     @yield('js')
 
+    <div class="modal fade" id="modalcontato" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <h5 class="modaltitulo">Fale com a gente</h5>
+                @include('componentes.contato_form')
+    
+            </div>
+        </div>
+        </div>
+    </div>
+
 
 
     <form id="tracker-token" class="d-none">
@@ -100,6 +119,13 @@
                 }
             });
         });
+
+        $(() => {
+            $(".botaocontato").on('click', function(event) {
+                event.preventDefault();
+                $("#modalcontato").modal("show")
+            })
+        })
     </script>
 </body>
 </html>
