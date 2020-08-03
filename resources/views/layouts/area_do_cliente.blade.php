@@ -18,7 +18,7 @@
 </head>
 <body>
     <div class="containerlayout">
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
             <a class="navbar-brand logolayout" href="/">Natal<strong>Empregos</strong></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
