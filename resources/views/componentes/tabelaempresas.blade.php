@@ -14,5 +14,5 @@
           <td><i class="fas fa-trash-alt"></i></td>
         </tr>
        
-      </table>    
+      </table>
 </div>
