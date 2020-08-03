@@ -1,21 +1,28 @@
 <form action="" method="POST" class="container formcontato mt-4 pb-2">
     <p class="fontecontato">Fale com a gente</p>
-    <div class="empresacontainer">
+    <div class="empresacontainer row">
         @csrf
-        <label for="nome">Seu nome</label>
-        <input type="text" name="nome">
+        <div class="form-group col-6">
+            <label for="nome">Seu nome</label>
+            <input type="text" name="nome" class="form-control" placeholder="Seu nome">
+        </div>
 
-        <label for="assunto">Assunto</label>
-        <input type="text" name="assunto">
-
-        <label for="telefone">Telefone</label>
-        <input type="number" name="telefone">
-
-        <label for="email">Email para contato</label>
-        <input type="text" name="email">
-        
-        <label for="mensagem">Mensagem</label>
-        <textarea name="mensagem" id="mensagem" rows="10" placeholder="Sua mensagem"></textarea>
+        <div class="form-group col-6">
+            <label for="assunto">Assunto</label>
+            <input type="text" name="assunto" class="form-control" placeholder="Qual o assunto?">
+        </div>
+        <div class="form-group col-6">
+            <label for="telefone">Telefone</label>
+            <input type="number" name="telefone" class="form-control" placeholder="Telefone para contato (opcional)">
+        </div>
+        <div class="form-group col-6">
+            <label for="email">Email para contato</label>
+            <input type="email" name="email" class="form-control" placeholder="Email para contato">
+        </div>
+        <div class="form-group col-12">
+            <label for="mensagem">Mensagem</label>
+            <textarea name="mensagem" id="mensagem" rows="10" placeholder="Sua mensagem"  class="form-control"></textarea>
+        </div>
        
         <button type="submit" class="botao">
             Enviar

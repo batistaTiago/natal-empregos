@@ -37,6 +37,73 @@
   align-items: center;
 }
 
+.heroi {
+  position: relative;
+  align-items: center;
+  height: 60vh;
+  overflow: hidden;
+  background-color: black;
+}
+
+.imagemheroi {
+  position: absolute;
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+.searchbar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  width: 70%;
+  text-align: center;
+  margin-top: 2%;
+  padding: 0 2em;
+}
+.searchbar p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2em;
+  color: white;
+}
+
+.botaosearch {
+  padding: 0 20px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border: 1px solid #0b4683;
+  background-color: #0b4683;
+}
+.botaosearch i {
+  color: #f2d678;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.searchform {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+}
+
+.searchinput {
+  padding: 0.5em;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border: 1px solid #222b56;
+  border-right: none;
+  flex-grow: 1;
+}
+
 .containercartao {
   display: flex;
   justify-content: center;
@@ -121,16 +188,6 @@
   padding: 0.5em;
   font-size: 1.2em;
 }
-.newsletter button {
-  margin-top: 5px;
-  padding: 0.5em;
-  background-color: white;
-  border: 1px solid #222b56;
-}
-.newsletter button:hover {
-  background-color: #0b4683;
-  color: white;
-}
 
 .newsform {
   align-items: center;
@@ -176,44 +233,35 @@
   color: white;
 }
 
-.empresacontainer {
-  display: flex;
-  margin: 0 auto;
-  flex-direction: column;
-  width: 70%;
-}
-.empresacontainer label {
-  padding: 0.2em;
-  font-size: 1em;
-}
-.empresacontainer input {
-  padding: 0.2em;
-  border-radius: 2px;
-}
-.empresacontainer textarea {
-  border: 1px solid black;
-  padding: 0.5em;
-}
-
 .formcontato {
-  background-color: rgba(11, 70, 131, 0.5);
+  background-color: #0b4683;
+}
+.formcontato .form-control {
+  color: white !important;
+  background-color: transparent !important;
+  border: 1px solid white;
+  padding: 3px 10px;
+}
+.formcontato .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.795) !important;
+}
+.formcontato label {
+  font-weight: 600;
+  color: white !important;
 }
 .formcontato button {
-  margin-top: 5px;
-  padding: 0.5em;
-  background-color: white;
-  border: 1px solid #222b56;
+  width: 100%;
 }
 .formcontato button:hover {
-  background-color: #0b4683;
-  color: white;
+  border: 1px solid white;
 }
 
 .fontecontato {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: 1.5em;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 2em;
+  padding: 0.5em 0.2em;
   text-align: center;
-  color: #1f1e1e;
+  color: #d69510;
 }
 
 .divdetalhes {
@@ -259,69 +307,16 @@
 }
 
 nav.navbar {
-  background-color: #0b4683;
+  transition: ease-in-out 200ms background-color;
+  background-color: transparent;
 }
 
 .navegar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 80px;
-  background-color: #222b56;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.425);
-}
-
-.searchbar {
-  margin: 0 auto;
-  width: 70%;
-  text-align: center;
-  margin-top: 2%;
-  padding: 0 2em;
-}
-.searchbar p {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 1.2em;
-  color: #222b56;
+  background-color: #0b4683 !important;
 }
 
 .central {
   margin: 0 auto;
-}
-
-.botaosearch {
-  padding: 0 20px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border: 1px solid #0b4683;
-  background-color: #0b4683;
-}
-.botaosearch i {
-  color: #f2d678;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-}
-
-.searchform {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  width: 100%;
-}
-
-.searchinput {
-  padding: 0.5em;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border: 1px solid #222b56;
-  border-right: none;
-  flex-grow: 1;
 }
 
 .logolayout {
@@ -379,6 +374,17 @@ nav.navbar {
   color: white;
 }
 
+.botao {
+  margin-top: 5px;
+  padding: 0.5em;
+  background-color: white;
+  border: 1px solid #222b56;
+}
+.botao:hover {
+  background-color: #0b4683;
+  color: white;
+}
+
 @media screen and (max-width: 520px) {
   .searchbar {
     width: 90%;
@@ -388,6 +394,30 @@ nav.navbar {
     font-size: 1em;
   }
 }
+.tabelacadastro .fundoheader {
+  background-color: rgba(34, 43, 86, 0.2);
+}
+.tabelacadastro .fundotabela {
+  background-color: rgba(11, 70, 131, 0.2);
+}
+.tabelacadastro th,
+.tabelacadastro td {
+  padding: 1em;
+}
+.tabelacadastro i {
+  text-align: center;
+  color: #d69510;
+}
+
+.titulotabela {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: black;
+}
+
+#botaotabela {
+  text-align: center;
+}
+
 body * {
   padding: 0;
   margin: 0;

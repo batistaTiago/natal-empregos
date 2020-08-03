@@ -7,8 +7,10 @@
 @endsection
 
 @section('content')
-
-@include('componentes.tabelavagas')
+<div class="container">
+    <h2 class='p-2'>Lista de Empresas</h2>
+    @include('componentes.tabelavagas')
+</div>
 
 @endsection
 

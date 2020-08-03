@@ -7,7 +7,8 @@
 @endsection
 
 @section('content')
-<div class="container">    
+<div class="heroi">
+    <img class='imagemheroi' src="{{asset("img/heroi.jpg")}}">
     <div class="searchbar">
         <p>Busque pela vaga de sua preferência</p>
         <form action="" class="searchform mt-2">
@@ -15,6 +16,10 @@
                 <button class="botaosearch"><i class="fas fa-search"></i></button>
         </form>
     </div>
+</div>
+
+<div class="container">    
+    
     <div class="mt-5 mb-2 containercartao row">
         @foreach ($vagas as $idx => $vaga)
         <div class="my-3 col-sm-12 col-md-6 col-lg-4">
