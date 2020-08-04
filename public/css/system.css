@@ -294,12 +294,22 @@
   border: 1px solid #222b56;
 }
 
+.heroivaga {
+  height: 30vh;
+  overflow: hidden;
+  background-color: black;
+}
+
+.imagemheroivaga {
+  width: 100%;
+  height: auto;
+}
+
 .divdetalhes {
-  margin-top: 100px;
+  margin-top: 20px;
   padding: 2em;
   background-color: #fff;
   color: black;
-  border: 1px solid black;
 }
 
 .infoenvio {
@@ -311,8 +321,9 @@
   padding: 0.5em;
 }
 
-.divbeneficios {
+.divsessao {
   padding: 2em;
+  text-align: justify;
 }
 
 .titulocabeca {
@@ -320,11 +331,8 @@
 }
 
 .detalhado {
-  padding: 1em;
-}
-
-.requisitos {
-  padding: 2em;
+  text-align: justify;
+  padding: 0.5em;
 }
 
 .botaovaga {
@@ -334,6 +342,24 @@
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+@media screen and (max-width: 520px) {
+  .heroivaga {
+    height: 20vh;
+  }
+
+  .imagemheroivaga {
+    height: 20vh;
+  }
+}
+@media screen and (min-width: 521px) and (max-width: 1150px) {
+  .heroivaga {
+    height: 25vh;
+  }
+
+  .imagemheroivaga {
+    height: 25vh;
+  }
+}
 .containerlayout {
   width: 100%;
 }
