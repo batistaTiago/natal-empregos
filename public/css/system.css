@@ -406,7 +406,7 @@ nav.navbar {
   width: 100%;
   background-color: #0b4683;
   padding: 1em;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .clientefooter ul {
   list-style: none;
@@ -419,18 +419,27 @@ nav.navbar {
 
 .linksuteis p {
   color: #d69510;
+  font-weight: 500;
   margin-bottom: 10px;
 }
 .linksuteis a {
   color: white;
   margin-left: 10px;
 }
+.linksuteis li {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
 
 .parceiros li {
   margin-left: 10px;
+  color: white;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .parceiros p {
   color: #d69510;
+  font-weight: 500;
   margin-bottom: 10px;
 }
 .parceiros ul p {
@@ -494,50 +503,53 @@ nav.navbar {
   text-align: center;
 }
 
-.heroiblog {
+.heroiservico {
   height: 30vh;
   overflow: hidden;
   background-color: black;
 }
 
-.imagemheroiblog {
+.imagemheroiservico {
   width: 100%;
   height: auto;
 }
 
-.imagemcartaoblog {
-  width: 15vw;
+.imagemcartaoservico {
+  width: 100%;
   height: 20vh;
   border: 1px solid #d69510;
 }
 
-.textoscartaoblog {
+.textoscartaoservico {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  text-align: justify;
+  text-align: center;
 }
 
-.cartaoblog {
-  padding: 1em;
+.cartaoservico {
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid rgba(13, 13, 153, 0.274);
 }
 
-.tituloblog {
+.tituloservico {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-decoration: none;
 }
-.tituloblog a {
+.tituloservico a {
   color: #222b56;
 }
 
 .descricaozinha {
   padding: 0.5em;
   margin-left: 5px;
+  text-align: justify;
 }
 
-.rodapeblog {
+.rodapeservico {
   border-top: 2px solid rgba(0, 0, 0, 0.37);
-  padding-top: 0.2em;
+  padding: 0.5em;
   display: flex;
   justify-content: space-between;
   align-content: flex-end;
@@ -545,19 +557,19 @@ nav.navbar {
 }
 
 @media screen and (max-width: 490px) {
-  .cartaoblog {
+  .cartaoservico {
     padding: 0.5em;
   }
 
-  .heroiblog {
+  .heroiservico {
     height: 20vh;
   }
 
-  .imagemheroiblog {
+  .imagemheroiservico {
     height: 20vh;
   }
 
-  .imagemcartaoblog {
+  .imagemcartaoservico {
     position: absolute;
     top: 0;
     left: 0;
@@ -566,15 +578,15 @@ nav.navbar {
   }
 }
 @media screen and (min-width: 491px) and (max-width: 761px) {
-  .heroiblog {
+  .heroiservico {
     height: 25vh;
   }
 
-  .imagemheroiblog {
+  .imagemheroiservico {
     height: 25vh;
   }
 
-  .imagemcartaoblog {
+  .imagemcartaoservico {
     position: absolute;
     top: 0;
     left: 0;
@@ -583,14 +595,87 @@ nav.navbar {
   }
 }
 @media screen and (min-width: 762px) and (max-width: 1150px) {
-  .imagemcartaoblog {
-    position: absolute;
-    top: 0;
-    left: 0;
+  .imagemcartaoservico {
     width: 150px;
     height: 125px;
   }
 }
+.divservicopost {
+  padding: 1em;
+}
+
+.imagemservicopost {
+  text-align: center;
+  width: 100%;
+}
+
+.imagemservico {
+  margin: 3em 0;
+  width: 70%;
+  border: 2px solid #222b56;
+}
+
+.cabecalhoservico {
+  padding: 1em;
+}
+
+.corposervico {
+  text-align: justify;
+  padding: 1em;
+}
+
+@media screen and (max-width: 490px) {
+  .imagemservico {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 491px) and (max-width: 761px) {
+  .imagemservico {
+    width: 80%;
+  }
+}
+.heroisobre {
+  height: 30vh;
+  overflow: hidden;
+  background-color: black;
+}
+
+.imagemheroisobre {
+  width: 100%;
+  height: auto;
+}
+
+.imagemcartaosobre {
+  width: 100%;
+  height: 20vh;
+  border: 1px solid #d69510;
+}
+
+.missao h2 {
+  background-color: #d69510;
+}
+
+.containersobre {
+  text-align: justify;
+  margin-bottom: 2em;
+}
+.containersobre h2 {
+  text-align: center;
+  font-family: "Parisienne", cursive;
+  font-size: 3em;
+}
+.containersobre p {
+  padding: 1em;
+}
+
+.visao h2 {
+  background-color: #f2d678;
+}
+
+.valores h2 {
+  background-color: rgba(11, 70, 131, 0.85);
+}
+
 body * {
   padding: 0;
   margin: 0;

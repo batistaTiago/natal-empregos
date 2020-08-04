@@ -16,14 +16,17 @@ Route::get('/listavagas', function () {
     return view('listavagas');
 });
 
-Route::get('/blog', function() {
-    return view('blog.listagemblog');
+Route::get('/servicos', function() {
+    return view('servico.servicos');
 });
 
-Route::get('/blogpost', function() {
-    return view('blog.blogpost');
+Route::get('/servicopost', function() {
+    return view('servico.detalheservico');
 });
 
+Route::get('/sobrenos', function() {
+    return view('sobrenos');
+});
 
 Route::prefix('admin')->group(function () {
 

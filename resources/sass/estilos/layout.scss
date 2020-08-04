@@ -56,8 +56,7 @@ nav.navbar {
     width: 100%;
     background-color: $azul;
     padding: 1em;
-
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
     & ul {
         list-style: none;
@@ -72,6 +71,7 @@ nav.navbar {
 .linksuteis {
     & p {
         color: $laranja;
+        font-weight: 500;
         margin-bottom: 10px;
     }
 
@@ -79,14 +79,22 @@ nav.navbar {
         color: white;
         margin-left: 10px;
     }
+    & li {
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
 }
 
 .parceiros {
     & li {
         margin-left: 10px;
+        color: white;
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
     & p {
         color: $laranja;
+        font-weight: 500;
         margin-bottom: 10px;
     }
 

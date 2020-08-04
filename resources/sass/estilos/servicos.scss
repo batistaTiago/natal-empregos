@@ -1,32 +1,34 @@
-.heroiblog {
+.heroiservico {
     height: 30vh;
     overflow: hidden;
     background-color: rgb(0, 0, 0);
 }
 
-.imagemheroiblog {
+.imagemheroiservico {
     width: 100%;
     height: auto;
 }
 
-.imagemcartaoblog {
-    width: 15vw;
+.imagemcartaoservico {
+    width: 100%;
     height: 20vh;
     border: 1px solid $laranja;
 }
 
-.textoscartaoblog {
+.textoscartaoservico {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    text-align: justify;
+    text-align: center;
 }
 
-.cartaoblog {
-    padding: 1em;
+.cartaoservico {
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid rgba(13, 13, 153, 0.274);
 }
 
-.tituloblog {
+.tituloservico {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-decoration: none;
     & a {
@@ -37,11 +39,12 @@
 .descricaozinha {
     padding: 0.5em;
     margin-left: 5px;
+    text-align: justify;
 }
 
-.rodapeblog {
+.rodapeservico {
     border-top: 2px solid rgba(0, 0, 0, 0.37);
-    padding-top: 0.2em;
+    padding: 0.5em;
     display: flex;
     justify-content: space-between;
     align-content: flex-end;
@@ -49,17 +52,17 @@
 }
 
 @media screen and (max-width: 490px) {
-    .cartaoblog {
+    .cartaoservico {
         padding: 0.5em;
     }
-    .heroiblog {
+    .heroiservico {
         height: 20vh;
     }
-    .imagemheroiblog {
+    .imagemheroiservico {
         height: 20vh;
     }
 
-    .imagemcartaoblog {
+    .imagemcartaoservico {
         position: absolute;
         top: 0;
         left: 0;
@@ -69,14 +72,14 @@
 }
 
 @media screen and (min-width: 491px) and (max-width: 761px) {
-    .heroiblog {
+    .heroiservico {
         height: 25vh;
     }
 
-    .imagemheroiblog {
+    .imagemheroiservico {
         height: 25vh;
     }
-    .imagemcartaoblog {
+    .imagemcartaoservico {
         position: absolute;
         top: 0;
         left: 0;
@@ -86,10 +89,7 @@
 }
 
 @media screen and (min-width: 762px) and (max-width: 1150px) {
-    .imagemcartaoblog {
-        position: absolute;
-        top: 0;
-        left: 0;
+    .imagemcartaoservico {
         width: 150px;
         height: 125px;
     }

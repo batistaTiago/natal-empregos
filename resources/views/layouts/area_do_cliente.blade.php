@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
    
+    {{-- Bootstrap --}}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
+    {{-- FontAwesome --}}
     <script src="https://kit.fontawesome.com/7725e2dc25.js" crossorigin="anonymous"></script>
 
+    {{-- Google Fonts --}}
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    
     <link href="{{ asset('css/system.css') }}" rel="stylesheet">
 
 
@@ -24,14 +29,17 @@
               <span class="navbar-toggler-icon"></span>
             </button>
                       
-            <div class="collapse navbar-collapse central" id="navbarToggler" style="justify-content: center">
+            <div class="collapse navbar-collapse justify-content-center" id="navbarToggler">
               <ul class="navbar-nav" >
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Blog</a>
+                <li class="nav-item mx-4">
+                  <a class="nav-link" href="/servicos">Serviços</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mx-4">
                   <a class="botaocontato nav-link" href="">Contato</a>
                 </li>
+                <li class="nav-item mx-4">
+                    <a class="nav-link" href="/sobrenos">Sobre nós</a>
+                  </li>
               </ul>
             </div>
           </nav>
@@ -54,8 +62,8 @@
                 <div class="parceiros">
                     <p style="font-size: 1.1em">Parceiros: </p>
                     <ul>
-                        <li><p style="">Garantistas Coding LTDA 2020</p></li>
-                        <li><p style="">Outros aliados</p></li>
+                        <li>Garantistas Coding LTDA 2020</li>
+                        <li>Outros aliados</li>
                     </ul>
                 </div>
             </div>
