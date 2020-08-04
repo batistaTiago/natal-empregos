@@ -16,6 +16,14 @@ Route::get('/listavagas', function () {
     return view('listavagas');
 });
 
+Route::get('/blog', function() {
+    return view('blog.listagemblog');
+});
+
+Route::get('/blogpost', function() {
+    return view('blog.blogpost');
+});
+
 
 Route::prefix('admin')->group(function () {
 
