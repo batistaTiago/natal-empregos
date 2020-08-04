@@ -109,11 +109,33 @@ nav.navbar {
 }
 
 @media screen and (max-width: 520px) {
-    .searchbar {
-        width: 90%;
-        padding: 0.5em 0;
-        & p {
-            font-size: 1em;
+    .logolayout {
+        margin-top: 1em;
+    }
+    .linksuteis {
+        a {
+            font-size: 0.8em;
+        }
+    }
+    .parceiros {
+        p {
+            font-size: 0.8em;
+        }
+    }
+}
+
+@media screen and (min-width: 521px) and (max-width: 1150px) {
+    // .logolayout {
+    //     margin-top: 1em;
+    // }
+    .linksuteis {
+        a {
+            font-size: 0.8em;
+        }
+    }
+    .parceiros {
+        p {
+            font-size: 0.8em;
         }
     }
 }

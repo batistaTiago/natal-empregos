@@ -181,18 +181,6 @@
     font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-@media screen and (max-width: 520px) {
-    li.page-item {
-        display: none;
-    }
-
-    .page-item:first-child,
-    .page-item:last-child,
-    .page-item.active {
-        display: block;
-    }
-}
-
 .contatoform {
     padding: 1em;
 
@@ -205,5 +193,59 @@
             background-color: $azul;
             color: white;
         }
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .searchbar {
+        width: 90%;
+        padding: 0.5em 0;
+        & p {
+            font-size: 1em;
+        }
+    }
+
+    li.page-item {
+        display: none;
+    }
+
+    .page-item:first-child,
+    .page-item:last-child,
+    .page-item.active {
+        display: block;
+    }
+
+    .heroi {
+        height: 35vh;
+    }
+
+    .imagemheroi {
+        height: 35vh;
+    }
+    .newsinput {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 521px) and (max-width: 1150px) {
+    li.page-item {
+        display: none;
+    }
+
+    .page-item:first-child,
+    .page-item:last-child,
+    .page-item.active {
+        display: block;
+    }
+
+    .heroi {
+        height: 50vh;
+    }
+
+    .imagemheroi {
+        height: 50vh;
+    }
+    .newsinput {
+        width: 80%;
     }
 }
