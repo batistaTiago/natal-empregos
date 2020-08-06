@@ -16,35 +16,34 @@
     </div>
     <div class="cabecalho">
         <p class="titulocabeca">
-            {{-- {{ $vaga->titulo }} --}}
-            Desenvolvedor(a) Full-stack (PHP+Laravel+React)
+            {{ $vaga->titulo }}
         </p>
         <p >
-            Natal, RN - Aceita remoto
+            {{ $vaga->empresa->cidade ?? 'Não informado' }}{{ $vaga->empresa->remoto ?? ' - Aceita remoto ' }}
         </p>
     </div>
     <div class="detalhado">
-        {{-- <p>{{ $vaga->descricao }}</p> --}}
-        <p>Somos uma startup voltada para a área de documentação e registro, cujo objetivo é possibilitar a adoção de novas tecnologias nos serviços notariais e de registro.</p>
+        <p>{{ $vaga->descricao }}</p>        
     </div>
     <div class="divsalario">
-        {{-- <p>Remuneração: <strong>{{ isset($vaga->remuneracao) ? realMoney($vaga->remuneracao) : 'A combinar' }}</strong></p> --}}
-        <p>Remuneração: <strong>R$ 800,00</strong></p>
+        <p>Remuneração: <strong>{{ isset($vaga->remuneracao) ? realMoney($vaga->remuneracao) : 'A combinar' }}</strong></p>
     </div>
 
-    <h3>Requesitos</h3>
+    <h3>Requisitos</h3>
     <div class="divsessao">
         <ul>
-            <li>PHP + Laravel</li>
-            <li>Javascript + React</li>
-            <li>Versionamento GIT</li>
+            @foreach ($vaga->requisitos as $requisito)
+              <li>{{ $requisito->nome }}</li>
+            @endforeach
         </ul>
     </div>
     
     <h3>Benefícios</h3>
     <div class="divsessao">
         <ul>
-            <li>Contribuição nos lucros</li>
+            @foreach ($vaga->beneficios as $beneficio)
+              <li>{{ $beneficio->nome }}</li>
+            @endforeach
         </ul>
     </div>
     <hr />
@@ -52,7 +51,7 @@
 
     <h3>Contato</h3>
     <div class="divsessao">
-        <p>Interessados mandar o CV e o repositório (Github, BitBucket) para garantistas@coding.com</p>
+        {{ $vaga->contato }}
     </div>
 </div>
 
