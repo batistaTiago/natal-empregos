@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
    
+    {{-- Bootstrap --}}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
+    {{-- FontAwesome --}}
     <script src="https://kit.fontawesome.com/7725e2dc25.js" crossorigin="anonymous"></script>
 
+    {{-- Google Fonts --}}
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    
     <link href="{{ asset('css/system.css') }}" rel="stylesheet">
 
 
@@ -18,20 +23,23 @@
 </head>
 <body>
     <div class="containerlayout">
-        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
             <a class="navbar-brand logolayout" href="/">Natal<strong>Empregos</strong></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-          
-            <div class="collapse navbar-collapse central" id="navbarTogglerDemo02" style="display: flex; justify-content: center">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Blog <span class="sr-only">(current)</span></a>
+                      
+            <div class="collapse navbar-collapse justify-content-center" id="navbarToggler">
+              <ul class="navbar-nav" >
+                <li class="nav-item mx-4">
+                  <a class="nav-link" href="/servicos">Serviços</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Contato</a>
+                <li class="nav-item mx-4">
+                  <a class="botaocontato nav-link" href="">Contato</a>
                 </li>
+                <li class="nav-item mx-4">
+                    <a class="nav-link" href="/sobrenos">Sobre nós</a>
+                  </li>
               </ul>
             </div>
           </nav>
@@ -46,7 +54,7 @@
                     <p style="font-size: 1.1em">Links úteis</p>
                     <ul>
                         <li><a href="">Sobre a Natal Empregos</a></li>
-                        <li><a href="">Fale conosco</a></li>
+                        <li><a class="botaocontato" href="">Fale conosco</a></li>
                         <li><a href="https://www.instagram.com/natal.empregos/"><i class="fab fa-instagram"></i> natal.empregos</a></li>
                         <li><a href="https://www.facebook.com/groups/433243110094657/learning_content/"><i class="fab fa-facebook-square"></i> Natal Empregos</a></li>
                     </ul>
@@ -54,14 +62,15 @@
                 <div class="parceiros">
                     <p style="font-size: 1.1em">Parceiros: </p>
                     <ul>
-                        <li><p style="">Garantistas Coding LTDA 2020</p></li>
-                        <li><p style="">Outros aliados</p></li>
+                        <li>Garantistas Coding LTDA 2020</li>
+                        <li>Outros aliados</li>
                     </ul>
                 </div>
             </div>
-            <p style="text-align: center; color:white">Natal Empregos - 2020</p>
+            <div class="logofooter">
+            <p class="logolayout" href="/">Natal<strong>Empregos</strong> - {{ date('Y') }}</p>
+            </div>
         </footer>
-        
     </div>
 
 
@@ -76,8 +85,29 @@
     
     <!-- sweet alert 2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <script src="{{ asset('js/system.js') }}"></script>
+
+
     @yield('modal')
     @yield('js')
+
+    <div class="modal fade" id="modalcontato" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <h5 class="modaltitulo">Fale com a gente</h5>
+                @include('componentes.contato_form')
+    
+            </div>
+        </div>
+        </div>
+    </div>
 
 
 
@@ -97,6 +127,13 @@
                 }
             });
         });
+
+        $(() => {
+            $(".botaocontato").on('click', function(event) {
+                event.preventDefault();
+                $("#modalcontato").modal("show")
+            })
+        })
     </script>
 </body>
 </html>

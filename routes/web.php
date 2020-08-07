@@ -16,6 +16,17 @@ Route::get('/listavagas', function () {
     return view('listavagas');
 });
 
+Route::get('/servicos', function() {
+    return view('servico.servicos');
+});
+
+Route::get('/servicopost', function() {
+    return view('servico.detalheservico');
+});
+
+Route::get('/sobrenos', function() {
+    return view('sobrenos');
+});
 
 Route::prefix('admin')->group(function () {
 
@@ -61,3 +72,7 @@ Route::get('/detalhes', function () {
 Route::get('/teste/{id}', 'VagaController@deletarContato')->name('deletar.contato');
 Route::get('/teste2', 'VagaController@editarEmpresa')->name('editar.empresa');
 Route::get('/teste3', 'VagaController@deletarEmpresa')->name('deletar.empresa');
+
+Route::get('/teste4', 'VagaController@deletarVaga')->name('deletar.vaga');
+
+Route::get('/teste5', 'VagaController@editarVaga')->name('editar.vaga');

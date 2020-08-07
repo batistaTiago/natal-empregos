@@ -8,7 +8,7 @@
 
 @section('content')
 
-<h1>tostado2</h1>
+<h1>Cadastrar vaga</h1>
 <form action="{{route('admin.vaga.editar')}}" method="POST">
     @csrf
     <input type="text" name="empresa">

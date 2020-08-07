@@ -1,41 +1,24 @@
-.empresacontainer {
-    display: flex;
-    margin: 0 auto;
-    flex-direction: column;
-    width: 70%;
-
-    label {
-        padding: 0.2em;
-        font-size: 1em;
-    }
-    input {
-        padding: 0.2em;
-        border-radius: 2px;
-    }
-    textarea {
-        border: 1px solid black;
-        padding: 0.5em;
-    }
-}
-
 .formcontato {
-    background-color: transparentize($color: $azul, $amount: 0.5);
-
-    & button {
-        margin-top: 5px;
-        padding: 0.5em;
-        background-color: white;
+    .form-control {
+        color: $azul-escuro !important;
+        background-color: transparent !important;
         border: 1px solid $azul-escuro;
-        &:hover {
-            background-color: $azul;
-            color: white;
+        padding: 3px 10px;
+
+        &::placeholder {
+            color: rgba(0, 0, 0, 0.795) !important;
         }
     }
-}
 
-.fontecontato {
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    font-size: 1.5em;
-    text-align: center;
-    color: rgb(31, 30, 30);
+    label {
+        font-weight: 600;
+        color: $azul-escuro !important;
+    }
+
+    & button {
+        width: 100%;
+        &:hover {
+            border: 1px solid $azul-escuro;
+        }
+    }
 }
