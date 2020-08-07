@@ -49,12 +49,12 @@ Route::prefix('admin')->group(function () {
 
     Route::get('dashboard', 'AdminController@dashboard')->name('admin.dashboard');
 
-
     Route::prefix('vagas')->group(function () {
         Route::get('/', 'Admin\Vagacontroller@listarVagas')->name('admin.vagas.listar');
     });
 
-    Route::prefix('empresa')->group(function () {
+    Route::prefix('empresas')->group(function () {
+        Route::get('/', 'Admin\Vagacontroller@listarEmpresas')->name('admin.empresa.listar');
         Route::get('cadastrar', 'EmpresaController@cadastrarEmpresaForm')->name('admin.empresa.cadastrar.form');
         Route::post('cadastrar', 'EmpresaController@cadastrarEmpresaCallback')->name('admin.empresa.cadastrar.callback');
         Route::prefix('{slug}')->group(function () {

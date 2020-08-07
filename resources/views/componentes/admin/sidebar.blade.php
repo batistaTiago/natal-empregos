@@ -16,13 +16,13 @@
         <div class="texto">Vagas</div>
     </a>
 
-    <div class="botoes">
+    <a href="{{ route('admin.empresa.listar') }}" class="botoes">
         <img src="{{ asset('img/contatos.svg') }}" alt="">
         <div class="texto">Empresas</div>
-    </div>
-    <div class="botoes">
+    </a>
+    <a href="{{ route('admin.vagas.listar') }}" class="botoes">
         <img src="{{ asset('img/blog.svg') }}" alt="">
         <div class="texto">Serviços</div>
-    </div>
+    </a>
     <div class="linha2"></div>
 </div>

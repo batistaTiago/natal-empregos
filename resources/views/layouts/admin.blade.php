@@ -19,6 +19,38 @@
 </head>
 <body>
 	<div class='header'>
+		<div class="sideMenu">
+			<div class="administracao">Administração</div>
+			<div class="linha"></div>
+			<div class='userContent'>
+				<div>
+					<img class="foto" src="{{ asset('img/Toalhinha.jpg') }}" alt="">
+				</div>
+				<div class="nomeEmail">
+					<div class="nome">Emanuele</div>
+					<div class="email">emanuele@email.com</div>
+				</div>
+			</div>
+
+			<div class="botoes">
+				<img src="{{ asset('img/vagas.svg') }}" alt="">
+				<div class="texto">Vagas</div>
+			</div>
+
+			<div class="botoes">
+				<img src="{{ asset('img/contatos.svg') }}" alt="">
+				<div class="texto">Empresas</div>
+			</div>
+			<div class="botoes">
+				<img src="{{ asset('img/blog.svg') }}" alt="">
+				<div class="texto">Serviços</div>
+			</div>
+			<div class="linha2"></div>
+			<div class="botoes">
+				<img src="{{ asset('img/sair.svg') }}" alt="">
+				<div class="texto">Sair</div>
+			</div>
+		</div>
 		<div class="topo"></div>
 	</div>
 	<div class="wrapper">

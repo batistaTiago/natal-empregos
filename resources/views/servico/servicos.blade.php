@@ -34,6 +34,14 @@
         @endforeach
     </div>
 </div> 
+<hr class="separador">
+<div class="d-flex flex-column text-center mb-4">
+    <h3>Conheça nossos pacotes de serviço!</h2>
+        <span>1 - Currículo criativo: R$ 40,00</span>
+        <span>2 - Currículo criativo + Consultoria sobre o currículo: R$ 60,00</span>
+        <span>3 - Pacote Master (Instrução e aprimoramento de currículo): R$ 150,00</span>
+        
+</div>
 
 @endsection
 

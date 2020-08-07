@@ -9,6 +9,13 @@ use App\Http\Controllers\Controller;
 
 class VagaController extends Controller
 {
+    public function listarEmpresas(Request $request)
+    {
+        $vagas = VagaEmprego::with(['regime', 'empresa'])->get();
+        // return response()->json($vagas);
+        return view('admin.listar_empresas', compact('vagas'));
+    }
+
     public function listarVagas(Request $request)
     {
         $vagas = VagaEmprego::with(['regime', 'empresa'])->get();
