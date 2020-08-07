@@ -4,6 +4,10 @@
 @import "./estilos/contato.scss";
 @import "./estilos/detalhesvaga.scss";
 @import "./estilos/layout.scss";
+@import "./estilos/tabelas.scss";
+@import "./estilos/servicos.scss";
+@import "./estilos/detalheservico.scss";
+@import "./estilos/sobrenos.scss";
 
 body {
     * {
@@ -20,4 +24,21 @@ body {
 button {
     transition: 0.1s ease-in-out !important;
     transition-property: background-color, color, border-color !important;
+}
+
+#modalcontato .modal-content {
+    .modaltitulo {
+        font-size: 2em;
+        text-align: center;
+        color: $azul-escuro;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+}
+
+.separador {
+    width: 100%;
+    height: 2px;
+    background-color: $azul;
+    border: none;
+    margin: 2em 0;
 }

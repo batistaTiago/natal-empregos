@@ -1,5 +1,5 @@
 <form action="{{ route('admin.empresa.cadastrar.callback') }}" method="POST" id="cadastrar-empresa-form">
-    <div class="empresacontainer">
+    <div class="cadastrarempresaconta">
         @csrf
         <label for="nome">Nome da empresa</label>
         <input type="text" name="nome" placeholder="Nome da empresa">
