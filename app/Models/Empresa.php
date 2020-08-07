@@ -30,4 +30,20 @@ class Empresa extends Model
         }
         return $empresa;
     }
+
+
+    public static function getAllVagasByEmpresaId($empresaId)
+    {
+
+        $allVagas = VagaEmprego::where('empresa_id', $empresaId)->get();
+
+
+
+        $data = [];
+        foreach ($allVagas as $vaga) {
+            $vaga->beneficios = VagaEmpregoBeneficio::where('vaga_emprego_id', $vaga->id);
+        }
+
+        return $allVagas;
+    }
 }

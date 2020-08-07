@@ -12,11 +12,19 @@
  */
 
 Route::get('/', 'VagaController@landing');
+Route::get('/listavagas', function () {
+    return view('listavagas');
+});
 
 
 Route::prefix('admin')->group(function () {
 
     Route::get('dashboard', 'AdminController@dashboard')->name('admin.dashboard');
+
+
+    Route::prefix('vagas')->group(function () {
+        Route::get('/', 'Admin\Vagacontroller@listarVagas')->name('admin.vagas.listar');
+    });
 
     Route::prefix('empresa')->group(function () {
         Route::get('cadastrar', 'EmpresaController@cadastrarEmpresaForm')->name('admin.empresa.cadastrar.form');
@@ -39,7 +47,17 @@ Route::prefix('vagas')->group(function () {
 });
 
 Route::get('/contato', 'ContatoController@contatoForm')->name('cliente.contato.form');
-Route::post('/contato', 'ContatoController@contatoCallback')->name('contato.form.callback');
-
 
 Route::post('gcc-tracker', 'TrackerController@registrarAcesso')->name('gcc-tracker');
+
+
+Route::post('/contato', 'ContatoController@contatoSubmit')->name('contato.form.callback');
+
+Route::get('/detalhes', function () {
+    return view("detalhesvaga");
+});
+
+
+Route::get('/teste/{id}', 'VagaController@deletarContato')->name('deletar.contato');
+Route::get('/teste2', 'VagaController@editarEmpresa')->name('editar.empresa');
+Route::get('/teste3', 'VagaController@deletarEmpresa')->name('deletar.empresa');
