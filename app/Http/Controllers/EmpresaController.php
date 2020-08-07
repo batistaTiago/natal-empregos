@@ -16,13 +16,14 @@ class EmpresaController extends Controller
     public function cadastrarEmpresaCallback(Request $request)
     {
 
-        return 'sucesso';
+        // dd($request->all());
 
         $novaEmpresa = new Empresa();
 
         $novaEmpresa->nome = $request->nome;
         $novaEmpresa->nome_fantasia = $request->nome_fantasia;
         $novaEmpresa->cnpj = $request->cnpj;
+        $novaEmpresa->slug = \slugify($request->nome_fantasia);
 
         $success = $novaEmpresa->save();
 
@@ -33,8 +34,8 @@ class EmpresaController extends Controller
                 return 'json';
             } else {
                 /* retorna view */
-
-                return 'view';
+                flash("Empresa $request->nome cadastrada com sucesso!")->success();
+                return redirect()->back();
             }
         } else {
             if ($request->header('accept') == 'application/json') {
