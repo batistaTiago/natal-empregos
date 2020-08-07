@@ -1,4 +1,4 @@
-@extends('layouts.area_do_cliente')
+@extends('layouts.admin')
 
 @section('css')
 <style>
@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+    @include('flash::message')
     @include('componentes.cadastrar_empresa_form')
 @endsection
 

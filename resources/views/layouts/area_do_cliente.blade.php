@@ -92,7 +92,7 @@
     @yield('modal')
     @yield('js')
 
-    <div class="modal fade" id="modalcontato" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -101,9 +101,15 @@
             </button>
             </div>
             <div class="modal-body">
-                <h5 class="modaltitulo">Fale com a gente</h5>
-                @include('componentes.contato_form')
-    
+                <div class="form-container contato-form" style="display: none;">
+                    <h5 class="modaltitulo">Fale com a gente</h5>
+                    @include('componentes.contato_form')
+                </div>
+
+                <div class="form-container agendar-form" style="display: none;">
+                    <h5 class="modaltitulo">Agende um serviço</h5>
+                    @include('componentes.agendar_form')
+                </div>
             </div>
         </div>
         </div>
@@ -131,7 +137,9 @@
         $(() => {
             $(".botaocontato").on('click', function(event) {
                 event.preventDefault();
-                $("#modalcontato").modal("show")
+                $('.form-container').hide();
+                $('.contato-form').show();
+                $('#modal').modal('show');
             })
         })
     </script>
