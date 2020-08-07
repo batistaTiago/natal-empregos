@@ -11,6 +11,37 @@ use App\Models\VagaEmpregoBeneficio;
 
 class VagaController extends Controller
 {
+    // lista todas as vagas
+
+    // Salva nova vaga via formulario
+    public function cadastroNovaVaga(Request $request)
+    {
+        $novaVaga = new  VagaEmprego();
+        $slugname = \slugify($request->empresa);
+
+        $empresa = Empresa::procurarPorNomeOuCriar($request->empresa);
+
+        $novaVaga->titulo  = $request->titulo;
+        $novaVaga->sub_titulo = $request->subtitulo;
+        // $novaVaga->local = $request->local;
+        $novaVaga->descricao = $request->descricao;
+        $novaVaga->regime_contratacao_id = $request->regime_contratacao_id;
+        $novaVaga->remuneracao = 1200;
+        $novaVaga->aceita_remoto = true;
+        $novaVaga->ativa = true;
+        $novaVaga->regime_contratacao_id = 2;
+
+
+        if ($novaVaga->save()) {
+
+            flash('Vaga de trabalho registrata com sucesso')->success();
+            return redirect()->back();
+        } else {
+            flash('Registro nao concluido , tente novamente.')->error();
+            return redirect()->back();
+        }
+    }
+
     // enviar todas as vagas para a requisicao
     public function listarVagas(Request $request)
     {
@@ -18,19 +49,32 @@ class VagaController extends Controller
         return view('home', compact('vagas'));
     }
 
+    public function cadastroForm(Request $request)
+    {
+        $empresas = Empresa::all();
+        return view('cadastrovaga', compact('empresas'));
+    }
+
     public function landing(Request $request)
     {
         return redirect(route('cliente.vagas.listar'));
     }
+    public function editarVagaEmprego(Request $request)
+    {
+        $vaga = VagaEmprego::find($request->id);
+        $params = Request::all();
+        dd($params);
+        if ($vaga) {
+            return 'vaga existente';
+        } else {
+            return 'vaga nao existente';
+        }
+    }
 
     public function vagaDetalhes(Request $request)
     {
-        $vaga = VagaEmprego::find($request->id);
-
-        if (!isset($vaga)) {
-            dd("implementar view de not found");
-        }
-        
+        $id = $request->id;
+        $vaga = VagaEmprego::find($id);
         return view('detalhesvaga', compact('vaga'));
     }
 
@@ -62,8 +106,17 @@ class VagaController extends Controller
         }
     }
 
-
     public function editarEmpresa(Request $request)
+    {
+
+        $empresa  = Empresa::find($request->id);
+
+        if ($empresa) {
+            return view('editarempresa', compact('empresa'));
+        }
+    }
+
+    public function editarEmpresaSubmit(Request $request)
     {
         // passar o request dinamicamente
         $request->id = 3;
@@ -81,8 +134,6 @@ class VagaController extends Controller
         $empresa->cnpj = $request->cnpj;
 
 
-        // tentei inventar coisa nova pra fazer isso, ou com updateOrCreate, mas nao rolou, entao eu so fiz. :( 
-        // $updated = Empresa::where(['nome' => $empresa->nome, 'nome_fantasia' => $empresa->nome_fantasia, 'cnpj' => $empresa->cnpj, 'slug' => $empresa->slug]);
         $updated = $empresa->save();
 
         if ($updated) {
@@ -105,7 +156,7 @@ class VagaController extends Controller
             if ($empresaVagas) {
                 foreach ($empresaVagas as $vaga) {
 
-                    $beneficios = VagaEmprego::find($vaga->id)->beneficios();
+                    // $beneficios = VagaEmprego::find($vaga->id)->beneficios();
 
                     $beneficios = VagaEmpregoBeneficio::getAllByVagaId($vaga->id);
 
@@ -127,6 +178,53 @@ class VagaController extends Controller
             return 'empresa deletada';
         } else {
             return 'algum erro';
+        }
+    }
+
+
+    public function deletarVaga(Request $request)
+    {
+        $request->id = 10;
+
+        $vaga = VagaEmprego::find($request->id);
+
+
+        $deleted = $vaga->delete();
+
+        dd($deleted);
+    }
+
+    public function editarVaga(Request $request)
+    {
+        $request->id = 19;
+        $request->titulo  = "Titulo alterado via form 2";
+        $request->sub_titulo = "Behemoth";
+        $request->descricao = "Black Metal";
+        $request->remuneracao = 6800;
+        $request->aceita_remoto = true;
+        $request->status = false;
+        $request->ativa = true;
+
+        $vaga = VagaEmprego::find($request->id);
+
+        if ($vaga) {
+            $vaga->titulo = $request->titulo;
+            $vaga->sub_titulo = $request->sub_titulo;
+            $vaga->descricao = $request->descricao;
+            $vaga->remuneracao = $request->remuneracao;
+            $vaga->aceita_remoto = $request->aceita_remoto;
+            $vaga->status = $request->status;
+            $vaga->ativa = $request->ativa;
+        } else {
+            return 'elemento nao encontrado';
+        }
+
+        $updated = $vaga->update();
+
+        if ($updated) {
+            return 'updated';
+        } else {
+            return 'not updated';
         }
     }
 }
