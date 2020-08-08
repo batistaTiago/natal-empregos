@@ -24,6 +24,8 @@ class VagaEmpregoSeeder extends Seeder
                 'regime_contratacao_id' => 1, // CLT
                 'remuneracao' => 16200,
                 'aceita_remoto' => true,
+                'requisitos' => 'Formacao em TI, Ciencia da Computacao ou Analise de sistemas',
+                'contato' => 'gccoding@garantismo.com.br',
                 'status' => true,
             ],
             [
@@ -34,6 +36,8 @@ class VagaEmpregoSeeder extends Seeder
                 'descricao' => 'AdobeXD e photoshop, se souber html e css eh um bonus',
                 'regime_contratacao_id' => 2, // CLT
                 'remuneracao' => 420,
+                'requisitos' => 'Ensino Medio Completo, Nocoes de Design, TADS ou TI',
+                'contato' => 'gccoding2@garantismo.com.br',
                 'aceita_remoto' => true,
                 'status' => true,
 
@@ -46,6 +50,8 @@ class VagaEmpregoSeeder extends Seeder
                 'descricao' => 'Tia da limpeza',
                 'regime_contratacao_id' => 1, // CLT
                 'remuneracao' => 4.20,
+                'requisitos' => 'Ensino fundamental completo.',
+                'contato' => 'gccoding3@garantismo.com.br',
                 'aceita_remoto' => false,
                 'status' => true,
 
@@ -55,20 +61,28 @@ class VagaEmpregoSeeder extends Seeder
         $d = [];
 
         for ($i = 0; $i < 100; $i++) {
+
+            if ($i % 2 == 0) {
+                $requisito = 'Medio';
+            } else {
+                $requisito = 'Fundamental';
+            }
             $d[] = [
-                'id' => $i+1,
+                'id' => $i + 1,
                 'empresa_id' => 1,
                 'titulo' => 'Analista de Banco de Dados 54sa4 1r56sa46r 5s4a56r4as6 5r4as896r4as48',
                 'sub_titulo' => 'Garantistas CORPs',
                 'descricao' => 'Analise de banco de dados e infraestrutura',
                 'regime_contratacao_id' => 1, // CLT
                 'remuneracao' => 16200,
+                'requisitos' => 'Ensino  ' . $requisito . '  completo.',
+                'contato' => 'gccoding3@garantismo.com.br',
                 'aceita_remoto' => true,
                 'status' => true,
             ];
         }
 
-        
+
         try {
 
             DB::beginTransaction();

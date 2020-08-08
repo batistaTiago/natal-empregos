@@ -18,6 +18,9 @@
         <p class="titulocabeca">
             {{ $vaga->titulo }}
         </p>
+        <p>
+            {{$vaga->sub_titulo}}
+        </p>
         <p >
             {{ $vaga->empresa->cidade ?? 'Não informado' }}{{ $vaga->empresa->remoto ?? ' - Aceita remoto ' }}
         </p>
@@ -31,11 +34,7 @@
 
     <h3>Requisitos</h3>
     <div class="divsessao">
-        <ul>
-            @foreach ($vaga->requisitos as $requisito)
-              <li>{{ $requisito->nome }}</li>
-            @endforeach
-        </ul>
+       {{$vaga->requisitos}}
     </div>
     
     <h3>Benefícios</h3>

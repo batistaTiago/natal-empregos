@@ -28,6 +28,8 @@ class VagaController extends Controller
         $novaVaga->regime_contratacao_id = $request->regime_contratacao_id;
         $novaVaga->remuneracao = 1200;
         $novaVaga->aceita_remoto = true;
+        $novaVaga->requisitos = 'isso e aquilo e aquilo la';
+        $novaVaga->contato = 'contato@gmail.com';
         $novaVaga->ativa = true;
         $novaVaga->regime_contratacao_id = 2;
 
@@ -59,7 +61,14 @@ class VagaController extends Controller
     {
         return redirect(route('cliente.vagas.listar'));
     }
+
     public function editarVagaEmprego(Request $request)
+    {
+        $request->id = 2;
+        $vaga =  VagaEmprego::with('beneficios')->find($request->id);
+        dd($vaga);
+    }
+    public function editarVagaEmpregoSubmit(Request $request)
     {
         $vaga = VagaEmprego::find($request->id);
         $params = Request::all();
@@ -74,7 +83,9 @@ class VagaController extends Controller
     public function vagaDetalhes(Request $request)
     {
         $id = $request->id;
-        $vaga = VagaEmprego::find($id);
+        $vaga = VagaEmprego::with('regime', 'beneficios', 'empresa')->find($id);
+
+        // dd($vaga);
         return view('detalhesvaga', compact('vaga'));
     }
 
@@ -133,7 +144,7 @@ class VagaController extends Controller
         $empresa->slug = $slug;
         $empresa->cnpj = $request->cnpj;
 
-
+        dd($empresa);
         $updated = $empresa->save();
 
         if ($updated) {
@@ -200,6 +211,8 @@ class VagaController extends Controller
         $request->titulo  = "Titulo alterado via form 2";
         $request->sub_titulo = "Behemoth";
         $request->descricao = "Black Metal";
+        $request->requisitos = "Ensino superior completo";
+        $request->contato = "contato@gmail.com";
         $request->remuneracao = 6800;
         $request->aceita_remoto = true;
         $request->status = false;
@@ -213,18 +226,24 @@ class VagaController extends Controller
             $vaga->descricao = $request->descricao;
             $vaga->remuneracao = $request->remuneracao;
             $vaga->aceita_remoto = $request->aceita_remoto;
+            $vaga->requisitos  = $request->requisitos;
+            $vaga->contato = $request->contato;
             $vaga->status = $request->status;
             $vaga->ativa = $request->ativa;
         } else {
-            return 'elemento nao encontrado';
+            flash('Vaga nao encontrada')->error();
+            return redirect()->back();
         }
 
         $updated = $vaga->update();
 
         if ($updated) {
-            return 'updated';
+            flash('Vaga editada com sucesso')->success();
+            return redirect()->back();
         } else {
-            return 'not updated';
+
+            flash('Vaga nao editada, algum erro ocorreu.')->error();
+            return redirect()->back();
         }
     }
 }

@@ -26,6 +26,7 @@ class VagaController extends Controller
     // Salva nova vaga via formulario
     public function cadastroNovaVaga(Request $request)
     {
+
         $novaVaga = new  VagaEmprego();
         $slugname = \slugify($request->empresa);
 
@@ -36,11 +37,13 @@ class VagaController extends Controller
         // $novaVaga->local = $request->local;
         $novaVaga->descricao = $request->descricao;
         $novaVaga->regime_contratacao_id = $request->regime_contratacao_id;
-        $novaVaga->remuneracao = 1200;
-        $novaVaga->aceita_remoto = true;
-        $novaVaga->ativa = true;
+        $novaVaga->remuneracao = $request->remuneracao;
+        $novaVaga->aceita_remoto = $request->aceita_remoto;
+        $novaVaga->ativa = $request->ativa;
+        $novaVaga->requisitos = $request->requisitos;
+        $novaVaga->contato = $request->contato;
         $novaVaga->regime_contratacao_id = 2;
-
+        $novaVaga->empresa_id = $empresa->id;
 
         if ($novaVaga->save()) {
 
