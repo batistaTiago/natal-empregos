@@ -12,6 +12,7 @@ class VagaController extends Controller
     public function listarVagas(Request $request)
     {
         $vagas = VagaEmprego::with(['regime', 'empresa'])->get();
+        dd($vaga);
         // return response()->json($vagas);
         return view('admin.listar_vagas', compact('vagas'));
     }

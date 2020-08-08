@@ -17,7 +17,24 @@ Route::get('/listavagas', function () {
 });
 
 Route::get('/servicos', function () {
-    return view('servico.servicos');
+    $servicos = [
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+    ];
+
+    return view('servico.servicos', compact('servicos'));
 });
 
 Route::get('/servicopost', function () {
