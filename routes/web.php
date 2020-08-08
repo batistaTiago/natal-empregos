@@ -51,18 +51,28 @@ Route::prefix('admin')->group(function () {
 
 
     Route::prefix('vagas')->group(function () {
-        Route::get('/', 'Admin\Vagacontroller@listarVagas')->name('admin.vagas.listar');
+        Route::get('/', 'Admin\VagaController@listarVagas')->name('admin.vagas.listar');
+        Route::post('/cadastrar', 'Admin\VagaController@cadastroNovaVaga')->name('cadastrar.vaga');
+        Route::put('/editar', 'Admin\VagaController@editarVagaEmprego')->name('editar.vaga');
+        Route::delete('/deletar', 'Admin\VagaController@deletarVaga')->name('deletar.vaga');
     });
 
     Route::prefix('empresa')->group(function () {
-        Route::get('cadastrar', 'EmpresaController@cadastrarEmpresaForm')->name('admin.empresa.cadastrar.form');
-        Route::post('cadastrar', 'EmpresaController@cadastrarEmpresaCallback')->name('admin.empresa.cadastrar.callback');
+        Route::get('cadastrar', 'Admin\EmpresaController@cadastrarEmpresaForm')->name('admin.empresa.cadastrar.form');
+        Route::post('cadastrar', 'Admin\EmpresaController@cadastrarEmpresaCallback')->name('admin.empresa.cadastrar.callback');
+        Route::get('/editar', 'Admin\EmpresaController@editarEmpresa')->name('editar.empresa');
+
+        Route::get('/editar', 'Admin\EmpresaController@editarEmpresaSubmit')->name('editar.empresa.submit');
+        Route::get('/deletar', 'Admin\EmpresaController@deletarEmpresa')->name('deletar.empresa');
         Route::prefix('{slug}')->group(function () {
             Route::prefix('vagas')->group(function () {
                 Route::post('editar', 'VagaController@editarVagaEmprego')->name('admin.vaga.editar');
                 Route::post('/cadastrar', 'VagaController@cadastroNovaVaga')->name('nova.vaga.emprego.callback');
             });
         });
+    });
+    Route::prefix('contato')->group(function () {
+        Route::delete('/deletar', 'Admin\VagaController@deletarContato')->name('deletar.contato');
     });
     Route::prefix('vagas')->group(function () {
         Route::get('/cadastrar', 'VagaController@cadastroForm')->name('admin.empresa.detalhes.vagas.cadastrar.form');
@@ -84,14 +94,3 @@ Route::post('/contato', 'ContatoController@contatoSubmit')->name('contato.form.c
 Route::get('/detalhes', function () {
     return view("detalhesvaga");
 });
-
-
-Route::get('/teste/{id}', 'VagaController@deletarContato')->name('deletar.contato');
-Route::get('/teste2', 'VagaController@editarEmpresa')->name('editar.empresa');
-Route::get('/teste6', 'VagaController@editarEmpresaSubmit')->name('editar.empresa.submit');
-
-Route::get('/teste3', 'VagaController@deletarEmpresa')->name('deletar.empresa');
-
-Route::get('/teste4', 'VagaController@deletarVaga')->name('deletar.vaga');
-
-Route::get('/teste5', 'VagaController@editarVagaEmprego')->name('editar.vaga');
