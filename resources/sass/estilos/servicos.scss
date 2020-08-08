@@ -9,9 +9,15 @@
     height: auto;
 }
 
+.divservico {
+    & h1 {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+}
+
 .imagemcartaoservico {
     width: 100%;
-    height: 20vh;
+
     border: 1px solid $laranja;
 }
 
@@ -23,6 +29,11 @@
 }
 
 .cartaoservico {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
     margin: 0 auto;
     text-align: center;
     border: 1px solid rgba(13, 13, 153, 0.274);
@@ -43,17 +54,19 @@
 }
 
 .rodapeservico {
-    border-top: 2px solid rgba(0, 0, 0, 0.37);
+    border-top: 2px solid transparentize($color: $azul, $amount: 0.7);
     padding: 0.5em;
     display: flex;
     justify-content: space-between;
-    align-content: flex-end;
+    align-items: center;
     font-size: 0.8em;
 }
 
 @media screen and (max-width: 490px) {
     .cartaoservico {
+        height: 325px;
         padding: 0.5em;
+        width: 80%;
     }
     .heroiservico {
         height: 20vh;
@@ -63,11 +76,9 @@
     }
 
     .imagemcartaoservico {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100px;
-        height: 100px;
+        margin: 0 auto;
+        height: 125px;
+        width: 80%;
     }
 }
 
@@ -76,21 +87,29 @@
         height: 25vh;
     }
 
+    .cartaoservico {
+        height: 350px;
+        padding: 0.5em;
+        width: 80%;
+    }
+
     .imagemheroiservico {
         height: 25vh;
     }
     .imagemcartaoservico {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 150px;
-        height: 150px;
+        margin: 0 auto;
+        height: 125px;
+        width: 80%;
     }
 }
 
 @media screen and (min-width: 762px) and (max-width: 1150px) {
     .imagemcartaoservico {
-        width: 150px;
+        margin: 0 auto;
         height: 125px;
+        width: 80%;
+    }
+    .cartaoservico {
+        height: 350px;
     }
 }
