@@ -19,14 +19,14 @@
                 <tbody>
                     @foreach($vagas as $vaga)
                         <tr>
-                            <td>Analista de sistemas</td>
-                            <td>Garantistas Coding LTDA</td>
+                            <td>{{$vaga->id}}</td>
+                            <td>{{$vaga->empresa->nome_fantasia}}</td>
                             <td>
                                 <div class="spread-flex-container px-3">
-                                    <a href="/">
+                                    <a href="{{route('deletar.vaga')}}">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <a href="/" class="text-danger">
+                                <a href="/teste4?id={{$vaga->id}}" class="text-danger">
                                         <i class="fas fa-trash-alt"></i>
                                     </a>
                                 </div>

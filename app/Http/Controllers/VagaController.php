@@ -184,14 +184,13 @@ class VagaController extends Controller
 
     public function deletarVaga(Request $request)
     {
-        $request->id = 10;
-
         $vaga = VagaEmprego::find($request->id);
 
 
         $deleted = $vaga->delete();
-
-        dd($deleted);
+        if($deleted){
+            return redirect()->back();
+        }
     }
 
     public function editarVaga(Request $request)

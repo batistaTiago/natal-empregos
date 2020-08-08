@@ -11,7 +11,7 @@
 |
  */
 
-Route::get('/', 'VagaController@landing');
+Route::get('/', 'VagaController@landing')->name('home');
 Route::get('/listavagas', function () {
     return view('listavagas');
 });
