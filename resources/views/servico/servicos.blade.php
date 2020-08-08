@@ -12,7 +12,7 @@
 </div>
 
 <div class="container divservico">    
-    <h1 class="p-">Nossos serviços</h1>
+    <h1 class="p-2">Nossos serviços</h1>
     <div class="row">
         <div class="col-lg-3 col-md-10 my-3 cartaoservico">
             <img class='imagemcartaoservico mt-4' src="{{asset("img/imagemservico1.jpg")}}">

@@ -34,12 +34,12 @@
                 <li class="nav-item mx-4">
                   <a class="nav-link" href="/servicos">Serviços</a>
                 </li>
-                <li class="nav-item mx-4">
-                  <a class="botaocontato nav-link" href="">Contato</a>
+               <li class="nav-item mx-4">
+                    <a class="nav-link" href="/sobrenos">Sobre nós</a>
                 </li>
                 <li class="nav-item mx-4">
-                    <a class="nav-link" href="/sobrenos">Sobre nós</a>
-                  </li>
+                <a class="botaocontato nav-link" href="">Contato</a>
+                </li>
               </ul>
             </div>
           </nav>

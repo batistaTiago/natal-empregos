@@ -1,12 +1,12 @@
 .heroisobre {
     height: 30vh;
     overflow: hidden;
-    background-color: rgb(0, 0, 0);
+    border-bottom: 2px solid transparentize($color: $azul-escuro, $amount: 0.5);
 }
 
 .imagemheroisobre {
     width: 100%;
-    height: auto;
+    height: 30vh;
 }
 
 .imagemcartaosobre {
