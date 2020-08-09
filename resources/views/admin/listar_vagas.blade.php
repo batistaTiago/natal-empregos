@@ -19,7 +19,7 @@
                 <tbody>
                     @foreach($vagas as $vaga)
                         <tr>
-                            <td>{{$vaga->id}}</td>
+                            <td>{{$vaga->titulo}}</td>
                             <td>{{$vaga->empresa->nome_fantasia}}</td>
                             <td>
                                 <div class="spread-flex-container px-3">

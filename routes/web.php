@@ -54,7 +54,7 @@ Route::prefix('admin')->group(function () {
     });
 
     Route::prefix('empresas')->group(function () {
-        Route::get('/', 'Admin\Vagacontroller@listarEmpresas')->name('admin.empresa.listar');
+        Route::get('/', 'Admin\VagaController@listarEmpresas')->name('admin.empresa.listar');
         Route::get('cadastrar', 'EmpresaController@cadastrarEmpresaForm')->name('admin.empresa.cadastrar.form');
         Route::post('cadastrar', 'EmpresaController@cadastrarEmpresaCallback')->name('admin.empresa.cadastrar.callback');
         Route::prefix('{slug}')->group(function () {

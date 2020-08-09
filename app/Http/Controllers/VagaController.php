@@ -106,6 +106,13 @@ class VagaController extends Controller
         }
     }
 
+    public function listarEmpresas(Request $request)
+    {
+        $empresas = Empresa::all();
+        // return response()->json($vagas);
+        return view('admin.listar_empresas', compact('empresas'));
+    }
+
     public function editarEmpresa(Request $request)
     {
 

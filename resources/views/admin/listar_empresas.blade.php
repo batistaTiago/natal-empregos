@@ -17,10 +17,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($vagas as $vaga)
+                    @foreach($empresas as $empresa)
                         <tr>
-                            <td>Analista de sistemas</td>
-                            <td>1620.42000-01</td>
+                            <td>{{$empresa->nome}}</td>
+                            <td>{{$empresa->cnpj}}</td>
                             <td>
                                 <div class="spread-flex-container px-3">
                                     <a href="/">

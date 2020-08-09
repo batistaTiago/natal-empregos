@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use App\Models\Empresa;
 use App\Models\VagaEmprego;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -9,18 +9,20 @@ use App\Http\Controllers\Controller;
 
 class VagaController extends Controller
 {
-    public function listarEmpresas(Request $request)
-    {
-        $vagas = VagaEmprego::with(['regime', 'empresa'])->get();
-        // return response()->json($vagas);
-        return view('admin.listar_empresas', compact('vagas'));
-    }
+    
 
     public function listarVagas(Request $request)
     {
         $vagas = VagaEmprego::with(['regime', 'empresa'])->get();
         // return response()->json($vagas);
         return view('admin.listar_vagas', compact('vagas'));
+    }
+
+    public function listarEmpresas(Request $request)
+    {
+        $empresas = Empresa::all();
+        // return response()->json($vagas);
+        return view('admin.listar_empresas', compact('empresas'));
     }
 
     public function cadastroForm(Request $request)

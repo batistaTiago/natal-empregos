@@ -20,9 +20,6 @@
         <img src="{{ asset('img/contatos.svg') }}" alt="">
         <div class="texto">Empresas</div>
     </a>
-    <a href="{{ route('admin.vagas.listar') }}" class="botoes">
-        <img src="{{ asset('img/blog.svg') }}" alt="">
-        <div class="texto">Serviços</div>
-    </a>
+
     <div class="linha2"></div>
 </div>
