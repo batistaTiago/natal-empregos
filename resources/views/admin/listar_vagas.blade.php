@@ -17,6 +17,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <div> @include('flash::message') </div>
                     @foreach($vagas as $vaga)
                         <tr>
                             <td>{{$vaga->titulo}}</td>
@@ -26,9 +27,15 @@
                                     <a href="{{route('deletar.vaga')}}">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                <a href="/teste4?id={{$vaga->id}}" class="text-danger">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </a>
+                                    <div class="text-danger">
+                                        <form action="{{route('teste')}}" method="GET">
+                                            <div>
+                                                <input name="id" type="hidden" class="form-control" id="id" value="{{$vaga->id}}">
+                                            </div>
+                                            <button type="submit"><i class="fas fa-trash-alt"></i></button>
+                                        </form>
+                                        
+                                    </div>
                                 </div>
                             </td>
                         </tr>

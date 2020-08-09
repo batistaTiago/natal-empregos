@@ -7,9 +7,10 @@
 @endsection
 
 @section('content')
+<div> @include('flash::message') </div>
 <div class="containercadastro">
     <h1>Cadastro</h1>
-        <form action="{{route('')}}" method="POST">
+        <form action="{{route('cadastro.vaga')}}" method="POST">
         @csrf
         <div class="divinputs">
             <label for="empresa">Nome da empresa</label>

@@ -16,7 +16,7 @@ Route::get('/listavagas', function () {
     return view('listavagas');
 });
 
-Route::get('/servicos', function() {
+Route::get('/servicos', function () {
     $servicos = [
         '',
         '',
@@ -37,32 +37,43 @@ Route::get('/servicos', function() {
     return view('servico.servicos', compact('servicos'));
 });
 
-Route::get('/servicopost', function() {
+Route::get('/servicopost', function () {
     return view('servico.detalheservico');
 });
 
-Route::get('/sobrenos', function() {
+Route::get('/sobrenos', function () {
     return view('sobrenos');
 });
+
 
 Route::prefix('admin')->group(function () {
 
     Route::get('dashboard', 'AdminController@dashboard')->name('admin.dashboard');
 
     Route::prefix('vagas')->group(function () {
-        Route::get('/', 'Admin\Vagacontroller@listarVagas')->name('admin.vagas.listar');
+        Route::get('/', 'Admin\VagaController@listarVagas')->name('admin.vagas.listar');
+        Route::post('/cadastrar', 'Admin\VagaController@cadastroNovaVaga')->name('cadastrar.vaga');
+        Route::put('/editar', 'Admin\VagaController@editarVagaEmprego')->name('editar.vaga');
+        Route::post('/deletar', 'Admin\VagaController@deletarVaga')->name('deletar.vaga');
     });
 
-    Route::prefix('empresas')->group(function () {
-        Route::get('/', 'Admin\VagaController@listarEmpresas')->name('admin.empresa.listar');
-        Route::get('cadastrar', 'EmpresaController@cadastrarEmpresaForm')->name('admin.empresa.cadastrar.form');
-        Route::post('cadastrar', 'EmpresaController@cadastrarEmpresaCallback')->name('admin.empresa.cadastrar.callback');
+    Route::prefix('empresa')->group(function () {
+        Route::get('/', 'Admin\EmpresaController@listarEmpresas')->name('admin.empresa.listar');
+        Route::get('cadastrar', 'Admin\EmpresaController@cadastrarEmpresaForm')->name('admin.empresa.cadastrar.form');
+        Route::post('cadastrar', 'Admin\EmpresaController@cadastrarEmpresaCallback')->name('admin.empresa.cadastrar.callback');
+        Route::get('/editar', 'Admin\EmpresaController@editarEmpresa')->name('editar.empresa');
+
+        Route::get('/editar', 'Admin\EmpresaController@editarEmpresaSubmit')->name('editar.empresa.submit');
+        Route::get('/deletar', 'Admin\EmpresaController@deletarEmpresa')->name('deletar.empresa');
         Route::prefix('{slug}')->group(function () {
             Route::prefix('vagas')->group(function () {
                 Route::post('editar', 'VagaController@editarVagaEmprego')->name('admin.vaga.editar');
                 Route::post('/cadastrar', 'VagaController@cadastroNovaVaga')->name('nova.vaga.emprego.callback');
             });
         });
+    });
+    Route::prefix('contato')->group(function () {
+        Route::delete('/deletar', 'Admin\VagaController@deletarContato')->name('deletar.contato');
     });
     Route::prefix('vagas')->group(function () {
         Route::get('/cadastrar', 'VagaController@cadastroForm')->name('admin.empresa.detalhes.vagas.cadastrar.form');
@@ -86,10 +97,6 @@ Route::get('/detalhes', function () {
 });
 
 
-Route::get('/teste/{id}', 'VagaController@deletarContato')->name('deletar.contato');
-Route::get('/teste2', 'VagaController@editarEmpresa')->name('editar.empresa');
-Route::get('/teste3', 'VagaController@deletarEmpresa')->name('deletar.empresa');
+Route::get('/teste', 'Admin\VagaController@deletarVaga')->name('teste');
+Route::post('/cadastrovaga', 'Admin\VagaController@cadastroForm')->name('cadastro.vaga');
 
-Route::get('/teste4', 'VagaController@deletarVaga')->name('deletar.vaga');
-
-Route::get('/teste5', 'VagaController@editarVaga')->name('editar.vaga');
