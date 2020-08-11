@@ -65,7 +65,7 @@
 		.spread-flex-container {
 			width: 100%;
 			display: flex;
-			justify-content: space-between;
+			justify-content: space-evenly;
 			align-items: center;
 		}
 	</style>
@@ -74,23 +74,21 @@
 	
 </head>
 <body>
-	<div class="container">
-		<div class="d-flex justify-content-between">
-			<nav class="gcc-navbar">
-				@include('componentes.admin.sidebar')
-			</nav>
+	<div>
+		<nav class="gcc-navbar" style="height: 100vh;">
+			@include('componentes.admin.sidebar')
+		</nav>
 
-			<div class="d-flex flex-column justify-content-between flex-grow" id="vertical-container">
-				<header class="header">
-					@include('componentes.admin.header')
-				</header>
-				<section class="section flex-grow">
-					@yield('content')
-				</section>
-				<footer class="footer">
-					@include('componentes.admin.footer')
-				</footer>
-			</div>
+		<div class="d-flex flex-column justify-content-between flex-grow" id="vertical-container">
+			<header class="header">
+				@include('componentes.admin.header')
+			</header>
+			<section class="section flex-grow">
+				@yield('content')
+			</section>
+			<footer class="footer">
+				@include('componentes.admin.footer')
+			</footer>
 		</div>
 	</div>
 

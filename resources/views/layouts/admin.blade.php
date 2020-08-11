@@ -24,11 +24,10 @@
 			<div class="linha"></div>
 			<div class='userContent'>
 				<div>
-					<img class="foto" src="{{ asset('img/Toalhinha.jpg') }}" alt="">
+					<img class="foto" src="{{ asset('img/admin.jpg') }}" alt="">
 				</div>
 				<div class="nomeEmail">
-					<div class="nome">Emanuele</div>
-					<div class="email">emanuele@email.com</div>
+					<div class="nome">Admin</div>
 				</div>
 			</div>
 

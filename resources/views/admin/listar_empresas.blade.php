@@ -24,20 +24,20 @@
                             <td>{{$empresa->cnpj}}</td>
                             <td>
                                 <div class="spread-flex-container px-3">
-                                    <a href="/">
-                                        <i class="fas fa-edit"></i>
-                                    </a>
+                                    <div>
+                                        <a href="/">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                    </div>
                                     <div>
                                         <form action="{{route('deletar.empresa')}}" method="DELETE">
                                             @csrf
                                             <input type="hidden" name="id" value="{{$empresa->id}}">
-                                            <button type="submit">
-                                            <i class="fas fa-trash-alt"></i>
+                                            <button type="submit" class='outline-danger'>
+                                                <i class="fas fa-trash-alt"></i>
                                             </button>
                                         </form>
                                     </div>
-                                    <a href="" class="text-danger">
-                                    </a>
                                 </div>
                             </td>
                         </tr>
