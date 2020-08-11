@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Beneficio;
 use App\Models\RegimeContratacao;
+use App\Models\VagaEmpregoBeneficio;
 
 class VagaController extends Controller
 {
@@ -53,12 +54,30 @@ class VagaController extends Controller
         $novaVaga->empresa_id = $empresa->id;
 
 
-
+        $data = $request->all();
+        if (isset($data['beneficios'])) {
+            $beneficiosInput = $data['beneficios'];
+        }
 
         if ($novaVaga->save()) {
 
-            flash('Vaga de trabalho registrata com sucesso')->success();
-            return redirect()->back();
+            $beneficios = Beneficio::all();
+            foreach ($beneficios as $beneficio) {
+                if (array_key_exists($beneficio->name, $beneficiosInput)) {
+                    $vagaBeneficio = new VagaEmpregoBeneficio();
+                    if ($beneficiosInput[$beneficio->id] == "on") {
+                        $vagaBeneficio->vaga_emprego_id = $novaVaga->id;
+                        $vagaBeneficio->beneficio_id = $beneficio->id;
+                        if ($vagaBeneficio->save()) {
+                            flash('Vaga de trabalho registrata com sucesso')->success();
+                            return redirect()->back();
+                        } else {
+                            flash('Erro em adicionar beneficios, por favor cheque o formulario e tente novamente')->error();
+                            return redirect()->back();
+                        }
+                    }
+                }
+            }
         } else {
             flash('Registro nao concluido , tente novamente.')->error();
             return redirect()->back();
