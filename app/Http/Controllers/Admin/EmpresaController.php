@@ -38,9 +38,7 @@ class EmpresaController extends Controller
 
                 return response('success', 200);
             } else {
-                /* retorna view */
                 DB::commit();
-
                 flash("Empresa $request->nome cadastrada com sucesso!")->success();
                 return redirect()->back();
             }
@@ -49,7 +47,7 @@ class EmpresaController extends Controller
             if ($request->header('accept') == 'application/json') {
                 return response('success', 400);
             } else {
-                flash("Empresa $request->nome cadastrada com sucesso!")->error();
+                flash("Empresa $request->nome nao pode ser cadastrada")->error();
                 return redirect()->back();
             }
         }
