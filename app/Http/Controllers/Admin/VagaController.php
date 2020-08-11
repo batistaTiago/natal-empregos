@@ -102,7 +102,9 @@ class VagaController extends Controller
     public function editarVagaEmprego(Request $request)
     {
         $id = $request->id;
-        $vaga = VagaEmprego::find($id);
+        DB::beginTransaction();
+
+        $vaga = VagaEmprego::with('beneficios')->find($id);
 
         if ($vaga) {
             $vaga->titulo = $request->titulo;
@@ -112,7 +114,6 @@ class VagaController extends Controller
             $vaga->aceita_remoto = $request->aceita_remoto;
             $vaga->requisitos  = $request->requisitos;
             $vaga->contato = $request->contato;
-            $vaga->status = $request->status;
             $vaga->ativa = $request->ativa;
             $vaga->regime_contratacao_id = $request->regime_contratacao_id;
             $vaga->empresa_id = $request->empresa_id;
@@ -124,10 +125,11 @@ class VagaController extends Controller
         $updated = $vaga->update();
 
         if ($updated) {
+            DB::commit();
             flash('Vaga editada com sucesso')->success();
             return redirect()->back();
         } else {
-
+            DB::rollBack();
             flash('Vaga nao editada, algum erro ocorreu.')->error();
             return redirect()->back();
         }
