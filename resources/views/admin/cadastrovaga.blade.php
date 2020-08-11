@@ -35,8 +35,8 @@
             <label for="subtitulo">Subtítulo</label>
             <input class="inputs" type="text" name="subtitulo" id="subtitulo" placeholder="Ex: Descrição resumida da vaga">
 
-            <label for="subtitulo">Requisitos</label>
-            <input class="inputs" type="text" name="subtitulo" id="subtitulo" placeholder="Ex: Descrição resumida da vaga">
+            <label for="requisitos">Requisitos</label>
+            <input class="inputs" type="text" name="requisitos" id="requisitos" placeholder="Ex: 2º Grau completo">
 
 
             <label for="descricao">Descrição da vaga</label>
@@ -57,7 +57,7 @@
 
             <label for="contrato">Tipo de contratação</label>
             <div class="remoto">
-                <select class="inputs" name="contrato" id="contrato" placeholder="Selecione um">
+                <select class="inputs" name="regime_contratacao_id" id="contrato" placeholder="Selecione um">
                     <option value="">Selecione um</option>
                     @foreach ($regime as $reg)
                       <option value="{{$reg->id}}">{{$reg->nome}}</option>
