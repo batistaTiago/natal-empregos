@@ -9,6 +9,7 @@ use App\Models\VagaEmpregoBeneficio;
 use App\Http\Controllers\Controller;
 use App\Models\RegimeContratacao;
 use Illuminate\Auth\Access\Response;
+use DB;
 
 class EmpresaController extends Controller
 {
@@ -17,7 +18,7 @@ class EmpresaController extends Controller
     {
         $empresas = Empresa::all();
         // return response()->json($vagas);
-        return view('admin.listar_empresas', compact('empresas', 'regime'));
+        return view('admin.listar_empresas', compact('empresas'));
     }
 
     public function cadastrarEmpresaCallback(Request $request)
