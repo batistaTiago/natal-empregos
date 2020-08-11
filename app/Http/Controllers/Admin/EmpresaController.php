@@ -7,6 +7,7 @@ use App\Models\Empresa;
 use Illuminate\Http\Request;
 use App\Models\VagaEmpregoBeneficio;
 use App\Http\Controllers\Controller;
+use App\Models\RegimeContratacao;
 
 class EmpresaController extends Controller
 {
@@ -14,6 +15,7 @@ class EmpresaController extends Controller
     public function listarEmpresas(Request $request)
     {
         $empresas = Empresa::all();
+        $regime = RegimeContratacao::all();
         // return response()->json($vagas);
         return view('admin.listar_empresas', compact('empresas'));
     }
@@ -117,7 +119,7 @@ class EmpresaController extends Controller
         $deleted = $empresa->delete();
 
         if ($deleted) {
-            flash('Empresa deletada com sucesso.')->succes();
+            flash('Empresa deletada com sucesso.')->success();
             return redirect()->back();
         } else {
             flash('Ocorreu algum erro, tente novamente.')->error();
