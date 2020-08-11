@@ -99,4 +99,3 @@ Route::get('/detalhes', function () {
 
 Route::get('/teste', 'Admin\VagaController@deletarVaga')->name('teste');
 Route::post('/cadastrovaga', 'Admin\VagaController@cadastroForm')->name('cadastro.vaga');
-

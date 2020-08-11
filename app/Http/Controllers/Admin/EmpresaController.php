@@ -15,7 +15,6 @@ class EmpresaController extends Controller
     public function listarEmpresas(Request $request)
     {
         $empresas = Empresa::all();
-        $regime = RegimeContratacao::all();
         // return response()->json($vagas);
         return view('admin.listar_empresas', compact('empresas', 'regime'));
     }
