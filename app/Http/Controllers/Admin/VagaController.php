@@ -7,6 +7,7 @@ use App\Models\VagaEmprego;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Beneficio;
 use App\Models\RegimeContratacao;
 
 class VagaController extends Controller
@@ -25,7 +26,8 @@ class VagaController extends Controller
     {
         $empresas = Empresa::all();
         $regime = RegimeContratacao::all();
-        return view('admin.cadastrovaga', compact('empresas', 'regime'));
+        $beneficios = Beneficio::all();
+        return view('admin.cadastrovaga', compact('empresas', 'regime', 'beneficios'));
     }
 
 
@@ -49,6 +51,9 @@ class VagaController extends Controller
         $novaVaga->contato = $request->contato;
         $novaVaga->regime_contratacao_id = $request->regime_contratacao_id;
         $novaVaga->empresa_id = $empresa->id;
+
+
+
 
         if ($novaVaga->save()) {
 
