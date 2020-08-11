@@ -87,15 +87,26 @@ class VagaController extends Controller
             }
             $vagaEmpregoBeneficioSucess =  VagaEmpregoBeneficio::insert($beneficiosVaga);
 
-            if (!$vagaEmpregoBeneficioSucess && $novaVagaSuccess && $empresaSuccess) {
+            if ($vagaEmpregoBeneficioSucess && $novaVagaSuccess && $empresaSuccess) {
                 DB::commit();
                 flash('Vaga de trabalho registrata com sucesso')->success();
                 return redirect()->back();
             }
         }
         DB::rollBack();
-        flash('Registro nao concluido , tente novamente.')->error();
-        return redirect()->back();
+
+        if (!$vagaEmpregoBeneficioSucess) {
+            flash('Registro nao concluido , erro ao informar beneficios.')->error();
+            return redirect()->back();
+        }
+        if (!$novaVagaSuccess) {
+            flash('Registro nao concluido , erro nos dados da nova vaga')->error();
+            return redirect()->back();
+        }
+        if (!$empresaSuccess) {
+            flash('Registro nao concluido , erro nos dados da empresa')->error();
+            return redirect()->back();
+        }
     }
 
 
