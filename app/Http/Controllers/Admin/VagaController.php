@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Models\Empresa;
 use App\Models\VagaEmprego;
 use Carbon\Carbon;
@@ -9,7 +10,7 @@ use App\Http\Controllers\Controller;
 
 class VagaController extends Controller
 {
-    
+
 
     public function listarVagas(Request $request)
     {
@@ -22,7 +23,7 @@ class VagaController extends Controller
     public function cadastroForm(Request $request)
     {
         $empresas = Empresa::all();
-        return view('cadastrovaga', compact('empresas'));
+        return view('admin.cadastrovaga', compact('empresas'));
     }
 
 
