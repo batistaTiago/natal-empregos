@@ -25,7 +25,6 @@ class CreateVagaEmpregosTable extends Migration
             $table->boolean('aceita_remoto')->nullable();
             $table->string('requisitos')->nullable();
             $table->string('contato')->nullable();
-            $table->boolean('status');
 
 
             /* controle */

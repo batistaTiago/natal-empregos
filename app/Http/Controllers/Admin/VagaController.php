@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Beneficio;
 use App\Models\RegimeContratacao;
 use App\Models\VagaEmpregoBeneficio;
+use DB;
 
 class VagaController extends Controller
 {
@@ -37,6 +38,7 @@ class VagaController extends Controller
     {
         $novaVaga = new  VagaEmprego();
         $slugname = \slugify($request->empresa);
+        DB::beginTransaction();
 
         $empresa = Empresa::procurarPorNomeOuCriar($request->empresa);
 
@@ -46,43 +48,54 @@ class VagaController extends Controller
         $novaVaga->regime_contratacao_id = $request->regime_contratacao_id;
         $novaVaga->remuneracao = $request->remuneracao;
         $novaVaga->aceita_remoto = $request->aceita_remoto;
-        $novaVaga->ativa = $request->ativa;
         $novaVaga->requisitos = $request->requisitos;
         $novaVaga->contato = $request->contato;
         $novaVaga->regime_contratacao_id = $request->regime_contratacao_id;
 
-
-        $novaVaga->empresa_id = $empresa->id;
-
+        if (isset($empresa)) {
+            $novaVaga->empresa_id = $empresa->id;
+            $empresaSuccess = true;
+        }
 
         $data = $request->all();
+        if ($data['ativa'] == 'on') {
+            $data['ativa'] = 1;
+            $novaVaga->ativa = $data['ativa'];
+        }
         if (isset($data['beneficios'])) {
             $beneficiosInput = $data['beneficios'];
         }
-        dd($beneficiosInput);
-        if ($novaVaga->save()) {
+
+        $novaVagaSuccess  = $novaVaga->save();
+
+        if ($novaVagaSuccess) {
 
             $beneficios = Beneficio::all();
+            $beneficiosVaga = [];
             foreach ($beneficios as $beneficio) {
-                if (array_key_exists($beneficio->name, $beneficiosInput)) {
-                    $vagaBeneficio = new VagaEmpregoBeneficio();
+                if (array_key_exists($beneficio->id, $beneficiosInput)) {
                     if ($beneficiosInput[$beneficio->id] == "on") {
+
+                        $vagaBeneficio = new VagaEmpregoBeneficio();
+
                         $vagaBeneficio->vaga_emprego_id = $novaVaga->id;
                         $vagaBeneficio->beneficio_id = $beneficio->id;
-                        if ($vagaBeneficio->save()) {
-                            flash('Vaga de trabalho registrata com sucesso')->success();
-                            return redirect()->back();
-                        } else {
-                            flash('Erro em adicionar beneficios, por favor cheque o formulario e tente novamente')->error();
-                            return redirect()->back();
-                        }
+
+                        $beneficiosVaga[] =  $vagaBeneficio->toArray();
                     }
                 }
             }
-        } else {
-            flash('Registro nao concluido , tente novamente.')->error();
-            return redirect()->back();
+            $vagaEmpregoBeneficioSucess =  VagaEmpregoBeneficio::insert($beneficiosVaga);
+
+            if (!$vagaEmpregoBeneficioSucess && $novaVagaSuccess && $empresaSuccess) {
+                DB::commit();
+                flash('Vaga de trabalho registrata com sucesso')->success();
+                return redirect()->back();
+            }
         }
+        DB::rollBack();
+        flash('Registro nao concluido , tente novamente.')->error();
+        return redirect()->back();
     }
 
 

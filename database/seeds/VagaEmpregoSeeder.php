@@ -39,7 +39,6 @@ class VagaEmpregoSeeder extends Seeder
                 'requisitos' => 'Ensino Medio Completo, Nocoes de Design, TADS ou TI',
                 'contato' => 'gccoding2@garantismo.com.br',
                 'aceita_remoto' => true,
-                'status' => true,
 
             ],
             [
@@ -53,7 +52,6 @@ class VagaEmpregoSeeder extends Seeder
                 'requisitos' => 'Ensino fundamental completo.',
                 'contato' => 'gccoding3@garantismo.com.br',
                 'aceita_remoto' => false,
-                'status' => true,
 
             ]
         ];
@@ -78,7 +76,6 @@ class VagaEmpregoSeeder extends Seeder
                 'requisitos' => 'Ensino  ' . $requisito . '  completo.',
                 'contato' => 'gccoding3@garantismo.com.br',
                 'aceita_remoto' => true,
-                'status' => true,
             ];
         }
 
