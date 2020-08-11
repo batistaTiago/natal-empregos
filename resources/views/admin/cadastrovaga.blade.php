@@ -9,7 +9,7 @@
 @section('content')
 <div> @include('flash::message') </div>
 <div class="containercadastro">
-    <h1>Cadastro</h1>
+    <h1>Cadastro Vaga</h1>
         <form action="{{route('cadastrar.vaga')}}" method="POST">
         @csrf
         <div class="divinputs">
@@ -42,7 +42,10 @@
             <textarea type="textarea" name="descricao" id="descricao" rows="10" placeholder=" Descrição detalhada da sua vaga"></textarea>
 
             <label for="contrato">Benefícios</label>
-            <input class="inputs" type="text" name="beneficios" id="beneficios" placeholder="Ex: vale transporte, vale alimentação...">
+            @foreach ($beneficios as $beneficio)
+              <label for="">{{$beneficio->nome}}</label>
+              <input type="checkbox" name="beneficio" id="" value="{{$beneficio->id}}">
+            @endforeach
 
             <label for="titulo">Remuneração</label>
             <input class="inputs" type="number" name="remunerecao" id="remunerecao" placeholder="Remuneração (somente números)">
