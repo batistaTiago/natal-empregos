@@ -22,8 +22,14 @@ class Empresa extends Model
         try {
             $empresa = Empresa::where('slug', $slug)->first();
             if (!isset($empresa)) {
-                $empresa = new Empresa(compact('nome', 'slug'));
-                $empresa->save();
+                $empresa = new Empresa();
+                $empresa->nome = $nome;
+                $empresa->slug = $slug;
+
+                $success = $empresa->save();
+                if ($success) {
+                    return $empresa;
+                }
             }
         } catch (\Throwable $e) {
             $empresa = null;
