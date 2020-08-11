@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\VagaEmpregoBeneficio;
 use App\Http\Controllers\Controller;
 use App\Models\RegimeContratacao;
+use Illuminate\Auth\Access\Response;
 
 class EmpresaController extends Controller
 {
@@ -22,6 +23,7 @@ class EmpresaController extends Controller
     public function cadastrarEmpresaCallback(Request $request)
     {
 
+        DB::beginTransaction();
 
         $novaEmpresa = new Empresa();
         $novaEmpresa->nome = $request->nome;
@@ -33,23 +35,22 @@ class EmpresaController extends Controller
 
         if ($success) {
             if ($request->header('accept') == 'application/json') {
-                /* retorna json */
 
-                return 'json';
+                return response('success', 200);
             } else {
                 /* retorna view */
+                DB::commit();
+
                 flash("Empresa $request->nome cadastrada com sucesso!")->success();
                 return redirect()->back();
             }
         } else {
+            DB::rollBack();
             if ($request->header('accept') == 'application/json') {
-                /* retorna json */
-
-                return 'json de erro';
+                return response('success', 400);
             } else {
-                /* retorna view de erro (callback de erro do form de submit empresa)*/
-
-                return 'view de erro';
+                flash("Empresa $request->nome cadastrada com sucesso!")->error();
+                return redirect()->back();
             }
         }
     }
