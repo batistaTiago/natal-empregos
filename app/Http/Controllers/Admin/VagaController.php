@@ -34,7 +34,7 @@ class VagaController extends Controller
     // Salva nova vaga via formulario
     public function cadastroNovaVaga(Request $request)
     {
-
+        dd($request);
         $novaVaga = new  VagaEmprego();
         $slugname = \slugify($request->empresa);
 

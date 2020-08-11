@@ -35,8 +35,9 @@
             <label for="subtitulo">Subtítulo</label>
             <input class="inputs" type="text" name="subtitulo" id="subtitulo" placeholder="Ex: Descrição resumida da vaga">
 
-            <label for="local">Local de trabalho</label>
-            <input class="inputs" type="text" name="local" id="local" placeholder="Local de trabalho">
+            <label for="subtitulo">Requisitos</label>
+            <input class="inputs" type="text" name="subtitulo" id="subtitulo" placeholder="Ex: Descrição resumida da vaga">
+
 
             <label for="descricao">Descrição da vaga</label>
             <textarea type="textarea" name="descricao" id="descricao" rows="10" placeholder=" Descrição detalhada da sua vaga"></textarea>
@@ -44,11 +45,15 @@
             <label for="contrato">Benefícios</label>
             @foreach ($beneficios as $beneficio)
               <label for="">{{$beneficio->nome}}</label>
-              <input type="checkbox" name="beneficio" id="" value="{{$beneficio->id}}">
+              <input type="checkbox" name="beneficios[{{$beneficio->id}}]">
             @endforeach
 
             <label for="titulo">Remuneração</label>
             <input class="inputs" type="number" name="remunerecao" id="remunerecao" placeholder="Remuneração (somente números)">
+
+            <label for="contrato">Contato</label>
+            <input class="inputs" type="text" name="contato" id="contato" placeholder="Ex: Dados para contato">
+
 
             <label for="contrato">Tipo de contratação</label>
             <div class="remoto">
@@ -60,6 +65,8 @@
                 </select>
                 <input type="checkbox" id="remoto" name="remoto" style="margin-left: 1em">
                 <label for="remoto">Remoto?</label>
+                <input type="checkbox" id="ativa" name="ativa" style="margin-left: 1em">
+                <label for="ativa">Ativa?</label>
             </div>
             <div style="display: flex; justify-content: center; margin-top: 2vh">
                 <button type="submit" class="botao">
