@@ -1,4 +1,4 @@
-@extends('layouts.area_do_cliente')
+@extends('layouts.admin_new')
 
 @section('css')
 <style>
@@ -10,7 +10,7 @@
 <div> @include('flash::message') </div>
 <div class="containercadastro">
     <h1>Cadastro</h1>
-        <form action="{{route('cadastro.vaga')}}" method="POST">
+        <form action="{{route('cadastrar.vaga')}}" method="POST">
         @csrf
         <div class="divinputs">
             <label for="empresa">Nome da empresa</label>
@@ -18,8 +18,8 @@
             <label for="remoto" class="text-muted">Você deseja que o nome da empresa apareça no anúncio da vaga?</label>
 
 
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                Launch demo modal
+            <button type="button" class="botao btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                Adicionar uma nova empresa
             </button>
 
             <div class="mostraranuncio">
@@ -34,9 +34,6 @@
 
             <label for="subtitulo">Subtítulo</label>
             <input class="inputs" type="text" name="subtitulo" id="subtitulo" placeholder="Ex: Descrição resumida da vaga">
-
-            <label for="titulo">Foto</label>
-            <input class="inputs" type="file" name="foto" id="foto">
 
             <label for="local">Local de trabalho</label>
             <input class="inputs" type="text" name="local" id="local" placeholder="Local de trabalho">
@@ -54,11 +51,9 @@
             <div class="remoto">
                 <select class="inputs" name="contrato" id="contrato" placeholder="Selecione um">
                     <option value="">Selecione um</option>
-                    <option value="1">CLT</option>
-                    <option value="2">PJ</option>
-                    @for($i = 0; $i < 100; $i++)
-                    <option value="" id="option-teste-{{ $i }}">TESTE</option>
-                    @endfor
+                    @foreach ($regime as $reg)
+                      <option value="{{$reg->id}}">{{$reg->nome}}</option>
+                    @endforeach
                 </select>
                 <input type="checkbox" id="remoto" name="remoto" style="margin-left: 1em">
                 <label for="remoto">Remoto?</label>

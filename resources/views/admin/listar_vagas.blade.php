@@ -7,6 +7,7 @@
 @section('content')
     <div class='container'> 
         <h2 class="text-center my-5">Lista de vagas</h2>
+        <a  class="botao my-2" href="{{route('cadastrar.vaga.form')}}">Cadastrar Vaga</a>
         <div class="table-responsive">
             <table class="table table-hover table-bordered">
                 <thead>
