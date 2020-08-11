@@ -17,7 +17,7 @@ class EmpresaController extends Controller
     {
         $empresas = Empresa::all();
         // return response()->json($vagas);
-        return view('admin.listar_empresas', compact('empresas', 'regime'));
+        return view('admin.listar_empresas', compact('empresas'));
     }
 
     public function cadastrarEmpresaCallback(Request $request)
