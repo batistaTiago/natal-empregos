@@ -25,7 +25,7 @@ class VagaController extends Controller
     {
         $empresas = Empresa::all();
         $regime = RegimeContratacao::all();
-        return view('admin.listar_empresas', compact('empresas', 'regime'));
+        return view('admin.cadastrovaga', compact('empresas', 'regime'));
     }
 
 
