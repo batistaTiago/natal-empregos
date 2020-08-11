@@ -9,6 +9,7 @@ use App\Models\VagaEmpregoBeneficio;
 use App\Http\Controllers\Controller;
 use App\Models\RegimeContratacao;
 use Illuminate\Auth\Access\Response;
+use DB;
 
 class EmpresaController extends Controller
 {
