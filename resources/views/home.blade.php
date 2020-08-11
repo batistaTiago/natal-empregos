@@ -28,14 +28,11 @@
               <p>{{ $idx + 1 }}</p>
               --}}
               <p class="titulo text-center">{{ $vaga->titulo }}</p>
-              <div class="empresacidade">
+            <div class="empresacidade">
                 <p>
                   {{ $vaga->empresa->nome ?? 'Não informado' }}
                 </p>
-                <p>
-                  {{ $vaga->empresa->cidade ?? 'Não informado' }}
-                </p>
-              </div>
+            </div>
               <p class="fontezinha">Regime de contratação: {{ $vaga->regime->nome }}</p>
               <p class="fontezinha">Salário: <strong>{{ isset($vaga->remuneracao) ? realMoney($vaga->remuneracao) : 'Não informado' }}</strong></p>
             </a>

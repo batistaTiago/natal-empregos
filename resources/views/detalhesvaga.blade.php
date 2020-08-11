@@ -19,7 +19,7 @@
             {{ $vaga->titulo }}
         </p>
         <p >
-            {{ $vaga->empresa->cidade ?? 'Não informado' }}{{ $vaga->empresa->remoto ?? ' - Aceita remoto ' }}
+            {{ $vaga->empresa->remoto ?? ' - Aceita remoto ' }}
         </p>
     </div>
     <div class="detalhado">
