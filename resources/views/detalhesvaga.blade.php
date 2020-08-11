@@ -14,15 +14,18 @@
     <div class="infoenvio">
         <p>Enviado em {{ $vaga->created_at }}</p>
     </div>
+    <p class="titulocabeca py-2">
+        {{ $vaga->titulo }}
+    </p>
     <div class="cabecalho">
-        <p class="titulocabeca">
-            {{ $vaga->titulo }}
+        <p class='px-2'>
+            {{$vaga->sub_titulo}}
         </p>
-        <p >
-            {{ $vaga->empresa->remoto ?? ' - Aceita remoto ' }}
+        <p class='px-2 text-muted'>
+            {{ $vaga->empresa->remoto ?? 'Aceita remoto ' }}
         </p>
     </div>
-    <div class="detalhado">
+    <div class="detalhado my-2">
         <p>{{ $vaga->descricao }}</p>        
     </div>
     <div class="divsalario">
@@ -31,11 +34,7 @@
 
     <h3>Requisitos</h3>
     <div class="divsessao">
-        <ul>
-            @foreach ($vaga->requisitos as $requisito)
-              <li>{{ $requisito->nome }}</li>
-            @endforeach
-        </ul>
+       {{$vaga->requisitos}}
     </div>
     
     <h3>Benefícios</h3>

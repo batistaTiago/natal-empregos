@@ -14,49 +14,84 @@
 
     @yield('css')
 
-    <title>Bem vindo a Natal Empregos</title>
+	<style>
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		html, body {
+			height: 100%;
+		}
+
+		nav.gcc-navbar {
+			display: flex;
+			position: fixed;
+			top: 0;
+			left: 0;
+			bottom: 0;
+		}
+
+		header.header {
+			background: #0b4683;
+			width: 100%;
+			height: 60px;
+		}
+
+		footer.footer {
+			/* background-color: yellow;
+			height: 420px; */
+		}
+
+		section.section {
+		}
+
+		.border-teste {
+			border: 3px solid pink;
+		}
+
+		.flex-grow {
+			flex-grow: 1;
+		}
+
+
+		#vertical-container {
+			margin-left: 256px;
+		}
+
+
+		.spread-flex-container {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	</style>
+
+    <title>NE - Administração</title>
 	
 </head>
 <body>
-	<div class='header'>
-		<div class="sideMenu">
-			<div class="administracao">Administração</div>
-			<div class="linha"></div>
-			<div class='userContent'>
-				<div>
-					<img class="foto" src="{{ asset('img/Toalhinha.jpg') }}" alt="">
-				</div>
-				<div class="nomeEmail">
-					<div class="nome">Emanuele</div>
-					<div class="email">emanuele@email.com</div>
-				</div>
-			</div>
+	<div class="container">
+		<div class="d-flex justify-content-between">
+			<nav class="gcc-navbar">
+				@include('componentes.admin.sidebar')
+			</nav>
 
-			<div class="botoes">
-				<img src="{{ asset('img/vagas.svg') }}" alt="">
-				<div class="texto">Vagas</div>
-			</div>
-
-			<div class="botoes">
-				<img src="{{ asset('img/contatos.svg') }}" alt="">
-				<div class="texto">Empresas</div>
-			</div>
-			<div class="botoes">
-				<img src="{{ asset('img/blog.svg') }}" alt="">
-				<div class="texto">Serviços</div>
-			</div>
-			<div class="linha2"></div>
-			<div class="botoes">
-				<img src="{{ asset('img/sair.svg') }}" alt="">
-				<div class="texto">Sair</div>
+			<div class="d-flex flex-column justify-content-between flex-grow" id="vertical-container">
+				<header class="header">
+					@include('componentes.admin.header')
+				</header>
+				<section class="section flex-grow">
+					@yield('content')
+				</section>
+				<footer class="footer">
+					@include('componentes.admin.footer')
+				</footer>
 			</div>
 		</div>
-		<div class="topo"></div>
-	</div>
-	<div class="wrapper">
-		<div class="container">
-		@yield('content')
-	</div>
 	</div>
 
 

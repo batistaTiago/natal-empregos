@@ -10,9 +10,8 @@
 }
 
 .divdetalhes {
-    margin-top: 20px;
     padding: 2em;
-    background-color: #fff;
+    background-color: rgb(245, 244, 244);
     color: black;
 }
 
@@ -23,6 +22,10 @@
 .divsalario {
     display: flex;
     padding: 0.5em;
+}
+
+.cabecalho {
+    display: flex;
 }
 
 .divsessao {

@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin_new')
 
 
 @section('css')
@@ -7,7 +7,7 @@
 	#chartdiv {
       position: absolute;
       top: 150px;
-      left: 350px;
+      left: 490px;
       width: 50%;
       height: 50%;
 	}
@@ -20,7 +20,7 @@
 <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
 <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
 <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
-
+<h2 class="text-center p-5">Você recebeu: 420 visitas no ultimo mês</h1>
 <div id="chartdiv"></div>
 
 
