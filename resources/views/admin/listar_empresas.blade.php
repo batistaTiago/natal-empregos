@@ -7,8 +7,8 @@
 @section('content')
     <div class='container'> 
         <h2 class="text-center my-5">Lista de Empresas</h2>
-        <button class="botao my-2">Adicionar Empresa</button>
-        <div class="table-responsive">
+        <a  class="botaoadmin my-2" href="">Cadastrar Vaga</a>
+        <div class="table-responsive mt-3">
             <table class="table table-hover table-bordered">
                 <thead>
                     <tr>
