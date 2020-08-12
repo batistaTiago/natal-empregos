@@ -19,9 +19,10 @@ class VagaController extends Controller
     public function listarVagas(Request $request)
     {
         $vagas = VagaEmprego::with(['regime', 'empresa'])->get();
-
+        $beneficios = Beneficio::all();
+        $regime = RegimeContratacao::all();
         // return response()->json($vagas);
-        return view('admin.listar_vagas', compact('vagas'));
+        return view('admin.listar_vagas', compact('vagas', 'beneficios', 'regime'));
     }
 
     public function cadastroForm(Request $request)

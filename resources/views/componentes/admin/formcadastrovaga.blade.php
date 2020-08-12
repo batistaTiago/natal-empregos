@@ -42,7 +42,7 @@
 
         <label for="contrato">Benefícios</label>
         <div class="row justify-content-around d-flex">
-          @foreach ($vaga->beneficios as $beneficio)
+          @foreach ($beneficios as $beneficio)
             <div class="align-items-center">
             <input id="beneficio_{{$beneficio->id}}" type="checkbox" name="beneficios[{{$beneficio->id}}]">
               <label for="beneficio_{{$beneficio->id}}">{{$beneficio->nome}}</label>
@@ -63,8 +63,8 @@
         <div class="remoto">
             <select class="inputs form-control" name="regime_contratacao_id" id="contrato" placeholder="Selecione um">
                 <option value="">Selecione um</option>
-                @foreach ($vaga->regime as $reg)
-                  <option value="{{$reg}}">{{$reg}}</option>
+                @foreach ($regime as $reg)
+                  <option value="{{$reg->id}}">{{$reg->nome}}</option>
                 @endforeach
             </select>
             <input type="checkbox" id="remoto" name="remoto" style="margin-left: 1em">
