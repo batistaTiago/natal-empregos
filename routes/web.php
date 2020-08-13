@@ -54,6 +54,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/', 'Admin\VagaController@listarVagas')->name('admin.vagas.listar');
         Route::post('/cadastrar', 'Admin\VagaController@cadastroNovaVaga')->name('cadastrar.vaga');
         Route::get('/cadastrar-form', 'Admin\VagaController@cadastroForm')->name('cadastrar.vaga.form');
+        Route::get('/editar/{id}', 'Admin\VagaController@editarForm')->name('editar.vaga.form');
         Route::put('/editar', 'Admin\VagaController@editarVagaEmprego')->name('editar.vaga');
         Route::post('/deletar', 'Admin\VagaController@deletarVaga')->name('deletar.vaga');
     });
@@ -86,7 +87,7 @@ Route::prefix('vagas')->group(function () {
     Route::get('/{id}', 'VagaController@vagaDetalhes')->name('cliente.vaga.detalhe');
 });
 
-Route::get('/contato', 'ContatoController@contatoForm')->name('cliente.contato.form');
+Route::post('/contato', 'ContatoController@contatoCallback')->name('cliente.contato.form');
 
 Route::post('gcc-tracker', 'TrackerController@registrarAcesso')->name('gcc-tracker');
 

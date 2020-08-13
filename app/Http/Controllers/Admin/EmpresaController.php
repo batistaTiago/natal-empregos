@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\VagaEmpregoBeneficio;
 use App\Http\Controllers\Controller;
 use App\Models\RegimeContratacao;
+use App\Models\VagaEmprego;
 use Illuminate\Auth\Access\Response;
 use DB;
 
@@ -97,31 +98,64 @@ class EmpresaController extends Controller
 
         $id = $request->id;
         $empresa = Empresa::find($id);
-
+        DB::beginTransaction();
+        // $allBeneficios = [];
+        // $allVagas = [];
+        // dd($empresa->id);
+        $allBeneficiosDeleted = false;
+        $allVagasDeleted = false;
         if ($empresa) {
             $empresaVagas = Empresa::getAllVagasByEmpresaId($id);
-            if ($empresaVagas) {
+            if ($empresaVagas && $empresaVagas->count() > 0) {
                 foreach ($empresaVagas as $vaga) {
-                    $beneficios = VagaEmpregoBeneficio::getAllByVagaId($vaga->id);
-
-                    foreach ($beneficios as $beneficio) {
-                        $beneficio->delete();
+                    $allBeneficios = VagaEmpregoBeneficio::getAllByVagaId($vaga->id);
+                    foreach ($allBeneficios as $beneficio) {
+                        $deleted = $beneficio->delete();
+                        if ($deleted) {
+                            $allBeneficiosDeleted = true;
+                        } else {
+                            $allBeneficiosDeleted = false;
+                        }
                     }
 
-                    $vaga->delete();
+                    $vagaDeleted = $vaga->delete();
+                    if ($vagaDeleted) {
+                        $allVagasDeleted = true;
+                    } else {
+                        $allVagasDeleted = false;
+                    }
+                }
+            } else {
+                $allVagasDeleted = true;
+                $allBeneficiosDeleted = true;
+            }
+
+
+            $empresaDeleted = $empresa->delete();
+
+            if ($allVagasDeleted && $allBeneficiosDeleted && $empresaDeleted) {
+                DB::commit();
+
+                flash('Empresa deletada com sucesso')->success();
+                return redirect()->back();
+            } else {
+                DB::rollBack();
+
+                if (!$allVagasDeleted) {
+                    flash('Erro ao deletar alguma vaga desta empresa, tente novamente')->error();
+                    return redirect()->back();
+                }
+                if (!$allBeneficiosDeleted) {
+                    flash('Erro ao deletar algum beneficio  relacionado a uma vaga desta empresa, tente novamente')->error();
+                    return redirect()->back();
+                }
+                if (!$empresaDeleted) {
+                    flash('Erro ao deletar empresa, tente novamente')->error();
+                    return redirect()->back();
                 }
             }
         } else {
             flash('Empresa nao encontrada, tente novamente.')->error();
-            return redirect()->back();
-        }
-        $deleted = $empresa->delete();
-
-        if ($deleted) {
-            flash('Empresa deletada com sucesso.')->success();
-            return redirect()->back();
-        } else {
-            flash('Ocorreu algum erro, tente novamente.')->error();
             return redirect()->back();
         }
     }

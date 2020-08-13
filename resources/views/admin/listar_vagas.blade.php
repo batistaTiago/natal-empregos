@@ -17,8 +17,9 @@
                         <th scope="col">Ações</th>
                     </tr>
                 </thead>
+                <div> @include('flash::message') </div>
+
                 <tbody>
-                    <div> @include('flash::message') </div>
                     @foreach($vagas as $vaga)
                         <tr>
                             <td>{{$vaga->titulo}}</td>

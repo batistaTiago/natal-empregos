@@ -17,6 +17,8 @@
                         <th scope="col">Ações</th>
                     </tr>
                 </thead>
+                <div> @include('flash::message') </div>
+
                 <tbody>
                     @foreach($empresas as $empresa)
                         <tr>
