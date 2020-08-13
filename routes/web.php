@@ -54,6 +54,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/', 'Admin\VagaController@listarVagas')->name('admin.vagas.listar');
         Route::post('/cadastrar', 'Admin\VagaController@cadastroNovaVaga')->name('cadastrar.vaga');
         Route::get('/cadastrar-form', 'Admin\VagaController@cadastroForm')->name('cadastrar.vaga.form');
+        Route::get('/editar/{id}', 'Admin\VagaController@editarForm')->name('editar.vaga.form');
         Route::put('/editar', 'Admin\VagaController@editarVagaEmprego')->name('editar.vaga');
         Route::post('/deletar', 'Admin\VagaController@deletarVaga')->name('deletar.vaga');
     });

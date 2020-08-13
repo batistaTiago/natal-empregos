@@ -109,7 +109,11 @@ class VagaController extends Controller
         }
     }
 
-
+    public function editarForm(Request $request, $id)
+    {
+        $vaga = VagaEmprego::with('regime', 'empresa', 'beneficio')->find($id);
+        return redirect('formeditarvaga', compact('vaga'));
+    }
     public function editarVagaEmprego(Request $request)
     {
         $id = $request->id;
