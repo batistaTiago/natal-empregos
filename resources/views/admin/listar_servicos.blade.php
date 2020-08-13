@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+
     <div class='container'> 
         <h2 class="text-center my-5">Lista de Serviços</h2>
         <div class="table-responsive">
@@ -16,6 +17,7 @@
                         <th scope="col">Ações</th>
                     </tr>
                 </thead>
+                <div> @include('flash::message') </div>
                 <tbody>
                     @foreach($vagas as $vaga)
                         <tr>
