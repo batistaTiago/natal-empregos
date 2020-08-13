@@ -109,12 +109,38 @@ class VagaController extends Controller
         }
     }
 
-    public function editarForm(Request $request, $id)
+
+    public function editarVagaEmpregoForm(Request $request)
     {
-        $vaga = VagaEmprego::with('regime', 'empresa', 'beneficio')->find($id);
-        return redirect('formeditarvaga', compact('vaga'));
+        $vaga = VagaEmprego::with('regime', 'empresa', 'beneficios')->find($request->id);
+        $beneficios = Beneficio::all();
+        $regime = RegimeContratacao::all();
+
+        // // return response()->json([
+        // //     'vaga_beneficios_id' => $vaga->beneficios->pluck('id'),
+        // //     'all_beneficios_id' => $beneficios->pluck('id')
+        // // ]);
+
+        // $all = collect([1, 2, 3]);
+        // $meus = collect([1, 3]);
+
+        // $checked = $all->map(function ($beneficio) use ($meus) {
+        //     return $meus->contains($beneficio);
+        // });
+
+        // dd($checked);
+
+        // foreach ($meus as $meu_beneficio) {
+        //     $tenho = $all->contains($meu_beneficio);
+        // }
+
+        // dd($all->contains(10));
+
+        return view('admin.editarvaga', compact('vaga', 'beneficios', 'regime'));
     }
-    public function editarVagaEmprego(Request $request)
+
+
+    public function editarVagaEmpregoCallback(Request $request)
     {
         $id = $request->id;
         DB::beginTransaction();
@@ -123,7 +149,7 @@ class VagaController extends Controller
 
         if ($vaga) {
             $vaga->titulo = $request->titulo;
-            $vaga->sub_titulo = $request->sub_titulo;
+            $vaga->sub_titulo = $request->subtitulo;
             $vaga->descricao = $request->descricao;
             $vaga->remuneracao = $request->remuneracao;
             $vaga->aceita_remoto = $request->aceita_remoto;
