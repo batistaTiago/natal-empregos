@@ -52,17 +52,18 @@ Route::prefix('admin')->group(function () {
 
     Route::prefix('vagas')->group(function () {
         Route::get('/', 'Admin\VagaController@listarVagas')->name('admin.vagas.listar');
-        Route::post('/cadastrar', 'Admin\VagaController@cadastroNovaVaga')->name('cadastrar.vaga');
-        Route::get('/cadastrar-form', 'Admin\VagaController@cadastroForm')->name('cadastrar.vaga.form');
-        Route::put('/editar', 'Admin\VagaController@editarVagaEmprego')->name('editar.vaga');
-        Route::post('/deletar', 'Admin\VagaController@deletarVaga')->name('deletar.vaga');
+        Route::post('/cadastrar', 'Admin\VagaController@cadastroNovaVaga')->name('admin.vaga.cadastrar.form');
+        Route::get('/cadastrar-form', 'Admin\VagaController@cadastroForm')->name('admin.vaga.cadastrar.callback');
+        Route::get('/editar/{id}', 'Admin\VagaController@editarVagaEmpregoForm')->name('admin.vaga.editar.form');
+        Route::put('/editar', 'Admin\VagaController@editarVagaEmpregoCallback')->name('admin.vaga.editar.callback');
+        Route::post('/deletar', 'Admin\VagaController@deletarVaga')->name('admin.vaga.deletar.callback');
     });
 
-    Route::prefix('empresa')->group(function () {
+    Route::prefix('empresas')->group(function () {
         Route::get('/', 'Admin\EmpresaController@listarEmpresas')->name('admin.empresa.listar');
         Route::get('cadastrar', 'Admin\EmpresaController@cadastrarEmpresaForm')->name('admin.empresa.cadastrar.form');
         Route::post('cadastrar', 'Admin\EmpresaController@cadastrarEmpresaCallback')->name('admin.empresa.cadastrar.callback');
-        Route::get('/editar', 'Admin\EmpresaController@editarEmpresa')->name('editar.empresa');
+        Route::get('/editar', 'Admin\EmpresaController@editarEmpresa')->name('admin.empresa.editar.form');
 
         Route::get('/editar', 'Admin\EmpresaController@editarEmpresaSubmit')->name('editar.empresa.submit');
         Route::get('/deletar', 'Admin\EmpresaController@deletarEmpresa')->name('deletar.empresa');
@@ -86,7 +87,7 @@ Route::prefix('vagas')->group(function () {
     Route::get('/{id}', 'VagaController@vagaDetalhes')->name('cliente.vaga.detalhe');
 });
 
-Route::get('/contato', 'ContatoController@contatoForm')->name('cliente.contato.form');
+Route::post('/contato', 'ContatoController@contatoCallback')->name('cliente.contato.form');
 
 Route::post('gcc-tracker', 'TrackerController@registrarAcesso')->name('gcc-tracker');
 

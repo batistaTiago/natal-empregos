@@ -18,7 +18,7 @@ class VagaController extends Controller
     // enviar todas as vagas para a requisicao
     public function listarVagas(Request $request)
     {
-        $vagas = VagaEmprego::with('regime')->paginate(12);
+        $vagas = VagaEmprego::with('regime')->where('ativa', true)->paginate(12);
         return view('home', compact('vagas'));
     }
 

@@ -22,8 +22,10 @@ class ContatoController extends Controller
         $contato->email = $request->email;
         $contato->lido = false;
         $contato->mensagem = $request->mensagem;
-        if ($contato->save()) {
 
+
+        $success = $contato->save();
+        if ($success) {
             flash('Contato submetido corretamente');
             return redirect()->back();
         } else {

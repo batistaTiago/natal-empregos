@@ -7,7 +7,7 @@
 @section('content')
     <div class='container'> 
         <h2 class="text-center my-5">Lista de vagas</h2>
-        <a  class="botaoadmin my-2" href="{{route('cadastrar.vaga.form')}}">Cadastrar Vaga</a>
+        <a  class="botaoadmin my-2" href="{{route('admin.vaga.cadastrar.form')}}">Cadastrar Vaga</a>
         <div class="table-responsive mt-3">
             <table class="table table-hover table-bordered">
                 <thead>
@@ -17,20 +17,21 @@
                         <th scope="col">Ações</th>
                     </tr>
                 </thead>
+                <div> @include('flash::message') </div>
+
                 <tbody>
-                    <div> @include('flash::message') </div>
                     @foreach($vagas as $vaga)
                         <tr>
                             <td>{{$vaga->titulo}}</td>
                             <td>{{$vaga->empresa->nome_fantasia}}</td>
                             <td>
                                 <div class="spread-flex-container px-3">
-                                    <a  data-toggle="modal" data-target="#exampleModalCenter">
+                                    <a href="{{ route('admin.vaga.editar.form', [ $vaga->id ]) }}">
                                         <i class="fas fa-edit"></i>
                                     </a>
 
                                     <div class="text-danger">
-                                        <form action="{{route('deletar.vaga')}}" method="POST">
+                                        <form action="{{route('admin.vaga.deletar.callback')}}" method="POST">
                                             @csrf
                                             <div>
                                                 <input name="id" type="hidden" class="form-control" id="id" value="{{$vaga->id}}">
@@ -103,35 +104,8 @@
             $('#contrato').append(option);
             
         });
+
+        $('')
     });
 </script>
-@endsection
-@section('modal')
-
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-
-
-        @include('componentes.admin.formcadastrovaga')
-
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-        <label for="novaEmpresaFormSubmitButton" type="submit" class="btn btn-primary">Enviar</label>
-      </div>
-    </div>
-  </div>
-</div>
-
 @endsection
