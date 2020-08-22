@@ -1,5 +1,5 @@
 
-<form action="{{route('admin.vaga.empresa.callback')}}" method="POST">
+<form action="{{route('admin.empresa.cadastrar.callback')}}" method="POST">
     @method('PUT')
     @csrf
     <div class="containercadastro">
@@ -11,8 +11,11 @@
         <label for="cnpj">CNPJ da empresa</label>
         <input class="inputs form-control" type="number" name="cnpj" placeholder="CNPJ" value={{ $empresa->cnpj }}>
             
-        <div style="display: flex; justify-content: center; margin-top: 2vh">
-            <button type="submit" class="botao ml-2 d-none" id="novaEmpresaFormSubmitButton">
+        <div style="display: flex; justify-content: center; margin-top: 2vh;">
+            <a  class="botao my-2" href="{{route('admin.empresa.listar')}}">
+              Voltar  
+            </a>
+            <button type="submit" class="botao ml-3">
                 Enviar
             </button>
         </div>
