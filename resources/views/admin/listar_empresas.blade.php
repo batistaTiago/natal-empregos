@@ -27,7 +27,7 @@
                             <td>
                                 <div class="spread-flex-container px-3">
                                     <div>
-                                        <a href="/">
+                                        <a href="{{ route('admin.empresa.editar.form', [ $empresa->id ]) }}">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                     </div>
