@@ -60,6 +60,10 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        
+        
+        /* Garantistas Middleware abaixo */
+        'admin-access-control' => \App\Http\Middleware\NEAdminGuardMiddleware::class,
     ];
 
     /**
