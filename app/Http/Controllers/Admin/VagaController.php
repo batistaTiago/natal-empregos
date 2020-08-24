@@ -143,11 +143,41 @@ class VagaController extends Controller
     public function editarVagaEmpregoCallback(Request $request)
     {
         $id = $request->id;
-        DB::beginTransaction();
+
+        $data = $request->all();
+        // DB::beginTransaction();
 
         $vaga = VagaEmprego::with('beneficios')->find($id);
 
+        $vagaBeneficios = VagaEmpregoBeneficio::where('vaga_emprego_id', $id)->get();
+        $data = $request->all();
+      
+        $data['beneficios'] = collect($data['beneficios']);
+ 
+        $keys = [];
+
+        foreach ($data['beneficios'] as $key=>$beneficio) {
+            $keys[] = $key;
+            if ($beneficio  === "on") {
+                $data['beneficios'][$key] = true;
+            }
+        }
+        if(isset($request->remoto)){
+            $request->remoto = true;
+        }else{
+            $request->remoto = false;
+        }
+    
+        if (isset($request['ativa'])) {
+            $request->ativa = true;
+        } else {
+            $request->ativa = false;
+        }
+
+
+
         if ($vaga) {
+            
             $vaga->titulo = $request->titulo;
             $vaga->sub_titulo = $request->subtitulo;
             $vaga->descricao = $request->descricao;
@@ -158,14 +188,28 @@ class VagaController extends Controller
             $vaga->ativa = $request->ativa;
             $vaga->regime_contratacao_id = $request->regime_contratacao_id;
             $vaga->empresa_id = $request->empresa_id;
+
+
+            $deletedBeneficioList = [];
+            foreach($vaga->beneficios as $key=>$beneficio){
+
+                $deletedBeneficioList[] = $beneficio;
+            }
+
+            $deletedBeneficios = VagaEmpregoBeneficio::clearVagaBeneficios($vaga->id);
+    
+            
+            $createdNewBeneficios = VagaEmpregoBeneficio::createNewVagaBeneficios($vaga->id, $keys);
+            
+
         } else {
             flash('Vaga nao encontrada')->error();
             return redirect()->back();
         }
 
         $updated = $vaga->update();
-
-        if ($updated) {
+        
+        if ($updated && $deletedBeneficios && $createdNewBeneficios) {
             DB::commit();
             flash('Vaga editada com sucesso')->success();
             return redirect()->back();
@@ -181,15 +225,19 @@ class VagaController extends Controller
 
         $id = $request->id;
         $vaga = VagaEmprego::find($id);
-
-
-        $deleted = $vaga->delete();
-        if ($deleted) {
-            flash('Vaga deletada com sucesso')->success();
-            return redirect()->back();
-        } else {
-            flash('Vaga deletada com sucesso')->success();
+        if($vaga){
+            $deleted = $vaga->delete();
+            if ($deleted) {
+                flash('Vaga deletada com sucesso')->success();
+                return redirect()->back();
+            } else {
+                flash('Vaga deletada com sucesso')->success();
+                return redirect()->back();
+            }
+        }else {
+            flash('Vaga nao encontrada, tente novamente')->error();
             return redirect()->back();
         }
+     
     }
 }
