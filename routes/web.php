@@ -58,7 +58,7 @@ Route::post('logout', 'LoginController@logoutCallback')->name('admin.logout.call
 
 
 /* AREA DO ADMIN */
-Route::prefix('admin')->middleware(['admin-access-control', 'middleware-2'])->group(function () {
+Route::prefix('admin')->middleware(['admin-access-control'])->group(function () {
 
     Route::get('dashboard', 'AdminController@dashboard')->name('admin.dashboard');
 
