@@ -145,7 +145,7 @@ class VagaController extends Controller
         $id = $request->id;
 
         $data = $request->all();
-        // DB::beginTransaction();
+        DB::beginTransaction();
 
         $vaga = VagaEmprego::with('beneficios')->find($id);
 
@@ -208,7 +208,7 @@ class VagaController extends Controller
         }
 
         $updated = $vaga->update();
-        
+
         if ($updated && $deletedBeneficios && $createdNewBeneficios) {
             DB::commit();
             flash('Vaga editada com sucesso')->success();
