@@ -23,6 +23,6 @@ class NEAdminGuardMiddleware
         }
 
         flash('É necessário fazer login')->error();
-        return redirect(route('admin.login'));
+        return redirect(route('admin.login.form'));
     }
 }
