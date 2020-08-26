@@ -39,7 +39,7 @@
         <div class="row">
           <div class="col">
             <label for="remuneracao">Remuneração</label>
-            <input class="inputs form-control" type="number" name="remuneracao" id="remunerecao" placeholder="Remuneração (somente números)" value="{{ $vaga->remuneracao }}">
+            <input class="inputs form-control" type="number" name="remuneracao" id="remunerecao" placeholder="Remuneração (somente números)" value="{{ $vaga->remuneracao}}">
           </div>
           <div class="col"> 
             <label for="contato">Contato</label>
