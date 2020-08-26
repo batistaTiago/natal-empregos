@@ -82,7 +82,6 @@
 
   $('.add-empresa-modal-trigger').on('click', e => {
     const nome = $('#empresa').val();
-    alert('hiusahesa');
     if (!!nome) {
       $('#nome_empresa').val(nome);
     }
