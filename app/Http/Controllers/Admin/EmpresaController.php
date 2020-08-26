@@ -31,7 +31,7 @@ class EmpresaController extends Controller
         $novaEmpresa->nome = $request->nome;
         $novaEmpresa->nome_fantasia = $request->nome_fantasia;
         $novaEmpresa->cnpj = $request->cnpj;
-        $novaEmpresa->slug = \slugify($request->nome_fantasia);
+        $novaEmpresa->slug = \slugify($request->nome);
 
         $success = $novaEmpresa->save();
 
