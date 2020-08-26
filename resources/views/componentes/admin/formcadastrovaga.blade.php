@@ -61,7 +61,7 @@
         </div>
         <label for="contrato">Tipo de contratação</label>
         <div class="remoto">
-            <select class="inputs form-control" name="regime_contratacao_id" id="contrato" placeholder="Selecione um">
+            <select required class="inputs form-control" name="regime_contratacao_id" id="contrato" placeholder="Selecione um">
                 <option value="">Selecione um</option>
                 @foreach ($regime as $reg)
                   <option value="{{$reg->id}}">{{$reg->nome}}</option>
