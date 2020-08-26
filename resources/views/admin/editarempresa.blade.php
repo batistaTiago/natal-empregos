@@ -9,7 +9,7 @@
 @section('content')
 <div> @include('flash::message') </div>
 <div class="containercadastro p-4">
-    <h1>Cadastrar Empresa</h1>
+    <h1>Editar Empresa</h1>
         @include('componentes.admin.formeditarempresa')
 </div>
 @endsection

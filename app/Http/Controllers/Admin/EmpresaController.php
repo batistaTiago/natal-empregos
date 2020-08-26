@@ -55,6 +55,13 @@ class EmpresaController extends Controller
         }
     }
 
+    public function cadastrarEmpresaForm()
+    {
+        return view('admin.cadastroempresa');
+    }
+
+
+
     public function editarEmpresaForm(Request $request)
     {
         $id = $request->id;

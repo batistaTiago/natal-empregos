@@ -7,7 +7,7 @@
 @section('content')
     <div class='container'> 
         <h2 class="text-center my-5">Lista de Empresas</h2>
-        <a  class="botaoadmin my-2" href="">Cadastrar Vaga</a>
+        <a  class="botaoadmin my-2" href="{{ route('admin.empresa.cadastrar.form')}}">Cadastrar Empresa</a>
         <div class="table-responsive mt-3">
             <table class="table table-hover table-bordered">
                 <thead>
