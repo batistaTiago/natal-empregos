@@ -52,7 +52,7 @@
         <div class="row">
           <div class="col">
             <label for="remuneracao">Remuneração</label>
-            <input class="inputs form-control" type="number" name="remunerecao" id="remunerecao" placeholder="Remuneração (somente números)">
+            <input class="inputs form-control" type="number" name="remuneracao" id="remunerecao" placeholder="Remuneração (somente números)">
           </div>
           <div class="col"> 
             <label for="contato">Contato</label>
@@ -67,7 +67,7 @@
                   <option value="{{$reg->id}}">{{$reg->nome}}</option>
                 @endforeach
             </select>
-            <input type="checkbox" id="remoto" name="remoto" style="margin-left: 1em">
+            <input type="checkbox" id="remoto" name="aceita_remoto" style="margin-left: 1em">
             <label for="remoto">Remoto?</label>
             <input type="checkbox" id="ativa" name="ativa" style="margin-left: 1em">
             <label for="ativa">Ativa?</label>

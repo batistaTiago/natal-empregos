@@ -58,10 +58,17 @@ class VagaController extends Controller
         }
 
         $data = $request->all();
+
         if ($data['ativa'] == 'on') {
             $data['ativa'] = 1;
             $novaVaga->ativa = $data['ativa'];
         }
+
+        if ($data['aceita_remoto'] == 'on') {
+            $data['aceita_remoto'] = 1;
+            $novaVaga->aceita_remoto = $data['aceita_remoto'];
+        }
+        
         if (isset($data['beneficios'])) {
             $beneficiosInput = $data['beneficios'];
         }

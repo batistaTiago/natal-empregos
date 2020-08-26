@@ -23,7 +23,7 @@
                     @foreach($vagas as $vaga)
                         <tr>
                             <td>{{$vaga->titulo}}</td>
-                            <td>{{$vaga->empresa->nome_fantasia}}</td>
+                            <td>{{$vaga->empresa->nome}}</td>
                             <td>
                                 <div class="spread-flex-container px-3">
                                     <a href="{{ route('admin.vaga.editar.form', [ $vaga->id ]) }}">
