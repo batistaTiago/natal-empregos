@@ -11,12 +11,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        /* administrativo */
         $this->call(UsuarioSeeder::class);
-        $this->call(RegimeContratacaoSeeder::class);
-        $this->call(ContatoSeeder::class);
 
+        /* entidades base */
+        $this->call(RegimeContratacaoSeeder::class);
         $this->call(BeneficioSeeder::class);
-        $this->call(EmpresaSeeder::class);
-        $this->call(VagaEmpregoSeeder::class);
     }
 }
