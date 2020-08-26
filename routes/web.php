@@ -89,6 +89,8 @@ Route::prefix('admin')->middleware(['admin-access-control'])->group(function () 
     });
     Route::prefix('contato')->group(function () {
         Route::delete('/deletar', 'Admin\VagaController@deletarContato')->name('deletar.contato');
+        Route::get('/' , 'Admin\ContatoController@listarContatos')->name('admin.contato.listar');
+        Route::get('/ler' , 'Admin\ContatoController@lerContato')->name('ler.contato');
     });
     Route::prefix('vagas')->group(function () {
         Route::get('/cadastrar', 'VagaController@cadastroForm')->name('admin.empresa.detalhes.vagas.cadastrar.form');
