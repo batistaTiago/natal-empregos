@@ -67,8 +67,7 @@ class EmpresaController extends Controller
 
     public function editarEmpresaSubmit(Request $request)
     {
-        $empresa = Empresa::find($request->id);
-
+        $empresa = Empresa::find($request->empresa_id);
         if ($empresa) {
             $empresa->nome = $request->nome;
             $empresa->nome_fantasia = $request->nome_fantasia;
@@ -79,11 +78,11 @@ class EmpresaController extends Controller
             $updated = $empresa->save();
             if ($updated) {
 
-                flash('Empresa editada com sucesso')->sucess();
+                flash('Empresa editada com sucesso')->success();
                 return redirect()->back();
             } else {
 
-                flash('Empresa nao editada, tente novamente')->sucess();
+                flash('Empresa nao editada, tente novamente')->success();
                 return redirect()->back();
             }
         } else {

@@ -3,6 +3,7 @@
     @method('PUT')
     @csrf
     <div class="containercadastro">
+        <input type="hidden" name="empresa_id" value='{{ request()->id }}'>
         <label for="nome">Nome da empresa</label>
         <input class="inputs form-control" type="text" name="nome" placeholder="Nome da empresa" value="{{ $empresa->nome }}">
         <label for="nome_fantasia">Nome da empresa</label>

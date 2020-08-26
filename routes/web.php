@@ -77,7 +77,7 @@ Route::prefix('admin')->middleware(['admin-access-control'])->group(function () 
         Route::post('cadastrar', 'Admin\EmpresaController@cadastrarEmpresaCallback')->name('admin.empresa.cadastrar.callback');
         
         Route::get('/editar/{id}', 'Admin\EmpresaController@editarEmpresaForm')->name('admin.empresa.editar.form');
-        Route::put('/editar', 'Admin\EmpresaController@editarEmpresaSubmit')->name('editar.empresa.submit');
+        Route::put('/editar', 'Admin\EmpresaController@editarEmpresaSubmit')->name('admin.empresa.editar.callback');
 
         Route::get('/deletar', 'Admin\EmpresaController@deletarEmpresa')->name('deletar.empresa');
         Route::prefix('{slug}')->group(function () {
