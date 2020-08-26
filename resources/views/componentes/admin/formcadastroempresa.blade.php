@@ -5,17 +5,17 @@
     <div class="containercadastro">
         @csrf
         <label for="nome">Nome da empresa</label>
-        <input class="inputs form-control" text" name="nome" placeholder="Nome da empresa">
+        <input class="inputs form-control" text" name="nome" placeholder="Nome da empresa" required>
         <label for="nome_fantasia">Nome Fantasia</label>
-        <input class="inputs form-control" type="text" name="nome_fantasia" placeholder="Nome fantasia">
+        <input class="inputs form-control" required type="text" name="nome_fantasia" placeholder="Nome fantasia">
         <label for="cnpj">CNPJ da empresa</label>
-        <input class="inputs form-control" type="number" name="cnpj" placeholder="CNPJ">
+        <input class="inputs form-control" required type="number" name="cnpj" placeholder="CNPJ">
             
-        <div style="display: flex; justify-content: center; margin-top: 2vh;">
-            <a  class="botao my-2" href="{{route('admin.empresa.listar')}}">
+        <div class="d-none" style="display: flex; justify-content: center; margin-top: 2vh;">
+            <a  id="backtolistagem" class="botao my-2" href="{{route('admin.empresa.listar')}}">
               Voltar  
             </a>
-            <button type="submit" class="botao ml-3">
+            <button id="novaEmpresaFormSubmitButton" type="submit" class="botao ml-3">
                 Enviar
             </button>
         </div>
