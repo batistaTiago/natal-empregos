@@ -46,7 +46,19 @@ Route::get('/sobrenos', function () {
 });
 
 
-Route::prefix('admin')->group(function () {
+Route::get('login', 'LoginController@loginForm')->name('admin.login.form');
+Route::post('login', 'LoginController@loginCallback')->name('admin.login.callback');
+Route::post('logout', 'LoginController@logoutCallback')->name('admin.logout.callback');
+
+
+
+
+
+
+
+
+/* AREA DO ADMIN */
+Route::prefix('admin')->middleware(['admin-access-control'])->group(function () {
 
     Route::get('dashboard', 'AdminController@dashboard')->name('admin.dashboard');
 
@@ -63,9 +75,10 @@ Route::prefix('admin')->group(function () {
         Route::get('/', 'Admin\EmpresaController@listarEmpresas')->name('admin.empresa.listar');
         Route::get('cadastrar', 'Admin\EmpresaController@cadastrarEmpresaForm')->name('admin.empresa.cadastrar.form');
         Route::post('cadastrar', 'Admin\EmpresaController@cadastrarEmpresaCallback')->name('admin.empresa.cadastrar.callback');
-        Route::get('/editar', 'Admin\EmpresaController@editarEmpresa')->name('admin.empresa.editar.form');
+        
+        Route::get('/editar/{id}', 'Admin\EmpresaController@editarEmpresaForm')->name('admin.empresa.editar.form');
+        Route::put('/editar', 'Admin\EmpresaController@editarEmpresaSubmit')->name('editar.empresa.submit');
 
-        Route::get('/editar', 'Admin\EmpresaController@editarEmpresaSubmit')->name('editar.empresa.submit');
         Route::get('/deletar', 'Admin\EmpresaController@deletarEmpresa')->name('deletar.empresa');
         Route::prefix('{slug}')->group(function () {
             Route::prefix('vagas')->group(function () {
@@ -81,6 +94,14 @@ Route::prefix('admin')->group(function () {
         Route::get('/cadastrar', 'VagaController@cadastroForm')->name('admin.empresa.detalhes.vagas.cadastrar.form');
     });
 });
+
+
+
+
+
+
+
+
 
 Route::prefix('vagas')->group(function () {
     Route::get('/', 'VagaController@listarVagas')->name('cliente.vagas.listar');

@@ -59,9 +59,9 @@ class EmpresaController extends Controller
     {
         $id = $request->id;
         $empresa  = Empresa::find($id);
-
+        
         if ($empresa) {
-            return view('editarempresa', compact('empresa'));
+            return view('admin.editarempresa', compact('empresa'));
         }
     }
 

@@ -19,6 +19,9 @@
             <label for="requisitos">Requisitos</label>
             <input class="inputs form-control" type="text" name="requisitos" id="requisitos" placeholder="Ex: 2º Grau completo, Bacharelado..." value="{{ $vaga->requisitos }}">
           </div>
+          <div class="col-12 d-none">
+            <input class="d-none" type="text" name="empresa_id" value="{{$vaga->empresa_id}}">            
+          </div>
         </div>
 
         <label for="descricao">Descrição da vaga</label>
@@ -36,7 +39,7 @@
         <div class="row">
           <div class="col">
             <label for="remuneracao">Remuneração</label>
-            <input class="inputs form-control" type="number" name="remunerecao" id="remunerecao" placeholder="Remuneração (somente números)" value="{{ $vaga->remuneracao }}">
+            <input class="inputs form-control" type="number" name="remuneracao" id="remunerecao" placeholder="Remuneração (somente números)" value="{{ $vaga->remuneracao }}">
           </div>
           <div class="col"> 
             <label for="contato">Contato</label>
