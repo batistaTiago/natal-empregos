@@ -73,7 +73,7 @@
             <label for="ativa">Ativa?</label>
         </div>
         <div style="display: flex; justify-content: center; margin-top: 2vh;">
-            <a  class="botao my-2" href="{{route('admin.vaga.cadastrar.form')}}">
+            <a  class="botao my-2" href="{{route('admin.vagas.listar')}}">
               Voltar  
             </a>
             <button type="submit" class="botao ml-3">
