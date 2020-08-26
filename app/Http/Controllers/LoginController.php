@@ -20,7 +20,7 @@ class LoginController extends Controller
         $credentials = $request->except('_token');
 
         $sucesso = Auth::attempt($credentials);
-
+        
         if ($sucesso) {
             return redirect(route('admin.dashboard'));
         } else {
