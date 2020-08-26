@@ -58,11 +58,19 @@
                   $('#empresa').val(nome);
                   $('#empresa').attr('readonly', true);
                   $('#empresa').addClass('is-valid');
+                  $('#titulo').focus();
+                  $('.add-empresa-modal-trigger').hide();
               } else {
                 throw 'erro';
               }
           } catch (error) {
             $('#exampleModalCenter input').addClass('is-invalid');
+
+            await Swal.fire({
+              icon: 'error',
+              title: 'Erro!',
+              text: 'Houve um erro, tente novamente',
+            });
           }
 
           const option = $('<option>');
@@ -70,6 +78,14 @@
           $('#contrato').append(option);
 
       });
+  });
+
+  $('.add-empresa-modal-trigger').on('click', e => {
+    const nome = $('#empresa').val();
+    alert('hiusahesa');
+    if (!!nome) {
+      $('#nome_empresa').val(nome);
+    }
   });
 </script>
 @endsection

@@ -5,7 +5,7 @@
       <div class="input-group">
         <input required type="text" class="form-control" name="empresa" id="empresa" placeholder="Nome da empresa" aria-label="Input group example" aria-describedby="btnGroupAddon">
         <div class="input-group-append">
-          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
+          <button type="button" class="btn btn-success add-empresa-modal-trigger" data-toggle="modal" data-target="#exampleModalCenter">
             Adicionar uma nova empresa
           </button>
           {{-- <div class="input-group-text" id="btnGroupAddon">@</div> --}}
