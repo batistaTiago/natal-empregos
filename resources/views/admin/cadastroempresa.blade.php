@@ -11,7 +11,9 @@
 <div class="containercadastro p-4">
     <h1>Cadastrar Empresa</h1>
     @include('componentes.admin.formcadastroempresa')
-    <label for="backtolistagem" class="btn btn-secondary">Voltar</label>
+    <a  id="backtolistagem" class="botao my-2" href="{{route('admin.empresa.listar')}}">
+        Voltar  
+      </a>
     <label for="novaEmpresaFormSubmitButton" class="btn btn-primary">Enviar</label>
 </div>
 @endsection
