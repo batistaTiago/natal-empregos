@@ -6,7 +6,7 @@
         <input type="hidden" name="empresa_id" value='{{ request()->id }}'>
         <label for="nome">Nome da empresa</label>
         <input class="inputs form-control" type="text" name="nome" placeholder="Nome da empresa" value="{{ $empresa->nome }}">
-        <label for="nome_fantasia">Nome da empresa</label>
+        <label for="nome_fantasia">Nome fantasia</label>
         <input class="inputs form-control" type="text" name="nome_fantasia" placeholder="Nome fantasia" value="{{ $empresa->nome_fantasia }}">
         <label for="cnpj">CNPJ da empresa</label>
         <input class="inputs form-control" type="number" name="cnpj" placeholder="CNPJ" value="{{ $empresa->cnpj }}">
