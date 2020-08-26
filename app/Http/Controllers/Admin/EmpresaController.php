@@ -36,11 +36,10 @@ class EmpresaController extends Controller
         $success = $novaEmpresa->save();
 
         if ($success) {
+            DB::commit();
             if ($request->header('accept') == 'application/json') {
-
                 return response('success', 200);
             } else {
-                DB::commit();
                 flash("Empresa $request->nome cadastrada com sucesso!")->success();
                 return redirect()->back();
             }
