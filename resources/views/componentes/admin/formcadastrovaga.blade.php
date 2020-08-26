@@ -11,15 +11,6 @@
           {{-- <div class="input-group-text" id="btnGroupAddon">@</div> --}}
         </div>
     </div>
-        <label for="remoto" class="text-muted">Você deseja que o nome da empresa apareça no anúncio da vaga?</label>
-
-        <div class="mostraranuncio">
-            <input type="radio" id="sim" name="sim" style="margin-left: 1em">
-            <label for="sim">Sim</label>
-            <input type="radio" id="nao" name="sim" style="margin-left: 1em">
-            <label for="nao">Não</label>
-        </div>
-        
         <div class="row">
           <div class="col-6">
             <label for="titulo">Título da vaga</label>
