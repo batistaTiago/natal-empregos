@@ -75,17 +75,25 @@
 
 @section('js')
 <script>
-
     $(() => {
-        // escrever todo o código js aqui dentro
+        const _token = $('form#tracker-token input[name="_token"]').val();
 
-        $('.botao-agendar-servico').on('click', e => {
-            $('.form-container').hide();
-            $('.agendar-form').show();
-            $('#modal').modal('show');
+        $.ajax({
+            url: '{{ route("gcc-tracker") }}',
+            method: 'post',
+            data: {
+                _token
+            }
         });
-
     });
 
+    $(() => {
+        $(".botao").on('click', function(event) {
+            event.preventDefault();
+            $('.form-container').hide();
+            $('.contato-form').show();
+            $('#modal').modal('show');
+        })
+    })
 </script>
 @endsection
