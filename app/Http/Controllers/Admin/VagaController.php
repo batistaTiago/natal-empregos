@@ -158,8 +158,14 @@ class VagaController extends Controller
 
         $vagaBeneficios = VagaEmpregoBeneficio::where('vaga_emprego_id', $id)->get();
         $data = $request->all();
+
+        // dd($data);
       
-        $data['beneficios'] = collect($data['beneficios']);
+        if (array_key_exists('beneficios', $data)) {
+            $data['beneficios'] = collect($data['beneficios']);
+        } else {
+            $data['beneficios'] = [];
+        }
  
         $keys = [];
 
