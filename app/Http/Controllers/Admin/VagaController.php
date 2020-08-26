@@ -97,7 +97,6 @@ class VagaController extends Controller
             $vagaEmpregoBeneficioSucess =  VagaEmpregoBeneficio::insert($beneficiosVaga);
 
             if ($vagaEmpregoBeneficioSucess && $novaVagaSuccess && $empresaSuccess) {
-                dd('deu bom...');
                 DB::commit();
                 flash('Vaga de trabalho registrata com sucesso')->success();
                 return redirect()->back();

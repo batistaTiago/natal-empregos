@@ -38,7 +38,9 @@ class EmpresaController extends Controller
         if ($success) {
             DB::commit();
             if ($request->header('accept') == 'application/json') {
-                return response('success', 200);
+                return response()->json([
+                    'success' => true
+                ], 200);
             } else {
                 flash("Empresa $request->nome cadastrada com sucesso!")->success();
                 return redirect()->back();

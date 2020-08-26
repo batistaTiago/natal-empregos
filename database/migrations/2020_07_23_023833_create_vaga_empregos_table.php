@@ -21,7 +21,7 @@ class CreateVagaEmpregosTable extends Migration
             $table->string('titulo');
             $table->string('sub_titulo');
             $table->text('descricao')->nullable();
-            $table->float('remuneracao')->nullable();
+            $table->float('remuneracao', 32, 2)->nullable();
             $table->boolean('aceita_remoto')->nullable();
             $table->string('requisitos')->nullable();
             $table->string('contato')->nullable();
