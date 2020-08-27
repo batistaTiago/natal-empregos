@@ -1,16 +1,13 @@
 <?php
 
-
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Empresa;
-use Illuminate\Http\Request;
-use App\Models\VagaEmpregoBeneficio;
 use App\Http\Controllers\Controller;
-use App\Models\RegimeContratacao;
-use App\Models\VagaEmprego;
-use Illuminate\Auth\Access\Response;
+use App\Models\Empresa;
+use App\Models\VagaEmpregoBeneficio;
 use DB;
+use Illuminate\Auth\Access\Response;
+use Illuminate\Http\Request;
 
 class EmpresaController extends Controller
 {
@@ -27,28 +24,38 @@ class EmpresaController extends Controller
 
         DB::beginTransaction();
 
-        $novaEmpresa = new Empresa();
-        $novaEmpresa->nome = $request->nome;
-        $novaEmpresa->nome_fantasia = $request->nome_fantasia;
-        $novaEmpresa->cnpj = $request->cnpj;
-        $novaEmpresa->slug = \slugify($request->nome);
+        try {
 
-        $success = $novaEmpresa->save();
+            $novaEmpresa = new Empresa();
+            $novaEmpresa->nome = $request->nome;
+            $novaEmpresa->nome_fantasia = $request->nome_fantasia;
+            $novaEmpresa->cnpj = $request->cnpj;
+            $novaEmpresa->slug = \slugify($request->nome);
 
-        if ($success) {
-            DB::commit();
-            if ($request->header('accept') == 'application/json') {
-                return response('success', 200);
+            $success = $novaEmpresa->save();
+
+            if ($success) {
+                DB::commit();
+                if ($request->header('accept') == 'application/json') {
+                    return response()->json([
+                        'success' => true,
+                    ], 200);
+                } else {
+                    flash("Empresa $request->nome cadastrada com sucesso!")->success();
+                    return redirect()->back();
+                }
             } else {
-                flash("Empresa $request->nome cadastrada com sucesso!")->success();
-                return redirect()->back();
+                throw new Error();
             }
-        } else {
+        } catch (\Throwable $e) {
             DB::rollBack();
             if ($request->header('accept') == 'application/json') {
-                return response('success', 400);
+                return response([
+                    'success' => false,
+                    'message' => $e->getMessage()
+                ], 400);
             } else {
-                flash("Empresa $request->nome nao pode ser cadastrada")->error();
+                flash('Houve um erro ao cadastrar, tente novamente')->error();
                 return redirect()->back();
             }
         }
@@ -59,13 +66,11 @@ class EmpresaController extends Controller
         return view('admin.cadastroempresa');
     }
 
-
-
     public function editarEmpresaForm(Request $request)
     {
         $id = $request->id;
-        $empresa  = Empresa::find($id);
-        
+        $empresa = Empresa::find($id);
+
         if ($empresa) {
             return view('admin.editarempresa', compact('empresa'));
         }
@@ -96,7 +101,6 @@ class EmpresaController extends Controller
             return redirect()->back();
         }
     }
-
 
     public function deletarEmpresa(Request $request)
     {
@@ -134,7 +138,6 @@ class EmpresaController extends Controller
                 $allVagasDeleted = true;
                 $allBeneficiosDeleted = true;
             }
-
 
             $empresaDeleted = $empresa->delete();
 

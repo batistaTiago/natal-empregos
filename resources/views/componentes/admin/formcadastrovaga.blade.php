@@ -5,7 +5,7 @@
       <div class="input-group">
         <input required type="text" class="form-control" name="empresa" id="empresa" placeholder="Nome da empresa" aria-label="Input group example" aria-describedby="btnGroupAddon">
         <div class="input-group-append">
-          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
+          <button type="button" class="btn btn-success add-empresa-modal-trigger" data-toggle="modal" data-target="#exampleModalCenter">
             Adicionar uma nova empresa
           </button>
           {{-- <div class="input-group-text" id="btnGroupAddon">@</div> --}}
@@ -52,7 +52,7 @@
         </div>
         <label for="contrato">Tipo de contratação</label>
         <div class="remoto">
-            <select class="inputs form-control" name="regime_contratacao_id" id="contrato" placeholder="Selecione um">
+            <select required class="inputs form-control" name="regime_contratacao_id" id="contrato" placeholder="Selecione um">
                 <option value="">Selecione um</option>
                 @foreach ($regime as $reg)
                   <option value="{{$reg->id}}">{{$reg->nome}}</option>
