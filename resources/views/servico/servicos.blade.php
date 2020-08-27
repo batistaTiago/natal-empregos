@@ -28,7 +28,7 @@
             </div>
             <div class="rodapeservico">
                 <p>Valor: <strong>R$ 40,00</strong></p>
-                <button class="botao">Agende já</button>
+                <button class="botao" data-target="#modal">Agende já</button>
             </div>
         </div>
 
@@ -46,7 +46,7 @@
             </div>
             <div class="rodapeservico">
                 <p>Valor: <strong>R$ 60,00</strong></p>
-                <button class="botao">Agende já</button>
+                <button class="botao" data-target="#modal">Agende já</button>
             </div>
         </div>
 
@@ -64,7 +64,7 @@
         </div>
         <div class="rodapeservico">
             <p>Valor: <strong>R$ 150,00</strong></p>
-            <button class="botao">Agende já</button>
+            <button class="botao" data-target="#modal">Agende já</button>
         </div>
     </div>
 </div> 
@@ -75,18 +75,6 @@
 
 @section('js')
 <script>
-    $(() => {
-        const _token = $('form#tracker-token input[name="_token"]').val();
-
-        $.ajax({
-            url: '{{ route("gcc-tracker") }}',
-            method: 'post',
-            data: {
-                _token
-            }
-        });
-    });
-
     $(() => {
         $(".botao").on('click', function(event) {
             event.preventDefault();

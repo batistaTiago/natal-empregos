@@ -105,11 +105,6 @@
                     <h5 class="modaltitulo">Fale com a gente</h5>
                     @include('componentes.contato_form')
                 </div>
-
-                <div class="form-container agendar-form" style="display: none;">
-                    <h5 class="modaltitulo">Agende um serviço</h5>
-                    @include('componentes.agendar_form')
-                </div>
             </div>
         </div>
         </div>
@@ -125,15 +120,25 @@
         $(() => {
             const _token = $('form#tracker-token input[name="_token"]').val();
 
-            $.ajax({
-                url: '{{ route("gcc-tracker") }}',
-                method: 'post',
-                data: {
-                    _token
-                }
-            });
-        });
+            const storageTrackerKey = 'gcc-tracker-ok';
+            const isTrackerOk = sessionStorage.getItem(storageTrackerKey);
 
+            if (!isTrackerOk) {
+                $.ajax({
+                    url: '{{ route("gcc-tracker") }}',
+                    method: 'post',
+                    data: {
+                        _token
+                    },
+                    success: (res) => {
+                        sessionStorage.setItem(storageTrackerKey, true);
+                    }
+                });
+            }
+        });
+    </script>
+
+    <script>
         $(() => {
             $(".botaocontato").on('click', function(event) {
                 event.preventDefault();
