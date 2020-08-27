@@ -58,7 +58,7 @@
         <button class="botao"><i class="fas fa-envelope" style="margin-left: 8px;"></i> Receber vagas</button>
         <p id="privacidade">Não iremos compartilhar suas informações com ninguém.</p>
     </form>
-</div> 
+</div>
 
 @endsection
 
