@@ -8,7 +8,7 @@
 
 @section('content')
 <div class="heroiservico">
-    <img class='imagemheroiservico' src="{{asset("img/heroiservicos.jpg")}}">
+    <img class='imagemheroiservico' src="{{asset('img/heroiservicos.jpg')}}">
 </div>
 
 <div class="container divservico">    
@@ -16,11 +16,11 @@
     <div class="row">
         <div class="col-lg-3 col-md-5 my-3 cartaoservico">
             <div class="row">
-                <img class='imagemcartaoservico mt-4' src="{{asset("img/imagemservico1.jpg")}}">
+                <img class='imagemcartaoservico mt-4' src="{{asset('img/imagemservico1.jpg')}}">
             </div>
             <div class="textoscartaoservico">
                 <h3 class="tituloservico">
-                    <a href="">Currículo criativo</a>
+                    Currículo criativo
                 </h3>
                 <div class="descricaozinha">
                     <p>*Texto dela aqui*</p>
@@ -34,11 +34,11 @@
 
         <div class="col-lg-3 col-md-5 my-3 cartaoservico">
             <div class="row">
-                <img class='imagemcartaoservico mt-4' src="{{asset("img/imagemservico2.jpg")}}">
+                <img class='imagemcartaoservico mt-4' src="{{asset('img/imagemservico2.jpg')}}">
             </div>
             <div class="textoscartaoservico row">
                 <h3 class="tituloservico">
-                    <a href="">Currículo criativo com consultoria</a>
+                    Currículo criativo com consultoria
                 </h3>
                 <div class="descricaozinha">
                     <p>*Texto dela aqui*</p>
@@ -52,11 +52,11 @@
 
         <div class="col-lg-3 col-md-5 my-3 cartaoservico">
             <div class="row">
-                <img class='imagemcartaoservico mt-4' src="{{asset("img/imagemservico3.jpg")}}">
+                <img class='imagemcartaoservico mt-4' src="{{asset('img/imagemservico3.jpg')}}">
             </div>
             <div class="textoscartaoservico row">
                 <h3 class="tituloservico">
-                    <a href="">Pacote master</a>
+                    Pacote master
                 </h3>
             <div class="descricaozinha">
                 <p>Instrução e aprimoramento de currículo</p>
