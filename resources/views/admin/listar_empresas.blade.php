@@ -35,8 +35,8 @@
                                         <form action="{{route('deletar.empresa')}}" method="DELETE">
                                             @csrf
                                             <input type="hidden" name="id" value="{{$empresa->id}}">
-                                            <button type="submit" class='outline-danger'>
-                                                <i class="fas fa-trash-alt"></i>
+                                            <button style='border: none; background-color: transparent' type="submit">
+                                                <i class="fas fa-window-close" style="color: red"></i>
                                             </button>
                                         </form>
                                     </div>

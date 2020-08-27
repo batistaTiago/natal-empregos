@@ -23,13 +23,13 @@ nav.navbar {
 }
 
 .botaoadmin {
-    text-decoration: none;
     color: black;
     margin-top: 5px;
     padding: 0.7em;
     background-color: white;
     border: 1px solid $azul-escuro;
     &:hover {
+        text-decoration: none;
         background-color: $azul;
         color: white;
     }

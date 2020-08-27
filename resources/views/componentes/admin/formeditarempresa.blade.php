@@ -12,7 +12,7 @@
         <input class="inputs form-control" type="number" name="cnpj" placeholder="CNPJ" value="{{ $empresa->cnpj }}">
             
         <div style="display: flex; justify-content: center; margin-top: 2vh;">
-            <a  class="botao my-2" href="{{route('admin.empresa.listar')}}">
+            <a  class="botaoadmin" href="{{route('admin.empresa.listar')}}">
               Voltar  
             </a>
             <button type="submit" class="botao ml-2" id="novaEmpresaFormSubmitButton">

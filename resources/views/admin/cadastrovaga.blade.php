@@ -97,23 +97,19 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Cadastrar nova empresa</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+
       <div class="modal-body">
-
-
-
         @include('componentes.admin.formcadastroempresa')
-
-
-
       </div>
+
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-        <label for="novaEmpresaFormSubmitButton" type="submit" class="btn btn-primary">Enviar</label>
+        <button type="button" class="botao" data-dismiss="modal">Voltar</button>
+        <button type="submit" class="botao">Enviar</button>
       </div>
     </div>
   </div>

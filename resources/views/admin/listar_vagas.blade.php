@@ -36,7 +36,8 @@
                                             <div>
                                                 <input name="id" type="hidden" class="form-control" id="id" value="{{$vaga->id}}">
                                             </div>
-                                            <button type="submit"><i class="fas fa-trash-alt"></i></button>
+                                            
+                                            <button style='border: none; background-color: transparent' type="submit"><i class="fas fa-window-close" style="color: red"></i></button>
                                         </form>
                                         
                                     </div>

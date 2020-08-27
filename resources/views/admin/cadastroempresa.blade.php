@@ -8,12 +8,16 @@
 
 @section('content')
 <div> @include('flash::message') </div>
-<div class="containercadastro p-4">
-    <h1>Cadastrar Empresa</h1>
+<div class="containercadastro">
+    <h1 class='p-2'>Cadastrar Empresa</h1>
     @include('componentes.admin.formcadastroempresa')
-    <a  id="backtolistagem" class="botao my-2" href="{{route('admin.empresa.listar')}}">
-        Voltar  
+    <div class='d-flex justify-content-center mt-3'>
+      <a  id="backtolistagem" class="botaoadmin mx-1" href="{{route('admin.empresa.listar')}}">
+          Voltar  
       </a>
-    <label for="novaEmpresaFormSubmitButton" class="btn btn-primary">Enviar</label>
+      <a id="cadastrar-empresa-form" class="botaoadmin mx-1" href="{{route('admin.empresa.cadastrar.form')}}">
+        Enviar  
+      </a>
+  </div>
 </div>
 @endsection
