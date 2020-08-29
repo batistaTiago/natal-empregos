@@ -1,4 +1,4 @@
-<form action="" method="POST" class="container formcontato mt-4 pb-2">
+<form action="{{route('contato.form.callback')}}" method="POST" class="container formcontato mt-4 pb-2">
     <div class="row">
         @csrf
         <div class="form-group col-md-6 col-12">
