@@ -21,7 +21,7 @@
                 <div> @include('flash::message') </div>
 
                 <tbody>
-                    @foreach($contatos as $contato)
+                    @foreach($allContatos as $contato)
                         <tr>
                             <td>{{$contato->nome}}</td>
                             <td>{{$contato->assunto}}</td>
