@@ -1,5 +1,6 @@
 <form action="{{route('contato.form.callback')}}" method="POST" class="container formcontato mt-4 pb-2">
     @csrf
+
     <div class="row">
         <div class="form-group col-md-6 col-12">
             <label for="nome">Seu nome</label>
