@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use App\Http\Controllers\Controller;
 use App\Models\Contato;
 use Illuminate\Http\Request;
 
@@ -12,7 +12,6 @@ class ContatoController extends Controller
     {
 
         $allContatos = Contato::all();
-
         return view('admin.listar_contatos' , compact('allContatos'));
 
     }
