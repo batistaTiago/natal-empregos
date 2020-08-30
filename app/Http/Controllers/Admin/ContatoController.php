@@ -16,9 +16,9 @@ class ContatoController extends Controller
 
     }
 
-    public function lerContato(Request $request)
+    public function lerContato(Request $request , $id)
     {
-        $id = $request->id;
+        // $id = $request->id;
         $contato = Contato::find($id);
 
         if($contato){

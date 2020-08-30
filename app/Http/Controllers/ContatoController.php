@@ -17,7 +17,7 @@ class ContatoController extends Controller
     {
 
         $data = $request->all();
-        // dd($data);
+        
         if(in_array(null , $data)){
             flash('Algum dado foi esquecido ou esta errado, tente novamente.');
             return redirect()->back();
