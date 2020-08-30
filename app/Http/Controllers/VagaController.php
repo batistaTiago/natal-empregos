@@ -2,18 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Beneficio;
-use Illuminate\Http\Request;
 use App\Models\VagaEmprego;
-use App\Models\Empresa;
-use App\Models\Contato;
+use Illuminate\Http\Request;
 
 class VagaController extends Controller
 {
     // lista todas as vagas
 
     // Salva nova vaga via formulario
-
 
     // enviar todas as vagas para a requisicao
     public function listarVagas(Request $request)
@@ -34,21 +30,22 @@ class VagaController extends Controller
         return view('detalhesvaga', compact('vaga'));
     }
 
-    public function procurarVaga(Request $request){
-        
+    public function procurarVaga(Request $request)
+    {
+
         $searchString = $request['searchinput'];
-   
 
-        $allVagas = VagaEmprego::join('empresa' , 'empresa.id' , 'vaga_emprego.empresa_id' )
-                                ->where('vaga_emprego.titulo', 'like' , '%' . $searchString . '%')
-                                ->orWhere('vaga_emprego.descricao' , 'like' , '%' . $searchString . '%')
-                                ->orWhere('empresa.nome' , 'like' , '%' . $searchString . '%')
-                                ->orWhere('empresa.nome_fantasia' , 'like' , '%' . $searchString . '%')
-                                ->paginate(24);
-        
+        $vagas = VagaEmprego::with(['empresa', 'regime'])->select([
+                'vaga_emprego.*'
+            ])->join('empresa', 'empresa.id', 'vaga_emprego.empresa_id')
+            // ->join('vaga_emprego_beneficio', 'vaga_emprego.id', 'vaga_emprego_beneficio.vaga_emprego_id')
+            // ->join('beneficio', 'beneficio.id', 'vaga_emprego_beneficio.beneficio_id')
+            ->where('vaga_emprego.titulo', 'like', '%' . $searchString . '%')
+            ->orWhere('vaga_emprego.descricao', 'like', '%' . $searchString . '%')
+            ->orWhere('empresa.nome', 'like', '%' . $searchString . '%')
+            ->orWhere('empresa.nome_fantasia', 'like', '%' . $searchString . '%')
+            ->paginate(24);
 
-
-        $vagas = $allVagas;
-        return view('home' , compact('vagas'));
+        return view('home', compact('vagas'));
     }
 }
