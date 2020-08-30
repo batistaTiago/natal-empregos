@@ -48,7 +48,6 @@ class VagaController extends Controller
         
 
 
-        $pag = new VagaEmprego();
         $vagas = $allVagas;
         return view('home' , compact('vagas'));
     }
