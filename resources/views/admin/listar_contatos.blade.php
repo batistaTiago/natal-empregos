@@ -16,6 +16,8 @@
                         <th scope="col">Telefone</th>
                         <th scope="col">Email</th>
                         <th scope="col">Mensagem</th>
+                        <th scope="col">Lido</th>
+                        <th scope="col">Ações</th>
                     </tr>
                 </thead>
                 <div> @include('flash::message') </div>

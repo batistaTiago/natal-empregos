@@ -35,7 +35,7 @@
                   <a class="nav-link" href="/servicos">Serviços</a>
                 </li>
                <li class="nav-item mx-4">
-                    <a class="nav-link" href="/sobrenos">Sobre nós</a>
+                    <a class="nav-link" href="">Sobre nós</a>
                 </li>
                 <li class="nav-item mx-4">
                 <a class="botaocontato nav-link" href="">Contato</a>

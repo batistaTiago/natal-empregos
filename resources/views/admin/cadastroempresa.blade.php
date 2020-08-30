@@ -15,9 +15,20 @@
       <a  id="backtolistagem" class="botaoadmin mx-1" href="{{route('admin.empresa.listar')}}">
           Voltar  
       </a>
-      <a id="cadastrar-empresa-form" class="botaoadmin mx-1" href="{{route('admin.empresa.cadastrar.form')}}">
+      <a id="enviar-button" class="botaoadmin mx-1">
         Enviar  
       </a>
   </div>
 </div>
+@endsection
+
+@section('js')
+<script>
+    $(() => {
+      // escrever todo o código js aqui dentro
+      $('#enviar-button').on('click', ()=>{
+        $('#cadastrar-empresa-form').submit();
+      });
+    });
+</script>
 @endsection
