@@ -8,7 +8,7 @@
 
 @section('content')
 <div class="heroi">
-    <img class='imagemheroi' src="{{asset("img/heroi.jpg")}}">
+    <img class='imagemheroi' src="{{asset('img/heroi.jpg')}}">
     <div class="searchbar">
         <p>Busque pela vaga de sua preferência</p>
         <form method="GET" action="{{route('buscar.vaga')}}" class="searchform mt-2">
