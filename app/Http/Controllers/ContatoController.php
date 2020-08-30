@@ -15,6 +15,13 @@ class ContatoController extends Controller
 
     public function contatoCallback(Request $request)
     {
+
+        $data = $request->all();
+        // dd($data);
+        if(in_array(null , $data)){
+            flash('Algum dado foi esquecido ou esta errado, tente novamente.');
+            return redirect()->back();
+        }
         $contato = new Contato();
         $contato->nome = $request->nome;
         $contato->assunto = $request->assunto;
@@ -23,6 +30,7 @@ class ContatoController extends Controller
         $contato->lido = false;
         $contato->mensagem = $request->mensagem;
 
+        
 
         $success = $contato->save();
         if ($success) {
@@ -33,7 +41,5 @@ class ContatoController extends Controller
             return redirect()->back();
         }
     }
-    public function listarContato(Request $request){
-        
-    }
+  
 }

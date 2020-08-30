@@ -108,9 +108,8 @@ class EmpresaController extends Controller
         $id = $request->id;
         $empresa = Empresa::find($id);
         DB::beginTransaction();
-        // $allBeneficios = [];
-        // $allVagas = [];
-        // dd($empresa->id);
+
+        
         $allBeneficiosDeleted = false;
         $allVagasDeleted = false;
         if ($empresa) {
