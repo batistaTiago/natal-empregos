@@ -58,7 +58,6 @@ class VagaController extends Controller
         $vagasEmprego = VagaEmprego::where('titulo' , 'like' , '%' . $searchString . '%')
                              ->orWhere('descricao' , 'like' , '%' . $searchString . '%')
                              ->get();
-                            //  ->paginate('25');
         
         // dd($vagasEmpresa , $vagasEmprego);
 
@@ -66,8 +65,8 @@ class VagaController extends Controller
 
         // $allVagas->push($vagasEmpresa[0]);
         $pag = new VagaEmprego();
-        $vagas = $pag->paginate($allVagas);
-        dd($vagas);
+        // $vagas = $pag->paginate($allVagas);
+        dd($allVagas);
 
         return view('home' , compact('vagas'));
     }
