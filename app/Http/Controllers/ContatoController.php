@@ -33,4 +33,7 @@ class ContatoController extends Controller
             return redirect()->back();
         }
     }
+    public function listarContato(Request $request){
+        
+    }
 }

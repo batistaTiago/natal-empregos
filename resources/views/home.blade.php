@@ -11,7 +11,7 @@
     <img class='imagemheroi' src="{{asset("img/heroi.jpg")}}">
     <div class="searchbar">
         <p>Busque pela vaga de sua preferência</p>
-        <form action="" class="searchform mt-2">
+        <form method="GET" action="{{route('buscar.vaga')}}" class="searchform mt-2">
                 <input type="text" id="searchinput" name="searchinput" class="searchinput " placeholder="Ex: Cozinheiro, Soldador, Motorista">
                 <button class="botaosearch"><i class="fas fa-search"></i></button>
         </form>

@@ -114,12 +114,13 @@ Route::post('/contato', 'ContatoController@contatoCallback')->name('cliente.cont
 Route::post('gcc-tracker', 'TrackerController@registrarAcesso')->name('gcc-tracker');
 
 
-Route::post('/contato', 'ContatoController@contatoSubmit')->name('contato.form.callback');
+Route::post('/contato', 'ContatoController@contatoCallback')->name('contato.form.callback');
 
 Route::get('/detalhes', function () {
     return view("detalhesvaga");
 });
 
+Route::get('/buscarvaga' , 'VagaController@procurarVaga')->name('buscar.vaga');
 
 Route::get('/teste', 'Admin\VagaController@deletarVaga')->name('teste');
 Route::post('/cadastrovaga', 'Admin\VagaController@cadastroForm')->name('cadastro.vaga');

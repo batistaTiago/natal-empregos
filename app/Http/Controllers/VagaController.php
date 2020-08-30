@@ -33,4 +33,42 @@ class VagaController extends Controller
         $vaga = VagaEmprego::with('regime', 'beneficios', 'empresa')->find($id);
         return view('detalhesvaga', compact('vaga'));
     }
+
+    public function procurarVaga(Request $request){
+        
+        $searchString = $request['searchinput'];
+
+        $vagasEmpresa = [];
+        $empresasByString = Empresa::where('nome' , 'like' , '%' . $searchString . '%')
+                                    ->orWhere('nome_fantasia' , 'like' , '%' . $searchString . '%')
+                                    ->get();
+        // dd($empresasByString);
+        $empresasId = [];
+        if($empresasByString){
+            foreach($empresasByString as $empresa){
+                $empresasId[] = $empresa->id;
+                // $vagasEmpresa[] = VagaEmprego::where('empresa_id' , $empresa->id)->get();
+            }
+        }
+
+        $vagasEmpresa = VagaEmprego::whereIn('empresa_id' , $empresasId)->get();
+        // $vagasEmpresa = $vagasEmpresa[0];
+        
+
+        $vagasEmprego = VagaEmprego::where('titulo' , 'like' , '%' . $searchString . '%')
+                             ->orWhere('descricao' , 'like' , '%' . $searchString . '%')
+                             ->get();
+                            //  ->paginate('25');
+        
+        // dd($vagasEmpresa , $vagasEmprego);
+
+        $allVagas = $vagasEmpresa->merge($vagasEmprego);
+
+        // $allVagas->push($vagasEmpresa[0]);
+        $pag = new VagaEmprego();
+        $vagas = $pag->paginate($allVagas);
+        dd($vagas);
+
+        return view('home' , compact('vagas'));
+    }
 }
