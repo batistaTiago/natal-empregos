@@ -36,7 +36,7 @@
                                             @csrf
                                             <input type="hidden" name="id" value="{{$empresa->id}}">
                                             <button style='border: none; background-color: transparent' type="submit">
-                                                <i class="fas fa-window-close" style="color: red"></i>
+                                                <i class="fa fa-trash" style="color: red"></i>
                                             </button>
                                         </form>
                                     </div>

@@ -18,6 +18,9 @@
 <script>
     $(() => {
       // escrever todo o código js aqui dentro
+      $('#enviar-button').on('click', ()=>{
+        $('#cadastrar-empresa-form').submit();
+      });
 
       $('#cadastrar-empresa-form').on('submit', async(e) => {
           e.preventDefault();
@@ -73,10 +76,6 @@
             });
           }
 
-          const option = $('<option>');
-          option.text('testando');
-          $('#contrato').append(option);
-
       });
   });
 
@@ -109,7 +108,7 @@
 
       <div class="modal-footer">
         <button type="button" class="botao" data-dismiss="modal">Voltar</button>
-        <button type="submit" class="botao">Enviar</button>
+        <button type="submit" id="enviar-button" class="botao">Enviar</button>
       </div>
     </div>
   </div>

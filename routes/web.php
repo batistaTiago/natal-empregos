@@ -62,7 +62,7 @@ Route::prefix('admin')->middleware(['admin-access-control'])->group(function () 
 
     Route::get('dashboard', 'AdminController@dashboard')->name('admin.dashboard');
 
-    Route::prefix('vagas')->group(function () {
+    Route::prefix('vagas'   )->group(function () {
         Route::get('/', 'Admin\VagaController@listarVagas')->name('admin.vagas.listar');
 
         Route::get('cadastrar', 'Admin\VagaController@cadastroForm')->name('admin.vaga.cadastrar.form');
@@ -90,7 +90,7 @@ Route::prefix('admin')->middleware(['admin-access-control'])->group(function () 
         });
     });
     Route::prefix('contato')->group(function () {
-        Route::delete('/deletar', 'Admin\VagaController@deletarContato')->name('deletar.contato');
+        Route::delete('/deletar', 'Admin\ContatoController@deletarContato')->name('deletar.contato');
         Route::get('/' , 'Admin\ContatoController@listarContatos')->name('admin.contato.listar');
         Route::get('/ler/{id}' , 'Admin\ContatoController@lerContato')->name('ler.contato');
     });
@@ -114,13 +114,12 @@ Route::post('/contato', 'ContatoController@contatoCallback')->name('cliente.cont
 Route::post('gcc-tracker', 'TrackerController@registrarAcesso')->name('gcc-tracker');
 
 
-Route::post('/contato', 'ContatoController@contatoCallback')->name('contato.form.callback');
+Route::post('/contato', 'ContatoController@contatoSubmit')->name('contato.form.callback');
 
 Route::get('/detalhes', function () {
     return view("detalhesvaga");
 });
 
-Route::get('/buscarvaga' , 'VagaController@procurarVaga')->name('buscar.vaga');
 
 Route::get('/teste', 'Admin\VagaController@deletarVaga')->name('teste');
 Route::post('/cadastrovaga', 'Admin\VagaController@cadastroForm')->name('cadastro.vaga');
