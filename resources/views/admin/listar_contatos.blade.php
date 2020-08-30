@@ -6,7 +6,7 @@
 
 @section('content')
     <div class='container'> 
-        <h2 class="text-center my-5">Lista de Contatos</h2>
+        <h2 class="text-center my-5">Caixa de entrada</h2>
         <div class="table-responsive mt-3">
             <table class="table table-hover table-bordered">
                 <thead>
@@ -16,10 +16,11 @@
                         <th scope="col">Telefone</th>
                         <th scope="col">Email</th>
                         <th scope="col">Mensagem</th>
+                        <th scope="col">Lido</th>
+                        <th scope="col">Ações</th>
                     </tr>
                 </thead>
                 <div> @include('flash::message') </div>
-
                 <tbody>
                     @foreach($allContatos as $contato)
                         <tr>
@@ -27,11 +28,15 @@
                             <td>{{$contato->assunto}}</td>
                             <td>{{$contato->telefone}}</td>
                             <td>{{$contato->email}}</td>
-                            <td>{{$contato->mensagem}}</td>
+                            <td>
+                                <p>
+                                    {{$contato->mensagem}}
+                                </p>
+                            </td>
                             
-                            @if($contato->lido): 
+                            @if($contato->lido)
                                 <td>Lido</td>
-                            @else: 
+                            @else
                                 <td>Nao lido</td>
                             @endif
 
@@ -40,15 +45,16 @@
                                 <div class="spread-flex-container px-3">
                                     <div>
                                         <a href="{{ route('ler.contato', [ $contato->id ]) }}">
-                                            <i class="fas fa-edit"></i>
+                                            <i class="fas fa-search"></i>
                                         </a>
                                     </div>
                                     <div>
-                                        <form action="{{route('deletar.contato')}}" method="DELETE">
+                                        <form action="{{route('deletar.contato')}}" method="POST">
+                                            @method("DELETE")
                                             @csrf
                                             <input type="hidden" name="id" value="{{$contato->id}}">
-                                            <button type="submit" class='outline-danger'>
-                                                <i class="fas fa-trash-alt"></i>
+                                            <button style='border: none; background-color: transparent' type="submit">
+                                                <i class="fa fa-trash" style="color: red"></i>
                                             </button>
                                         </form>
                                     </div>
