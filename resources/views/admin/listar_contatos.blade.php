@@ -39,7 +39,7 @@
                             <td>
                                 <div class="spread-flex-container px-3">
                                     <div>
-                                        <a href="{{ route('admin.contato.ler', [ $empresa->id ]) }}">
+                                        <a href="{{ route('ler.contato', [ $contato->id ]) }}">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                     </div>

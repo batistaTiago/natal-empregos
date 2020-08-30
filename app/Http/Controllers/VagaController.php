@@ -37,37 +37,18 @@ class VagaController extends Controller
     public function procurarVaga(Request $request){
         
         $searchString = $request['searchinput'];
+   
 
-        $vagasEmpresa = [];
-        $empresasByString = Empresa::where('nome' , 'like' , '%' . $searchString . '%')
-                                    ->orWhere('nome_fantasia' , 'like' , '%' . $searchString . '%')
-                                    ->get();
-        // dd($empresasByString);
-        $empresasId = [];
-        if($empresasByString){
-            foreach($empresasByString as $empresa){
-                $empresasId[] = $empresa->id;
-                // $vagasEmpresa[] = VagaEmprego::where('empresa_id' , $empresa->id)->get();
-            }
-        }
-
-        $vagasEmpresa = VagaEmprego::whereIn('empresa_id' , $empresasId)->get();
-        // $vagasEmpresa = $vagasEmpresa[0];
+        $allVagas = VagaEmprego::join('empresa' , 'empresa.id' , 'vaga_emprego.empresa_id' )
+                                ->where('vaga_emprego.titulo', 'like' , '%' . $searchString . '%')
+                                ->orWhere('vaga_emprego.descricao' , 'like' , '%' . $searchString . '%')
+                                ->orWhere('empresa.nome' , 'like' , '%' . $searchString . '%')
+                                ->orWhere('empresa.nome_fantasia' , 'like' , '%' . $searchString . '%')
+                                ->paginate(24);
         
 
-        $vagasEmprego = VagaEmprego::where('titulo' , 'like' , '%' . $searchString . '%')
-                             ->orWhere('descricao' , 'like' , '%' . $searchString . '%')
-                             ->get();
-        
-        // dd($vagasEmpresa , $vagasEmprego);
 
-        $allVagas = $vagasEmpresa->merge($vagasEmprego);
-
-        // $allVagas->push($vagasEmpresa[0]);
-        $pag = new VagaEmprego();
-        // $vagas = $pag->paginate($allVagas);
-        dd($allVagas);
-
+        $vagas = $allVagas;
         return view('home' , compact('vagas'));
     }
 }
