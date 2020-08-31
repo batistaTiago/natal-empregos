@@ -19,7 +19,7 @@ class Contato extends Migration
             $table->string('assunto');
             $table->string('telefone');
             $table->string('email');
-            $table->string('mensagem');
+            $table->text('mensagem');
             $table->boolean('lido');
             $table->timestamps();
         });
