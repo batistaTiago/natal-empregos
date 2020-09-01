@@ -8,7 +8,7 @@
 
 @section('content')
 <div class="heroiservico">
-    <img class='imagemheroiservico' src="{{asset('img/heroiservicos.jpg')}}">
+    <img class='imagemheroiservico' src="{{asset('img/allmightyheroi.jpg')}}">
 </div>
 
 <div class="container divservico">    
