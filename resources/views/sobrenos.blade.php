@@ -8,24 +8,29 @@
 
 @section('content')
 <div class="heroisobre">
-    <img class='imagemheroisobre' src="{{asset("img/heroisobre.jpg")}}">
+    <img class='imagemheroisobre' src="{{asset("img/allmightyheroi.jpg")}}">
 </div>
 
-<div class="container containersobre">    
-    <div class="missao">
-        <h2>Missão</h2>
-        <p>Atender e melhorar a performance das pessoas e das empresas.</p>
+<div class="containersobre"> 
+    <h2 style="text-decoration: underline">Sobre a Natal Empregos</h2>   
+    <div class="missao ml-5">
+        <p class="pmissao">Missão</p>
+        <p class='ml-4'>Atender e melhorar a performance das pessoas e das empresas.</p>
     </div>
-    <div class="visao">
-        <h2>Visão</h2>
-        <p>Vender inteligência empresarial e pessoal.</p>
+    <div class="visao ml-5">
+        <p class="pvisao">Visão</p>
+        <p class='ml-4'>Vender inteligência empresarial e pessoal.</p>
     </div>
-    <div class="valores">
-        <h2>Valores</h2>
-        <p>Foco no Cliente, responsabilidade pessoal e profissional, 
+    <div class="valores ml-5">
+        <p class="pvalores">Valores</p>
+        <p class='ml-4'>Foco no Cliente, responsabilidade pessoal e profissional, 
             gostar de servir, gostar de aprender, resolutividade, respeito
             e gratidão.            
         </p>
+    </div>
+    <h2 style="text-align: center">Equipe Natal Empregos</h2>
+    <div class="profissionais pb-3">
+        <img class='coachdecarreira' src="{{asset("img/coachdecarreira.jpg")}}">
     </div>
 </div>
 

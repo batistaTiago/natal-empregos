@@ -1,12 +1,29 @@
+.containersobre {
+    text-align: justify;
+    padding-left: 10em;
+    padding-right: 10em;
+    width: 100%;
+    margin: 0px;
+    color: $azul-escuro;
+    p {
+        padding: 0.5em;
+    }
+    h2 {
+        padding: 1em;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+}
+
 .heroisobre {
-    height: 30vh;
+    height: 60px;
     overflow: hidden;
-    border-bottom: 2px solid transparentize($color: $azul-escuro, $amount: 0.5);
+    border-bottom: 1px solid transparentize($color: $azul-escuro, $amount: 0.5);
+    background-size: cover;
 }
 
 .imagemheroisobre {
     width: 100%;
-    height: 30vh;
+    height: 60px;
 }
 
 .imagemcartaosobre {
@@ -15,33 +32,23 @@
     border: 1px solid $laranja;
 }
 
-.missao {
-    h2 {
-        background-color: $laranja;
-    }
+.pmissao {
+    font-size: 1.3em;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+}
+.pvisao {
+    font-size: 1.3em;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+}
+.pvalores {
+    font-size: 1.3em;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
 }
 
-.containersobre {
-    text-align: justify;
-    h2 {
-        text-align: center;
-        font-family: "Parisienne", cursive;
-        font-size: 3em;
-    }
-    p {
-        padding: 1em;
-    }
-    margin-bottom: 2em;
-}
-
-.visao {
-    h2 {
-        background-color: $amarelo;
-    }
-}
-
-.valores {
-    h2 {
-        background-color: transparentize($color: $azul, $amount: 0.15);
-    }
+.profissionais {
+    display: flex;
+    justify-content: center;
 }
