@@ -35,7 +35,7 @@
                                         <form action="{{route('deletar.empresa')}}" method="DELETE">
                                             @csrf
                                             <input type="hidden" name="id" value="{{$empresa->id}}">
-                                            <button style='border: none; background-color: transparent' type="submit">
+                                            <button style='border: none; background-color: transparent' type="submit" id="delete-submit">
                                                 <i class="fa fa-trash" style="color: red"></i>
                                             </button>
                                         </form>
@@ -51,5 +51,18 @@
 @endsection
 
 @section('js')
+<script>
+    $(() => {
+        $('#delete-submit').on('click', (e)=>{
+            console.log('aqui');
+
+            confirm = confirm('Tem certeza? ao deletar empresa perdera todas as vagas relacionadas a ela');
+            if(confirm){
+            }else{
+                e.preventDefault();
+            }
+        });
+});
+</script>
 
 @endsection
