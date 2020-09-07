@@ -68,10 +68,19 @@
 
 <div class="newsletter">
     <p>Receba as vagas em primeira mão</p>
-    <form action="">
+    <div> @include('flash::message') </div>
+
+    <form action="{{route('contato.form.callback')}}" method="POST">
+        @csrf
         <div class="newsform">
             <p>Preencha os seus dados e iremos enviar novas vagas assim que surgirem</p>
-            <input type="email" id="newsemail" name="newsemail" class="newsinput" placeholder="Digite seu email">
+            <input type="email" id="email" name="email" class="newsinput" placeholder="Digite seu email">
+            <input style="display:none;" type="text" name="nome" class="form-control" placeholder="Seu nome" value="Email solicita vagas">
+            <input style="display:none;" type="text" name="assunto" class="form-control" placeholder="Qual o assunto?" value="Email solicita vagas">
+            <input style="display:none;" type="number" name="telefone" class="form-control" placeholder="Telefone para contato (opcional)" value="1">
+            <input style="display:none;" type="text" name="mensagem" class="form-control" placeholder="Telefone para contato (opcional)" value="Email solicita vagas">
+
+
         </div>
         <button class="botao"><i class="fas fa-envelope" style="margin-left: 8px;"></i> Receber vagas</button>
         <p id="privacidade">Não iremos compartilhar suas informações com ninguém.</p>

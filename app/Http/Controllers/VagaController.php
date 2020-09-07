@@ -38,8 +38,6 @@ class VagaController extends Controller
         $vagas = VagaEmprego::with(['empresa', 'regime'])->select([
                 'vaga_emprego.*'
             ])->join('empresa', 'empresa.id', 'vaga_emprego.empresa_id')
-            // ->join('vaga_emprego_beneficio', 'vaga_emprego.id', 'vaga_emprego_beneficio.vaga_emprego_id')
-            // ->join('beneficio', 'beneficio.id', 'vaga_emprego_beneficio.beneficio_id')
             ->where('vaga_emprego.titulo', 'like', '%' . $searchString . '%')
             ->orWhere('vaga_emprego.descricao', 'like', '%' . $searchString . '%')
             ->orWhere('empresa.nome', 'like', '%' . $searchString . '%')

@@ -20,7 +20,7 @@ class BootstrapRelations extends Migration
 
 
         Schema::table('vaga_emprego_beneficio', function (Blueprint $table) {
-            $table->foreign('vaga_emprego_id')->references('id')->on('vaga_emprego');
+            $table->foreign('vaga_emprego_id')->references('id')->on('vaga_emprego')->onDelete('cascade');
             $table->foreign('beneficio_id')->references('id')->on('beneficio');
         });
     }

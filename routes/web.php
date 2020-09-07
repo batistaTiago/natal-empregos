@@ -90,7 +90,7 @@ Route::prefix('admin')->middleware(['admin-access-control'])->group(function () 
         });
     });
     Route::prefix('contato')->group(function () {
-        Route::delete('/deletar', 'Admin\VagaController@deletarContato')->name('deletar.contato');
+        Route::delete('/deletar', 'Admin\ContatoController@deletarContato')->name('deletar.contato');
         Route::get('/' , 'Admin\ContatoController@listarContatos')->name('admin.contato.listar');
         Route::get('/ler/{id}' , 'Admin\ContatoController@lerContato')->name('ler.contato');
     });
