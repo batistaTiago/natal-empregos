@@ -48,7 +48,7 @@
 
 <hr class="separador">
 
-<div class="container containersobre">    
+{{-- <div class="container containersobre">    
     <div class="missao">
         <h2>Missão</h2>
         <p>Atender e melhorar a performance das pessoas e das empresas.</p>
@@ -64,7 +64,7 @@
             e gratidão.            
         </p>
     </div>
-</div>
+</div> --}}
 
 <div class="newsletter">
     <p>Receba as vagas em primeira mão</p>
