@@ -731,6 +731,23 @@ nav.navbar {
   justify-content: center;
 }
 
+@media screen and (max-width: 800px) {
+  .containersobre {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  .coachdecarreira {
+    width: 450px;
+    height: 350px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .coachdecarreira {
+    width: 300px;
+    height: 250px;
+  }
+}
 .headeradmin {
   width: 100%;
   display: flex;
