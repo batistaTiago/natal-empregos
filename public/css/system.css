@@ -369,7 +369,7 @@
 
 nav.navbar {
   transition: ease-in-out 200ms background-color;
-  background-color: transparent;
+  background-color: #0b4683;
 }
 
 .navegar {
@@ -495,11 +495,6 @@ nav.navbar {
     font-size: 0.8em;
   }
 }
-@media screen and (max-width: 992px) {
-  nav.navbar {
-    background-color: #0b4683;
-  }
-}
 .tabelacadastro .fundoheader {
   background-color: rgba(34, 43, 86, 0.2);
 }
@@ -526,7 +521,7 @@ nav.navbar {
 
 .divservico {
   padding-top: 5em;
-  height: 72vh;
+  height: 100vh;
 }
 .divservico h1 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;

@@ -4,7 +4,7 @@
 
 nav.navbar {
     transition: ease-in-out 200ms background-color;
-    background-color: transparent;
+    background-color: $azul;
 }
 
 .navegar {
@@ -134,9 +134,6 @@ nav.navbar {
 }
 
 @media screen and (min-width: 521px) and (max-width: 1150px) {
-    // .logolayout {
-    //     margin-top: 1em;
-    // }
     .linksuteis {
         a {
             font-size: 0.8em;
@@ -146,11 +143,5 @@ nav.navbar {
         p {
             font-size: 0.8em;
         }
-    }
-}
-
-@media screen and (max-width: 992px){
-    nav.navbar{
-        background-color: $azul;
     }
 }
