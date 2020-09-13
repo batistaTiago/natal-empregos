@@ -52,3 +52,14 @@ button {
 .is-valid {
     color: green;
 }
+
+@media screen and (min-width: 762px) and (max-width: 1150px) {
+    .imagemcartaoservico {
+        margin: 0 auto;
+        height: 125px;
+        width: 80%;
+    }
+    .cartaoservico {
+        height: 350px;
+    }
+}

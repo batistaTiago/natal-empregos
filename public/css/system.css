@@ -524,20 +524,9 @@ nav.navbar {
   text-align: center;
 }
 
-.heroiservico {
-  height: 60px;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(34, 43, 86, 0.5);
-  background-size: cover;
-}
-
-.imagemheroiservico {
-  width: 100%;
-  height: 60px;
-}
-
 .divservico {
-  height: 100%;
+  padding-top: 5em;
+  height: 72vh;
 }
 .divservico h1 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -591,6 +580,10 @@ nav.navbar {
 }
 
 @media screen and (max-width: 490px) {
+  .divservico {
+    height: 100%;
+  }
+
   .cartaoservico {
     height: 325px;
     padding: 0.5em;
@@ -612,6 +605,10 @@ nav.navbar {
   }
 }
 @media screen and (min-width: 491px) and (max-width: 761px) {
+  .divservico {
+    height: 100%;
+  }
+
   .heroiservico {
     height: 25vh;
   }
@@ -679,7 +676,8 @@ nav.navbar {
 }
 .containersobre {
   text-align: justify;
-  padding-left: 10em;
+  padding-top: 5em;
+  padding-left: 5em;
   padding-right: 10em;
   width: 100%;
   margin: 0px;
@@ -733,7 +731,6 @@ nav.navbar {
 
 @media screen and (max-width: 800px) {
   .containersobre {
-    padding-left: 2em;
     padding-right: 2em;
   }
 
@@ -983,6 +980,18 @@ button {
 
 .is-valid {
   color: green;
+}
+
+@media screen and (min-width: 762px) and (max-width: 1150px) {
+  .imagemcartaoservico {
+    margin: 0 auto;
+    height: 125px;
+    width: 80%;
+  }
+
+  .cartaoservico {
+    height: 350px;
+  }
 }
 
 /*# sourceMappingURL=system.css.map */

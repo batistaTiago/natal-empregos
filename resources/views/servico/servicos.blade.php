@@ -7,10 +7,6 @@
 @endsection
 
 @section('content')
-<div class="heroiservico">
-    <img class='imagemheroiservico' src="{{asset('img/allmightyheroi.JPG')}}">
-</div>
-
 <div class="container divservico">    
     <h1 class="p-2">Nossos serviços</h1>
     <div class="row">

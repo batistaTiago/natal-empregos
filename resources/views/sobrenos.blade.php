@@ -7,9 +7,7 @@
 @endsection
 
 @section('content')
-<div class="heroisobre">
-    <img class='imagemheroisobre' src="{{asset("img/allmightyheroi.JPG")}}">
-</div>
+
 
 <div class="containersobre"> 
     <h2 style="text-decoration: underline">Sobre a Natal Empregos</h2>   
