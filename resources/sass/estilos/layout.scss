@@ -148,3 +148,9 @@ nav.navbar {
         }
     }
 }
+
+@media screen and (max-width: 992px){
+    nav.navbar{
+        background-color: $azul;
+    }
+}

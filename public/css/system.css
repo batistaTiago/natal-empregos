@@ -405,7 +405,7 @@ nav.navbar {
 }
 
 .logolayout {
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-family: "Candara", sans-serif;
 }
 .logolayout strong {
@@ -495,6 +495,11 @@ nav.navbar {
     font-size: 0.8em;
   }
 }
+@media screen and (max-width: 992px) {
+  nav.navbar {
+    background-color: #0b4683;
+  }
+}
 .tabelacadastro .fundoheader {
   background-color: rgba(34, 43, 86, 0.2);
 }
@@ -520,16 +525,20 @@ nav.navbar {
 }
 
 .heroiservico {
-  height: 30vh;
+  height: 60px;
   overflow: hidden;
-  border-bottom: 2px solid rgba(242, 214, 120, 0.7);
+  border-bottom: 1px solid rgba(34, 43, 86, 0.5);
+  background-size: cover;
 }
 
 .imagemheroiservico {
   width: 100%;
-  height: auto;
+  height: 60px;
 }
 
+.divservico {
+  height: 75vh;
+}
 .divservico h1 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
@@ -668,15 +677,32 @@ nav.navbar {
     width: 80%;
   }
 }
+.containersobre {
+  text-align: justify;
+  padding-left: 10em;
+  padding-right: 10em;
+  width: 100%;
+  margin: 0px;
+  color: #222b56;
+}
+.containersobre p {
+  padding: 0.5em;
+}
+.containersobre h2 {
+  padding: 1em;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
 .heroisobre {
-  height: 30vh;
+  height: 60px;
   overflow: hidden;
-  border-bottom: 2px solid rgba(34, 43, 86, 0.5);
+  border-bottom: 1px solid rgba(34, 43, 86, 0.5);
+  background-size: cover;
 }
 
 .imagemheroisobre {
   width: 100%;
-  height: 30vh;
+  height: 60px;
 }
 
 .imagemcartaosobre {
@@ -685,29 +711,24 @@ nav.navbar {
   border: 1px solid #d69510;
 }
 
-.missao h2 {
-  background-color: #d69510;
+.pmissao {
+  font-size: 1.3em;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
-.containersobre {
-  text-align: justify;
-  margin-bottom: 2em;
-}
-.containersobre h2 {
-  text-align: center;
-  font-family: "Parisienne", cursive;
-  font-size: 3em;
-}
-.containersobre p {
-  padding: 1em;
+.pvisao {
+  font-size: 1.3em;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
-.visao h2 {
-  background-color: #f2d678;
+.pvalores {
+  font-size: 1.3em;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
-.valores h2 {
-  background-color: rgba(11, 70, 131, 0.85);
+.profissionais {
+  display: flex;
+  justify-content: center;
 }
 
 .headeradmin {
