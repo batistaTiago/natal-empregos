@@ -26,7 +26,7 @@
                             <td>{{$vaga->empresa->nome}}</td>
                             <td>
                                 <div class="spread-flex-container px-3">
-                                    <a href="{{ route('admin.vaga.editar.form', [ $vaga->id ]) }}">
+                                    <a title="editar_vaga" href="{{ route('admin.vaga.editar.form', [ $vaga->id ]) }}">
                                         <i class="fas fa-edit"></i>
                                     </a>
 
@@ -37,7 +37,7 @@
                                                 <input name="id" type="hidden" class="form-control" id="id" value="{{$vaga->id}}">
                                             </div>
                                             
-                                            <button style='border: none; background-color: transparent' type="submit"><i class="fa fa-trash" style="color: red"></i></button>
+                                            <button title="deletar_vaga" style='border: none; background-color: transparent' type="submit"><i class="fa fa-trash" style="color: red"></i></button>
                                         </form>
                                         
                                     </div>

@@ -57,13 +57,14 @@
                         <li><a class="botaocontato" href="">Fale conosco</a></li>
                         <li><a href="https://www.instagram.com/natal.empregos/"><i class="fab fa-instagram"></i> natal.empregos</a></li>
                         <li><a href="https://www.facebook.com/groups/433243110094657/learning_content/"><i class="fab fa-facebook-square"></i> Natal Empregos</a></li>
+                        <br>
+                        <li>natal.empregos2020@gmail.com</li>
                     </ul>
                 </div>
                 <div class="parceiros">
                     <p style="font-size: 1.1em">Parceiros: </p>
                     <ul>
                         <li>Garantistas Coding LTDA 2020</li>
-                        <li>Outros aliados</li>
                     </ul>
                 </div>
             </div>

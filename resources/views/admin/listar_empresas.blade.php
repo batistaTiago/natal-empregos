@@ -27,7 +27,7 @@
                             <td>
                                 <div class="spread-flex-container px-3">
                                     <div>
-                                        <a href="{{ route('admin.empresa.editar.form', [ $empresa->id ]) }}">
+                                        <a title="editar_empresa" href="{{ route('admin.empresa.editar.form', [ $empresa->id ]) }}">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                     </div>
@@ -35,7 +35,7 @@
                                         <form action="{{route('deletar.empresa')}}" method="DELETE">
                                             @csrf
                                             <input type="hidden" name="id" value="{{$empresa->id}}">
-                                            <button style='border: none; background-color: transparent' type="submit" id="delete-submit">
+                                            <button title="deletar_empresa" style='border: none; background-color: transparent' type="submit" id="delete-submit">
                                                 <i class="fa fa-trash" style="color: red"></i>
                                             </button>
                                         </form>
