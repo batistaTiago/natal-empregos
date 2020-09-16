@@ -22,7 +22,7 @@
     
         <h3>Contato</h3>
         <div class="divsessao">
-            <a href="mailto:{{$contato->email}}">{{$contato->email}}</a>
+            <a title='AnchorParaContatoAdmin' href="mailto:{{$contato->email}}">{{$contato->email}}</a>
         </div>
     </div>
     </div>

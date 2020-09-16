@@ -12,10 +12,10 @@
         <input class="inputs form-control" required type="number" name="cnpj" placeholder="CNPJ">
             
         <div class="d-none" style="display: flex; justify-content: center; margin-top: 2vh;">
-            <a  id="backtolistagem" class="botao my-2" href="{{route('admin.empresa.listar')}}">
+            <a title='voltarCadastroEmpresaAdmin' id="backtolistagem" class="botao my-2" href="{{route('admin.empresa.listar')}}">
               Voltar  
             </a>
-            <button id="novaEmpresaFormSubmitButton" type="submit" class="botao ml-3">
+            <button title='enviarCadastroEmpresaAdmin' id="novaEmpresaFormSubmitButton" type="submit" class="botao ml-3">
                 Enviar!!!
             </button>
         </div>

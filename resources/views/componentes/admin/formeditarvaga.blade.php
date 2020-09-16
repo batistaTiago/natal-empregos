@@ -60,10 +60,10 @@
             <label for="ativa">Ativa?</label>
         </div>
         <div style="display: flex; justify-content: center; margin-top: 2vh;">
-            <a  class="botaoadmin" href="{{route('admin.vaga.cadastrar.form')}}">
+            <a title='voltarEditarVagaAdmin' class="botaoadmin" href="{{route('admin.vaga.cadastrar.form')}}">
               Voltar  
             </a>
-            <button type="submit" class="botao ml-3">
+            <button title='enviarEditarVagaAdmin' type="submit" class="botao ml-3">
                 Enviar
             </button>
         </div>

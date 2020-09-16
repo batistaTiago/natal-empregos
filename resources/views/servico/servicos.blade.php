@@ -24,7 +24,7 @@
             </div>
             <div class="rodapeservico">
                 <p>Valor: <strong>R$ 40,00</strong></p>
-                <button class="botao" data-target="#modal">Agende já</button>
+                <button title='botaoAgendarServico1' class="botao" data-target="#modal">Agende já</button>
             </div>
         </div>
 
@@ -42,7 +42,7 @@
             </div>
             <div class="rodapeservico">
                 <p>Valor: <strong>R$ 60,00</strong></p>
-                <button class="botao" data-target="#modal">Agende já</button>
+                <button title='botaoAgendarServico2' class="botao" data-target="#modal">Agende já</button>
             </div>
         </div>
 
@@ -60,7 +60,7 @@
         </div>
         <div class="rodapeservico">
             <p>Valor: <strong>R$ 150,00</strong></p>
-            <button class="botao" data-target="#modal">Agende já</button>
+            <button title='botaoAgendarServico3' class="botao" data-target="#modal">Agende já</button>
         </div>
     </div>
 </div> 

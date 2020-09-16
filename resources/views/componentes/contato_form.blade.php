@@ -24,7 +24,7 @@
             <textarea name="mensagem" id="mensagem" rows="10" placeholder="Sua mensagem"  class="form-control"></textarea>
         </div>
        
-        <button type="submit" class="botao">
+        <button title='botaoEnviarContatoForm' type="submit" class="botao">
             Enviar
         </button>
     </div>

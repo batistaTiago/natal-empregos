@@ -7,7 +7,7 @@
 @section('content')
     <div class='container'> 
         <h2 class="text-center my-5">Lista de Empresas</h2>
-        <a  class="botaoadmin my-2" href="{{ route('admin.empresa.cadastrar.form')}}">Cadastrar Empresa</a>
+        <a title='AnchorParaCadastrarEmpresaAdmin' class="botaoadmin my-2" href="{{ route('admin.empresa.cadastrar.form')}}">Cadastrar Empresa</a>
         <div class="table-responsive mt-3">
             <table class="table table-hover table-bordered">
                 <thead>
@@ -27,7 +27,7 @@
                             <td>
                                 <div class="spread-flex-container px-3">
                                     <div>
-                                        <a title="editar_empresa" href="{{ route('admin.empresa.editar.form', [ $empresa->id ]) }}">
+                                        <a title='AnchorParaEditarEmpresaAdmin' title="editar_empresa" href="{{ route('admin.empresa.editar.form', [ $empresa->id ]) }}">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                     </div>

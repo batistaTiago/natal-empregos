@@ -32,7 +32,7 @@
                 <p class='mt-2'>Senha</p>
                 <input type="password" name="password">
                 <div class="divbutton">
-                    <button class='botao mt-2'>Entrar</button>
+                    <button title='botaoEntrarFormLoginAdmin' class='botao mt-2'>Entrar</button>
                 </div>
             </div>
         </div>

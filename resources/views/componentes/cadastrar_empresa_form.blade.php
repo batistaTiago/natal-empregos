@@ -9,10 +9,10 @@
         <input type="number" name="cnpj" placeholder="CNPJ">
             
         <div style="display: flex; justify-content: center; margin-top: 2vh">
-            <button type="submit" class="botao">
+            <button title='botaoVoltarCadastrarEmpresa' type="submit" class="botao">
             Voltar
             </button>    
-            <button type="submit" class="botao">
+            <button title='botaoEnviarCadastrarEmpresa' type="submit" class="botao">
                 Enviar
             </button>
         </div>

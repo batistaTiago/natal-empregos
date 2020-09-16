@@ -12,10 +12,10 @@
     <h1 class='p-2'>Cadastrar Empresa</h1>
     @include('componentes.admin.formcadastroempresa')
     <div class='d-flex justify-content-center mt-3'>
-      <a  id="backtolistagem" class="botaoadmin mx-1" href="{{route('admin.empresa.listar')}}">
+      <a title='AnchorParaListagemEmpresas' id="backtolistagem" class="botaoadmin mx-1" href="{{route('admin.empresa.listar')}}">
           Voltar  
       </a>
-      <a id="enviar-button" class="botaoadmin mx-1">
+      <a title='AnchorParaCadastrarEmpresaAdmin' id="enviar-button" class="botaoadmin mx-1">
         Enviar  
       </a>
   </div>

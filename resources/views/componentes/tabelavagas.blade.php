@@ -8,8 +8,8 @@
         <tr>
             <td>{{ $vaga->titulo }}</td>
             <td>{{ $vaga->empresa->nome ?? 'Não informado' }}</td>
-            <td><a href=""><i class="fas fa-edit"></a></i></td>
-            <td><a href=""><i class="fas fa-trash-alt"></a></i></td>
+            <td><a title='editarVagaAdmin' href=""><i class="fas fa-edit"></a></i></td>
+            <td><a title='deletarVagaAdmin' href=""><i class="fas fa-trash-alt"></a></i></td>
         </tr>
         
     </table>    

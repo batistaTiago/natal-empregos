@@ -5,7 +5,7 @@
       <div class="input-group">
         <input required type="text" class="form-control" name="empresa" id="empresa" placeholder="Nome da empresa" aria-label="Input group example" aria-describedby="btnGroupAddon">
         <div class="input-group-append">
-          <button type="button" class="btn btn-success add-empresa-modal-trigger" data-toggle="modal" data-target="#exampleModalCenter">
+          <button title='adicionarEmpresaAdmin' type="button" class="btn btn-success add-empresa-modal-trigger" data-toggle="modal" data-target="#exampleModalCenter">
             Adicionar uma nova empresa
           </button>
           {{-- <div class="input-group-text" id="btnGroupAddon">@</div> --}}
@@ -64,10 +64,10 @@
             <label for="ativa">Ativa?</label>
         </div>
         <div style="display: flex; justify-content: center; margin-top: 2vh;">
-            <a  class="botaoadmin" href="{{route('admin.vagas.listar')}}">
+            <a title='voltarCadastroVagaAdmin' class="botaoadmin" href="{{route('admin.vagas.listar')}}">
               Voltar  
             </a>
-            <button class="botao ml-3" type="submit">
+            <button title='enviarCadastroVagaAdmin' class="botao ml-3" type="submit">
                 Enviar
             </button>
         </div>

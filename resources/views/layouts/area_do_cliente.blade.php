@@ -24,21 +24,21 @@
 <body>
     <div class="containerlayout">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top d-f center-items">
-            <a class="navbar-brand logolayout" href="/">Natal<strong>Empregos</strong></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <a title='navbarLogoAnchor' class="navbar-brand logolayout" href="/">Natal<strong>Empregos</strong></a>
+            <button title='navbarBootstrapToggle' class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
                       
             <div class="collapse navbar-collapse justify-content-center" id="navbarToggler">
               <ul class="navbar-nav" >
                 <li class="nav-item mx-4">
-                  <a class="nav-link" href="/servicos">Serviços</a>
+                  <a title='AnchorParaServicos' class="nav-link" href="/servicos">Serviços</a>
                 </li>
                <li class="nav-item mx-4">
-                    <a class="nav-link" href="/sobrenos">Sobre nós</a>
+                    <a title='AnchorParaSobrenos' class="nav-link" href="/sobrenos">Sobre nós</a>
                 </li>
                 <li class="nav-item mx-4">
-                <a class="botaocontato nav-link" href="">Contato</a>
+                <a title='AnchorParaContato' class="botaocontato nav-link" href="">Contato</a>
                 </li>
               </ul>
             </div>

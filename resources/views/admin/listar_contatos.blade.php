@@ -44,7 +44,7 @@
                             <td>
                                 <div class="spread-flex-container px-3">
                                     <div>
-                                        <a href="{{ route('ler.contato', [ $contato->id ]) }}">
+                                        <a title='AnchorParaLerContatoAdmin' href="{{ route('ler.contato', [ $contato->id ]) }}">
                                             <i class="fas fa-search"></i>
                                         </a>
                                     </div>
@@ -53,7 +53,7 @@
                                             @method("DELETE")
                                             @csrf
                                             <input type="hidden" name="id" value="{{$contato->id}}">
-                                            <button style='border: none; background-color: transparent' type="submit">
+                                            <button title='deletarContatoAdmin' style='border: none; background-color: transparent' type="submit">
                                                 <i class="fa fa-trash" style="color: red"></i>
                                             </button>
                                         </form>

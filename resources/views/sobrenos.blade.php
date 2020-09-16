@@ -26,7 +26,6 @@
             e gratidão.            
         </p>
     </div>
-    <h2 style="text-align: center">Equipe Natal Empregos</h2>
     <div class="profissionais pb-3">
         <img class='coachdecarreira' src="{{asset('img/coachdecarreira.JPG')}}">
     </div>

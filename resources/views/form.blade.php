@@ -24,7 +24,7 @@
         <option value="2">PJ</option>
     </select>
     <input type="text" name="remuneracao">
-    <button type="submit" class="btn btn-primary">
+    <button title='botaoEditarVaga' type="submit" class="btn btn-primary">
 
     </button>
 </form>

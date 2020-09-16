@@ -25,10 +25,10 @@
                             <td>1620.42000-01</td>
                             <td>
                                 <div class="spread-flex-container px-3">
-                                    <a href="/">
+                                    <a title='AnchorParaEditarServicoAdmin' title='AnchorParaDashboardAdmin' href="/">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <a href="/" class="text-danger">
+                                    <a title='AnchorParaDeletarServicoAdmin' href="/" class="text-danger">
                                         <i class="fas fa-trash-alt"></i>
                                     </a>
                                 </div>

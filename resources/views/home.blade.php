@@ -13,7 +13,7 @@
         <p>Busque pela vaga de sua preferência</p>
         <form method="GET" action="{{route('buscar.vaga')}}" class="searchform mt-2">
                 <input type="text" id="searchinput" name="searchinput" class="searchinput " placeholder="Ex: Cozinheiro, Soldador, Motorista">
-                <button class="botaosearch"><i class="fas fa-search"></i></button>
+                <button title='botaoPesquisa' class="botaosearch"><i class="fas fa-search"></i></button>
         </form>
     </div>
 </div>
@@ -23,7 +23,7 @@
     <div class="mt-5 mb-2 containercartao row">
         @foreach ($vagas as $idx => $vaga)
         <div class="my-3 col-sm-12 col-md-6 col-lg-4">
-            <a class="cartao" href="{{ route('cliente.vaga.detalhe', [ $vaga->id ]) }}">
+            <a title='linkVagaDetalhe' class="cartao" href="{{ route('cliente.vaga.detalhe', [ $vaga->id ]) }}">
               {{--
               <p>{{ $idx + 1 }}</p>
               --}}
@@ -82,7 +82,7 @@
 
 
         </div>
-        <button class="botao"><i class="fas fa-envelope" style="margin-left: 8px;"></i> Receber vagas</button>
+        <button title='botaoReceberVagas' class="botao"><i class="fas fa-envelope" style="margin-left: 8px;"></i> Receber vagas</button>
         <p id="privacidade">Não iremos compartilhar suas informações com ninguém.</p>
     </form>
 </div>

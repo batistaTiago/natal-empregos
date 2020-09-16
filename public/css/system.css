@@ -722,6 +722,12 @@ nav.navbar {
 .profissionais {
   display: flex;
   justify-content: center;
+  margin-top: 25px;
+}
+
+.coachdecarreira {
+  height: 350px;
+  border: 4px solid #0b4683;
 }
 
 @media screen and (max-width: 800px) {
